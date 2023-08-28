@@ -1,0 +1,167 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --background-white: #F8FAFE;
+    --accent-one: #27264B;
+    --accent-two: #C2CEFF;
+    --accent-three: #B57AFE;
+    --accent-four: #FFB2C0;
+    --accent-five: #FFC877;
+}
+
+body {
+    display: flex;
+    background-color: var(--background-white);
+    height: 100vh;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+
+    font-family: Arial, sans-serif;
+    color: var(--accent-one);
+}
+
+h2, h3, h4 {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+li::before {
+    content: '';
+    display: inline-block;
+    height: 25px;
+    width: 25px;
+    background-image: url(https://www.pngmart.com/files/16/Tick-Green-Check-Mark-PNG-Clipart.png);
+    background-size: contain;
+    margin-right: 5px;
+}
+
+.freeTier::before {
+    background-image: url(https://clipart-library.com/images/gie5B478T.png);
+    height: 25px;
+    width: 25px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 5px;
+    height: 85%;
+    box-shadow: 0px 0.7em 1em -0.6em var(--accent-two);
+    width: 230px;
+}
+
+.card:nth-of-type(2) {
+    box-shadow: 0px 0.7em 1em -0.6em var(--accent-three);
+}
+
+.card:nth-of-type(3) {
+    box-shadow: 0px 0.7em 1em -0.6em var(--accent-five);
+}
+
+.card:last-of-type {
+    margin-right: 40px;
+}
+
+.card:first-of-type {
+    margin-left: 40px;
+}
+
+.card--banner {
+    margin: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+.card--banner > * {
+    padding: 13px;
+    margin: 0;
+}
+
+.card--banner-free {
+    background-color: var(--background-white);
+}
+
+.card--banner-lite {
+    background-image: linear-gradient(to right, var(--accent-two), var(--accent-three));
+    color: white; 
+}
+
+.card--banner-pro {
+    background-image: linear-gradient(to right, var(--accent-four), var(--accent-five));
+}
+
+.card--body {
+    height: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.card--body-main {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card--body-main > * {
+    max-width: 75%;
+    text-align: center;
+}
+
+.price {
+    font-size: 40px;
+    margin: 20px 0px 0px 0px;
+}
+
+.price > sup {
+    font-size: 16px;
+    position: relative;
+    bottom: 10px;
+}
+
+.price > sub {
+    font-size: 16px;
+    position: relative;
+    bottom: 8px;
+}
+
+.subtitle {
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.card--button {
+    width: calc(100% - 40px);
+    margin: 5px;
+    padding: 15px 0px;
+    background: white;
+    border: 1px solid var(--accent-one);
+    border-radius: 5px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.card:nth-of-type(2) > .card--body > button {
+    background-color: var(--accent-one);
+    color: var(--background-white);
+}
+
+.card--features {
+    margin-left: 15px;
+}
