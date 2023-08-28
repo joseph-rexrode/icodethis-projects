@@ -1,0 +1,178 @@
+/* GLOBALS */
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --main-background: #F5F6FF;
+    --accent-one: #202142;
+    --accent-two: #8791DB;
+    --accent-three: #FF5C8A;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--main-background);
+}
+
+p {
+    font-size: 12px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+    padding-bottom: 10px;
+}
+
+.icon img {
+    max-width: 40px;
+    max-height: 30px;
+    border-radius: 100%;
+    object-fit: fill;
+}
+
+.slackIcon img {
+    max-width: 50px;
+    border-radius: 100%;
+    background-color: white;
+    padding: 5px;
+}
+
+.donateCard--main img {
+    width: 65px;
+    height: 65px;
+    background-size: contain;
+    margin-bottom: 35px;
+}
+
+/* SPECIFIC ELEMENTS */
+
+
+.div--centered-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer {
+    width: 800px;
+    height: 500px;
+    margin: 70px 0px;
+    border-radius: 10px;
+    overflow: auto;
+    background: white;
+    box-shadow: 0 1em 1.2em -1.2em var(--accent-two);
+}
+
+.footer--main {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 30px 35px;
+    gap: 40px;
+}
+
+.footer--main-donateCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    background-color: var(--main-background);
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 1em 1.2em -1.4em var(--accent-two);
+    padding: 25px;
+}
+
+.donateCard--main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.donateCard--main-text h3 {
+    margin: 0
+}
+
+.donateCard--button {
+    padding: 10px 35px;
+    border-radius: 7px;
+    background-color: var(--accent-one);
+    color: var(--main-background);
+    border: none;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: var(--accent-three);
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 100%;
+    border: none;
+    background-color: white;
+}
+
+.slackIcon {
+    display: flex;
+    background-color: var(--main-background);
+    border: none;
+    border-radius: 30px;
+}
+
+.footer--main-follow-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+.footer--ad {
+    margin: 0px 30px;
+    padding: 15px 0px;
+    border-radius: 10px;
+    background-color: var(--main-background);
+    display: flex;
+    justify-content: center;
+}
+
+.footer--ad p {
+    border: 2px solid grey;
+    color: grey;
+    border-radius: 5px;
+    padding: 2px 3px;
+}
+
+.footer--footer {
+    display: flex;
+    margin: 20px 30px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer--footer > * {
+    width: 200px;
+}
+
+.footer--footer p:nth-of-type(2) {
+    text-align: center;
+}
+
+.footer--footer-projects {
+    text-align: end;
+    margin: 0;
+}
+
+.footer--footer-projects > * {
+    margin: 0;
+    padding: 2px 0px;
+}
