@@ -1,0 +1,75 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+:root {
+    --background-white: #F8F8FF;
+    --accent-one: #23A4A3;
+    --accent-two: #5c5c5c;
+    --accent-dark: #090E1F;
+}
+
+body {
+    margin: 0;
+    background-color: var(--background-white);
+}
+
+.card {
+    background-color: white;
+    margin: 4em 3em;
+    padding: 4em 6em;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    box-shadow: 0 1em 1em -1.4em;
+    border-radius: 5px;
+}
+
+.card--section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.subtitle {
+    color: var(--accent-two);
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.card--edit {
+    width: 50px;
+    height: 50px;
+    background-color: var(--accent-one);
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 1em 1em -1em;
+    position: absolute;
+    bottom: -25px;
+    right: 25px;
+}
+
+.editSection {
+    background-color: var(--accent-dark);
+    margin: 4em 3em;
+    padding: 3em 6em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    gap: 25px;
+
+}
+
+.editSection--title {
+    color: var(--background-white);
+    text-align: center;
+    max-width: 350px;
+}
+
+.editSection--main {
+    display: flex;
+    justify-content: space-between;
+}
