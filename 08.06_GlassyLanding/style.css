@@ -1,0 +1,182 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --background-light: #F5ECEC;
+    --accent-blue: #616DFF;
+    --accent-orange: #F87666;
+    --accent-pink: #FDBAFF;
+    --accent-dark: #2B2863;
+}
+
+body {
+    margin: 0;
+    background-color: var(--background-light);
+    height: 100vh;
+    overflow: hidden;
+    color: var(--accent-dark);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p {
+    font-size: 10pt;
+}
+
+
+.background--blue-slant {
+    background: var(--accent-blue);
+    height: 1000px;
+    width: 75px;
+    transform: rotate(20deg);
+    position: absolute;
+    top: -100px;
+    right: 325px;
+    z-index: -2;
+}
+
+.background--pink-triangle {
+    width: 0px;
+    height: 0px;
+    border-right: 400px solid var(--accent-pink);
+    border-top: 1100px solid transparent;
+    position: absolute;
+    right: 100px;
+    top: -215px;
+    z-index: -2;
+}
+
+.background--orange {
+    width: 30px;
+    height: 300px;
+    background-color: var(--accent-orange);
+    z-index: -1;
+    position: absolute;
+    bottom: 0;
+    right: 100px;
+}
+
+.background--other-blue {
+    width: 100px;
+    height: 1000px;
+    background-color: var(--accent-blue);
+    position: absolute;
+    right: 0;
+    top: -100px;
+    z-index: -2;
+}
+
+.landing {
+    margin: 6rem 4rem 0 4rem;
+    padding: 20px;
+    max-width: 80%;
+    height: calc(100% - 6rem);
+    background-color: rgb(255, 255, 255, 0.5);
+    backdrop-filter: blur(7px);
+    border-radius: 10px 10px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.landing::-webkit-scrollbar {
+    display: none;
+}
+
+.icon {
+    position: relative;
+    width: 30px;
+    height: 20px;
+}
+
+.bigSquare {
+    width: 20px;
+    height: 20px;
+    position: relative;
+}
+
+.littleSquare {
+    width: 12.5px;
+    height: 12.5px;
+    position: absolute;
+    bottom: -5px;
+    right: 5px;
+}
+
+.bigSquare, .littleSquare {
+    background-color: var(--accent-dark);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pages {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+ul {
+    margin: 0;
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    font-size: 10pt;
+}
+
+a {
+    text-decoration: none;
+    color: var(--accent-dark);
+}
+
+.landing--main {
+    padding: 30px;
+    max-width: 75%;
+}
+
+.landing--cards {
+    margin-bottom: 20px;
+    padding: 0px 30px 30px 30px;
+    display: flex;
+    gap: 10px;
+}
+
+.landing--card {
+    flex: 1;
+    padding: 10px 15px;
+    background: white;
+    box-shadow: -0.7em 1em 1em -1.3em;
+    border-radius: 5px;
+}
+
+/* Buttons */
+
+.signup {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--accent-dark);
+    color: var(--background-light);
+}
+
+.location {
+    border: none;
+    background-color: transparent;
+    color: var(--accent-blue);
+    margin-left: -5px;
+    font-weight: bold;
+}
+
+.learn {
+    background: transparent;
+    border: 1px solid var(--accent-blue);
+    padding: 7px 25px;
+    border-radius: 20px;
+    color: var(--accent-blue);
+    font-weight: bold;
+}
