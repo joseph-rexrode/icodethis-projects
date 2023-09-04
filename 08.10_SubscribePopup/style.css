@@ -1,0 +1,124 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --background-col: #EDEEF7;
+    --circle1-accent1: #FB9688;
+    --circle1-accent2: #F5C5A3;
+    --circle2-accent1: #B8B4CF;
+    --circle2-accent2: #98C3EC;
+    --accent-dark: #2D2866;
+    --accent-light: #D7D4FA;
+    --card: #FAFAFC;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+}
+
+h3, p {
+    margin: 0;
+}
+
+p, label {
+    font-size: 10pt;
+}
+
+.wrapper {
+    background-color: var(--background-col);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+    filter: blur(15px);
+}
+
+.circle1 {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(var(--circle1-accent2), var(--circle1-accent1));
+    border-radius: 50%;
+    position: relative;
+    top: 3em
+}
+
+.circle2 {
+    width: 250px;
+    height: 250px;
+    background: linear-gradient(to left, var(--circle2-accent2), var(--circle2-accent1));
+    border-radius: 50%;
+    position: relative;
+    bottom: 2em;
+}
+
+.card--wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    background-color: var(--card);
+    width: 350px;
+    height: 375px;
+    border-radius: 10px;
+    box-shadow: 0 1em 1em -1.5em;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 85%
+}
+
+.exit {
+    align-self: end;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 1px solid var(--accent-light);
+    background: transparent;
+}
+
+.header, .form, .subscribeButton {
+    padding: 0 30px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.subscribeButton {
+    width: calc(100% - 60px);
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--accent-dark);
+    color: var(--background-col);
+    box-shadow: 0 5px 1px var(--circle2-accent1);
+    text-transform: uppercase;
+}
+
+.header, .form {
+    text-align: center;
+}
+
+#email {
+    padding: 15px;
+    border: 1px solid lavender;
+    border-radius: 5px;
+}
+
+.subscribe {
+    display: flex;
+    gap: 5px;
+}
