@@ -1,0 +1,170 @@
+/* Global Styling */
+
+*, ::before, ::after {
+    box-sizing: border-box;
+    font-size: 8pt;
+}
+
+:root {
+    --background-col: #F5F4FF;
+    --backdrop-col: #FDD2D2;
+    --accent-dark: #121633;
+    --star-main: #FFEC8A;
+    --star-trim: #FFC879;
+}
+
+body {
+    margin: 0;
+    background-color: var(--background-col);
+    height: 100vh;
+}
+
+h5, p {
+    margin: 0;
+}
+
+h3 {
+    margin: 0;
+    font-size: 12pt;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.center {
+    align-items: center;
+    justify-content: center;
+}
+
+.between {
+    justify-content: space-between;
+}
+
+input {
+    padding: 10px;
+    border: 1.5px solid lavender;
+    border-radius: 5px;
+}
+
+/* Specific elements */
+
+.backdrop {
+    width: 500px;
+    height: 400px;
+    background-color: var(--backdrop-col);
+    border-radius: 30px;
+}
+
+.card {
+    background-color: white;
+    
+    position: absolute;
+    width: 350px;
+    height: 550px;
+
+    border-radius: 20px;
+    box-shadow: -1em 1em 1em -1.6em;
+
+    padding: 25px;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.card--header {
+    justify-content: space-between;
+}
+
+.rating {
+    display: flex;
+    gap: 5px;
+}
+
+.star {
+    border: 2px solid lavender;
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+}
+
+.options {
+    gap: 20px;
+}
+
+.option {
+    display: flex;
+    align-items: end;
+}
+
+#nickname, #email {
+    width: 147.5px
+}
+
+.card--section {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.terms {
+    align-items: center;
+    gap: 5px;
+}
+
+#terms {
+    width: 1.1em;
+    height: 1.1em;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid lavender;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+#terms:checked {
+    background-color: var(--accent-dark);
+}
+
+#review {
+    padding: 20px 10px;
+}
+
+#review::placeholder {
+    width: calc(100% - 20px);
+    position: absolute;
+    top: 7.5px;
+}
+
+::-webkit-input-placeholder {
+  white-space:pre-line;  
+}
+
+/* Buttons */
+
+.exit {
+    align-self: flex-start;
+    border-radius: 50%;
+    border: none;
+    height: 35px;
+    width: 35px;
+}
+
+.submit {
+    width: 150px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--accent-dark);
+    color: var(--background-col);
+    cursor: pointer;
+    transition: all, 400ms;
+}
+
+.submit:hover {
+    background-color: var(--backdrop-col);
+    color: var(--accent-dark);
+    transition: all, 400ms;
+}
