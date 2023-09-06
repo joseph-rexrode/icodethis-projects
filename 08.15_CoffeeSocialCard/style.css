@@ -1,0 +1,201 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+:root {
+    --accent-one: #F03534;
+    --grayscale-text: #616162;
+    --darker-text: #363944;
+}
+
+body {
+    background-image: url(https://images.unsplash.com/photo-1623772892441-15ee6fde6f8e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80);
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h3 {
+    text-transform: uppercase;
+}
+
+h4 {
+    font-size: 15pt;
+}
+
+p {
+    font-size: 11pt;
+}
+
+.card {
+    width: 350px;
+    height: 500px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.card--header {
+    height: 35%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card--header:before {
+    background-image: url(https://www.customersure.com/assets/img/case-studies/dwc/banner.jpg);
+    filter: saturate(180%) contrast(70%) brightness(70%);
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+.header--price {
+    transform: rotate(45deg);
+    border: 2px solid red;
+    position: absolute;
+    right: -40px;
+    top: 25px;
+    padding: 2px 60px;
+    background-color: var(--accent-one);
+}
+
+.header--title {
+    z-index: 2;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.card--body {
+    padding: 0px 1.5rem;
+}
+
+.brand--info {
+    position: relative;
+    border: 1px solid lightgrey;
+    border-top: none;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px;
+}
+
+.brand--info > img {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    padding: 5px;
+    position: absolute;
+    left: calc(50% - 50px);
+    top: -50px;
+    background-color: white;
+}
+
+.contact--buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact--button {
+    padding: 10px;
+    width: 95px;
+    background-color: transparent;
+    border: 1px solid var(--accent-one);
+    border-radius: 3px;
+    color: var(--accent-one);
+    text-transform: uppercase;
+    font-size: 8pt;
+    font-weight: 600;
+    transition: 300ms;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.contact--button > svg > g > path,
+.contact--button > svg > g > g > g > g > line {
+    transition: 300ms;
+}
+
+.contact--button:hover {
+    background-color: var(--accent-one);
+    color: white;
+    transition: 300ms;
+    cursor: pointer;
+}
+
+.contact--button:hover > svg > g > path,
+.contact--button:hover > svg > g > g > g > g > line {
+    stroke: white;
+    transition: 300ms;
+}
+
+
+.brand--info-stats {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 30px 0 10px 0;
+}
+
+.stat-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px
+}
+
+.stat-section > p {
+    color: var(--darker-text)
+}
+
+.contact--info {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    padding: 25px 15px;
+}
+
+.contact--section {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.contact--section > p {
+    font-size: 9pt;
+}
+
+.action {
+    background-color: var(--accent-one);
+    color: white;
+    height: 88px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 300ms;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.action:hover {
+    font-size: 16pt;
+    margin: 0px 15px 0 15px;
+    transition: 300ms;
+    border-radius: 0;
+}
