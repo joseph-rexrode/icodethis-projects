@@ -1,0 +1,107 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+:root {
+    --background-col: #ECF1F7;
+    --accent-one: #6D74FF;
+    --accent-two: #F0636D;
+    --text-dark: #2B3451;
+}
+
+body {
+    background-color: var(--background-col);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2em 5em;
+    gap: 1em;
+    color: var(--text-dark);
+}
+
+p {
+    font-size: 10pt;
+}
+
+h5 {
+    font-size: 12pt;
+}
+
+.select--membership {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.membership {
+    display: flex;
+    background-color: white;
+    max-width: 600px;
+    padding: 1.5em 2em;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 1em 1em -1.3em var(--text-dark);
+}
+
+.membership--info {
+    flex: 2.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.membership--info > p {
+    max-width: 80%;
+}
+
+.membership--prices {
+    flex: 1;
+    background-color: var(--background-col);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1em;
+    gap: 5px;
+    border-radius: 10px;
+}
+
+.popular {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    text-align: center;
+    color: white;
+    background-color: var(--accent-one);
+    padding: 0.125em 0;
+    border-bottom-right-radius: 7px;
+}
+
+.footer {
+    max-width: 400px;
+}
+
+.footer > p {
+    font-size: 8pt;
+}
+
+.order {
+    padding: 0.75em 4em;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--accent-two);
+    color: var(--background-col);
+    cursor: pointer;
+    transition: 400ms;
+}
+
+.order:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1em 1em -1em black;
+    transition: 100ms;
+}
