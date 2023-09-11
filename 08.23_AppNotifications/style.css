@@ -1,0 +1,139 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    --background-one: #2B1D48;
+    --background-two: #32244E;
+    --accent-one: #F2356D;
+    --accent-two: #588FE3;
+    --bell: #FFDA44;
+    --card-one: #3D2E5C;
+    --card-two: #392A57;
+}
+
+body {
+    background: linear-gradient(to bottom,
+                    var(--background-one), 
+                    var(--background-one) 15%,
+                    var(--background-two) 15%);
+    background-repeat: no-repeat;
+    height: 100vh;
+    color: rgba(255, 255, 255, 0.626);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    font-size: 9pt;
+}
+
+img {
+    min-width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+
+h5 {
+    color: white;
+}
+
+span {
+    color: var(--accent-one);
+    font-weight: 700;
+}
+
+.notif-icon {
+    height: 70px;
+    width: 70px;
+    background-color: var(--background-two);
+    border: 0.5px solid var(--accent-one);
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 50px;
+    top: 50px;
+    transition: 300ms;
+}
+
+.notif-icon:hover {
+    transform: rotate(45deg);
+}
+
+.card {
+    width: 350px;
+    background-color: var(--card-one);
+    border-radius: 5px;
+    box-shadow: 1em 1em 1em -0.5em var(--background-one);
+}
+
+.card--title {
+    padding: 1.5em 2em;
+    text-transform: uppercase;
+}
+
+.card--content {
+    background-color: var(--card-two);
+    padding: 1em 0;
+}
+
+.notification {
+    display: flex;
+    padding: 0.75em 2em;
+    gap: 15px;
+}
+
+.notification--content {
+    width: 100%;
+}
+
+.notification--content-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.5em;
+}
+
+.notification--content-message {
+    font-size: 8pt;
+    padding-bottom: 0.5em;
+}
+
+.notification--content-when {
+    font-size: 7pt;
+}
+
+.comment {
+    padding-top: 1em;
+    color: var(--accent-one);
+    opacity: 0.8;
+    font-style: italic;
+}
+
+.card--footer {
+    padding: 1.5em 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.new {
+    border: none;
+    border-radius: 50px;
+    padding: 0.35em 0.85em;
+    background-color: var(--accent-two);
+    color: white;
+    font-size: 8pt;
+    text-transform: uppercase;
+}
+
+.view {
+    border: none;
+    background-color: transparent;
+    color: var(--accent-one);
+    font-weight: 900;
+    text-transform: uppercase;
+    cursor: pointer;
+}
