@@ -1,0 +1,124 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;    
+}
+
+:root {
+    --card-background: #191931;
+    --background-col: #393955;
+    --accent-one: #FF557E;
+    --accent-two: #FF9180;
+    --text-color: #A1A1C6;
+}
+
+body {
+    background-color: var(--background-col);
+    color: var(--text-color);
+    margin: 0;
+    height: 100vh;
+    font-family: sans-serif;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h5 {
+    font-size: 9pt;
+}
+
+p, li {
+    font-size: 8pt;
+}
+
+.card {
+    background-color: var(--card-background);
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    border-radius: 5px;
+}
+
+.card--header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5em 0;
+}
+
+.card--content {
+    display: flex;
+    border-top: 1px solid black
+}
+
+.feature--card {
+    padding: 1.5em 3em;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+    border-right: 1px solid black;
+}
+
+.feature--price {
+    text-align: center;
+}
+
+.feature--price-font {
+    font-size: 24pt;
+}
+
+.muted {
+    color: var(--background-col);
+    font-size: 9pt;
+}
+
+.feature--desc {
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+.services {
+    flex: 3.5;
+}
+
+.service--card {
+    height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    border-top: 1px solid black;
+    padding: 0 1.5em;
+}
+
+.service--card:nth-of-type(1) {
+    border-top: none;
+}
+
+.service--price {
+    display: flex;
+}
+
+.right-side {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.add {
+    padding: 0.5em 1.5em;
+    border: 1px solid var(--accent-two);
+    border-radius: 50px;
+    background: transparent;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: 300ms;
+}
+
+.add:hover {
+    background-color: var(--accent-two);
+    color: var(--card-background)
+}
+
