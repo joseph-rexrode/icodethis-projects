@@ -1,0 +1,132 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --background-col-1: #161f34;
+    --background-col-2: #1c737e;
+    --accent-one: #FF536B;
+    --accent-dark: #0f0e2b;
+    --text-color: #FAFBFC;
+    --background-col-3: #183646;
+}
+
+body {
+    background: radial-gradient(
+        farthest-corner at 100% 0px,
+        var(--background-col-2) 0%,
+        var(--background-col-1) 90%
+    );
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    font-family: "Roboto"
+}
+
+img {
+    width: 500px;
+    mix-blend-mode: multiply;
+    position: absolute;
+    right: -180px;
+    bottom: -100px
+}
+
+h3, h4 {
+    text-transform: uppercase;
+}
+
+.card {
+    background: rgba(0, 0, 0, 0.063);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 3em 1em;
+    max-width: 70%;
+    width: clamp(300px, 40em, 70%);
+    min-width: 300px;
+}
+
+.card--header {
+    position: absolute;
+    top: -30px; 
+    align-self: center;
+    padding: 1em 4em;
+    background-color: var(--accent-dark);
+    color: var(--accent-one);
+    text-transform: uppercase;
+    box-shadow: 0 -0.5em 1.4em -0.5em black;
+}
+
+.card--main {
+    display: flex;
+    background: rgba(255, 255, 255, 0);
+    position: relative;
+}
+
+.card--content {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    position: relative;
+}
+
+.content--time-left {
+    background-color: var(--background-col-3);
+    padding: 1em 0.5em 0.25em 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+}
+
+.time-left-times {
+    display: flex;
+    gap: 0.25em;
+    align-items: center;
+    font-size: 16pt;
+}
+
+.time-left-times > div {
+    background-color: var(--accent-dark);
+    padding: 0.5em
+}
+
+.time-left-types {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.25em 1em 0.25em 1.5em;
+}
+
+.card--action {
+    position: absolute;
+    bottom: -80px;
+    left: 10px;
+    padding: 1em 1.5em;
+    background-color: var(--accent-one);
+    color: var(--text-color);
+    border: none;
+    font-size: 16pt;
+    cursor: pointer;
+    box-shadow: 0.5em 1em 1.5em -0.6em black;
+}
+
+.card--action:hover {
+    opacity: 0.7
+}
+
+
+@media screen and (max-width: 760px) {
+    img {
+        display: none;
+    }
+
+    .card--content {
+        width: 100%;
+    }
+}
