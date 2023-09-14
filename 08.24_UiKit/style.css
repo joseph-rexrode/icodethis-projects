@@ -1,0 +1,334 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --background-col: #2D3F51;
+    --accent-one: #39B39B;
+    --text-main: #3E4956;
+    --text-muted: #C2C8CC;
+    --card-back: #F6F8F9;
+}
+
+body {
+    background-color: var(--background-col);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-main);
+    margin-top: 2em;
+}
+
+h3, h5, h4, p {
+    margin: 0;
+}
+
+p {
+    font-size: 8pt
+}
+
+.profile--pic > img {
+    width: 75px;
+}
+
+img {
+    width: 150px
+}
+
+label {
+    font-size: 8pt
+}
+
+.ui--kit {
+    width: clamp(25rem, 60vw, 70rem);
+}
+
+.card {
+    background-color: var(--card-back);
+    border-radius: 5px;
+    margin-bottom: 0.75em
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 300ms;
+}
+
+.navbar--navlist {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0.5em;
+    margin: 0.5em 0;
+    height: auto;
+    max-height: 1000px;
+    transition-property: max-height, opacity;
+    transition: all 400ms;
+
+}
+
+.none {
+    visibility: hidden;
+    opacity: 0;
+    max-height: 0px;
+    margin: 0;
+}
+
+.navbar--navlist > li {
+    padding: 0 1vw;
+    font-size: 9pt
+}
+
+.hamburger {
+    margin: 0.75em
+}
+
+#searchbar {
+    align-self: start;
+    height: 40px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+}
+
+#searchbar::placeholder, 
+#searchbar::selection {
+    opacity: 0.5;
+    padding-left: 2.5em
+}
+
+
+@media screen and (min-width: 480px) {
+    .hamburger {
+        display: none;
+    }
+
+    .navbar--navlist {
+        display: flex;
+        flex-direction: row;
+        padding: 0 0.5em;
+        margin: 0.75em 0;
+    }
+}
+
+.ui--kit-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 0.75em;
+}
+
+
+.signin {
+    display: flex;
+    min-width: 350px;
+    flex: 1;
+}
+
+.signin--left {
+    flex: 1;
+    background-image: url("https://images.unsplash.com/photo-1511207538754-e8555f2bc187?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2412&q=80");
+    background-size: cover;
+    border-radius: 4px 0 0 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    color: white;
+    text-align: center;
+    padding: 3em 0.75em
+}
+
+.signin--form {
+    flex: 1;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em
+}
+
+#email,
+#password,
+.signin--form > button,
+.signin--button {
+    width: 100%;
+    padding: 0.5em
+}
+
+.signin--form-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    width: 100%;
+}
+
+#remember {
+    align-self: start;
+}
+
+.remember {
+    display: flex; 
+    align-items: center;
+}
+
+.signin--options {
+    width: 100%;
+}
+
+.signin--options-other {
+    display: flex;
+    justify-content: space-between;
+}
+
+.date {
+    display: flex;
+    flex-direction: column;
+    min-width: 150px;
+    max-width: 250px;
+    flex: 1;
+}
+
+.muted {
+    opacity: 0.5;
+}
+
+.date--top {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url("https://images.unsplash.com/photo-1617282140935-fa1488c3a4a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2427&q=80");
+    background-size: cover;
+    color: white;
+    padding: 0.5em 0.75em;
+    border-radius: 5px 5px 0 0;
+}
+
+.date--top > h3 {
+    font-size: 32pt
+}
+
+.month {
+    padding-top: 1em;
+}
+
+.date--bottom {
+    flex: 1;
+    padding: 0.5em 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendar--grid {
+    display: grid;
+    grid-template-columns: repeat(7, 14.28%);
+    grid-template-rows: repeat(6,15px);
+    gap: 0.75em 0em;
+    text-align: center;
+    font-size: 7pt;
+    width: 100%;
+}
+
+.profile {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+    max-width: 250px
+}
+
+.profile--top {
+    padding: 1em;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex: 4;
+    border-radius: 5px 5px 0 0;
+}
+
+.profile--profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile--stats {
+    display: flex;
+    gap: 15px;
+}
+
+.profile--bottom {
+    padding: 1em;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile--pic {
+    width: 75px;
+    height: 75px;
+    overflow: hidden;
+    border-radius: 100%;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em 0;
+    gap: 1em;
+}
+
+.gallery--pics {
+    display: flex;
+    position: relative
+}
+
+.superimposed {
+    position: absolute;
+    z-index: 3;
+    top: -7px;
+    left: 25%;
+    width: 165px;
+    border-radius: 5px;
+    box-shadow: 0 -1em 1.4em -1.3em;
+}
+
+
+
+/* Buttons */
+
+button {
+    border-radius: 5px;
+    border: none;
+    color: var(--card-back);
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.7
+}
+
+.signin--button {
+    background-color: var(--accent-one);
+}
+
+.facebook {
+    background-color: #3C5899;
+}
+
+.gmail {
+    background-color: #CC3228;
+}
+
+.follow {
+    background-color: var(--accent-one);
+    padding: 0.75em 3.5em
+}
