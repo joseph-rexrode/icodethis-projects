@@ -1,0 +1,160 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    --background-col: #F4F4F4;
+    --light-mode-main: #FFFFFF;
+    --light-mode-muted: #CCCCCC;
+    --light-mode-text: #445482;
+    --accent-one: #2FBEFF;
+    --dark-mode-main: #3B4C7D;
+    --dark-mode-muted: #344574;
+    --dark-mode-text: #B5BFDA;
+}
+
+body {
+    background-color: var(--background-col);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: "Montserrat"
+}
+
+.font-light {
+    color: var(--light-mode-text);
+}
+
+.font-dark {
+    color: var(--dark-mode-text);
+}
+
+p {
+    font-size: 8pt;
+    text-align: center;
+}
+
+h3 {
+    font-size: 12pt;
+}
+
+h1 {
+    font-size: 20pt;
+}
+
+.card {
+    width: 325px;
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    border-radius: 10px;
+    box-shadow: 0 0 1.5em -0.75em var(--accent-one);
+}
+
+.light-bg {
+    background-color: var(--light-mode-main);
+}
+
+.dark-bg {
+    background-color: var(--dark-mode-main);
+}
+
+.card--options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.option {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.card--searchbar {
+    display: flex;
+    align-items: center;
+    background-color: var(--background-col);
+    border-radius: 5px
+}
+
+.muted-light {
+    background-color: var(--background-col);
+}
+
+.muted-dark {
+    background-color: var(--dark-mode-muted);
+}
+
+.search {
+    padding: 0.39em 0.75em;
+    display: flex;
+}
+
+input {
+    padding: 1em 0.5em;
+    width: 100%;
+    border: none;
+    background-color: transparent;
+}
+
+input::placeholder {
+    color: var(--light-mode-muted)
+}
+
+.card--main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+    padding: 1em 0
+}
+
+.location-toggle {
+    background-color: var(--accent-one);
+    color: var(--background-col);
+    padding: 0.75em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+.location-toggle:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1em 1em -1em black;
+}
+
+
+.light-icon > #moon {
+    display: none;
+}
+
+.dark-icon > #sun {
+    display: none;
+}
+
+.toggled-off > .on {
+    display: none;
+}
+
+.toggled-on > .off {
+    display: none;
+}
+
+.status-off > .on {
+    display: none;
+} 
+
+.status-on > .off {
+    display: none;
+}
