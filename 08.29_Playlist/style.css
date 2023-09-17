@@ -1,0 +1,143 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    --background-one: #8404FE;
+    --background-two: #483EE8;
+    --background-three: #0683D3;
+    --card-accent-one: #0290D5;
+    --card-accent-two: #01B3E1;
+    --text-dark: #4D565B;
+}
+
+body {
+    background: linear-gradient(to bottom left, 
+                                var(--background-one),
+                                var(--background-two) 35%,
+                                var(--background-three) 75%);
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Montserrat";
+    overflow: hidden;
+}
+
+h3 {
+    font-weight: 300;
+    font-size: 12pt;
+}
+
+h4 {
+    font-size: 9pt;
+}
+
+h5 {
+    color: var(--card-accent-one);
+}
+
+.card {
+    width: 350px;
+    background-color: white;
+    padding: 1.5em 0.75em 0 0.75em;
+    border-radius: 10px;
+}
+
+.card--header-subheader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5em 0 0.5em 0;
+    border-bottom: 0.5px solid var(--text-dark)
+}
+
+.no-border-bottom {
+    border-bottom: none;
+}
+
+.card--content {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0.5em;
+    max-height: 1000px;
+    opacity: 1;
+    transition: max-height 1s ease-out;
+}
+
+.card--content-video {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 1em;
+    padding: 0.5em 0;
+    transition: 300ms;
+}
+
+.card--content-video:hover {
+    background: linear-gradient(to right,
+                                var(--card-accent-one),
+                                var(--card-accent-two));
+    margin: 0 -1.5em;
+    padding: 0.5em 1.5em;
+    box-shadow: 0 1em 1em -1em var(--card-accent-one);
+    color: white;
+}
+
+.card--content-video:hover > .card--content-timeRemaining {
+    left: 2.5em;
+    color: var(--text-dark);
+}
+
+.card--content-video:hover > .card--content-video-desc > p {
+    color: white;
+    opacity: 0.6;
+}
+
+.preview {
+    min-width: 100px;
+    max-width: 100px;
+    height: 60px;
+    border-radius: 5px;
+    background-color: beige;
+}
+
+.card--content-timeRemaining {
+    position: absolute;
+    bottom: 1em;
+    left: 0.5em;
+    background: rgb(255, 255, 255, 0.6);
+    padding: 0.1em 0.4em;
+    font-size: 9pt;
+    border-radius: 20px;
+}
+
+.card--content-video-desc {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
+    align-self: start;
+}
+
+.card--content-video-desc > p {
+    font-size: 8pt;
+    color: var(--card-accent-one);
+    font-weight: 500;
+}
+
+svg {
+    cursor: pointer;
+    transition: 300ms;
+}
+
+.upside-down {
+    transform: rotate(180deg);
+}
+
+.hide {
+    opacity: 0;
+    max-height: 0;
+    transition: max-height 500ms;
+}
