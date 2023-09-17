@@ -1,0 +1,149 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    --background-col: #FAFAFF;
+    --card-col: #FFFFFF;
+    --font-dark: #161544;
+    --accent-light: #F2F3FF;
+    --accent-primary: #5866E0;
+}
+
+body {
+    background-color: var(--background-col);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: var(--font-dark);
+    font-family: "Roboto";
+}
+
+p {
+    font-size: 10pt;
+}
+
+.wrapper {
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+}
+
+.noti--bell {
+    width: 50px;
+    height: 50px;
+    background-color: var(--font-dark);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    width: 100%;
+    background-color: var(--card-col);
+    border-radius: 10px;
+    box-shadow: 0 1em 1em -0.7em;
+    padding: 1.5em;
+}
+
+.card--header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5em 0 2em 0;
+}
+
+.card--notification {
+    display: flex;
+    gap: 10px;
+    padding: 2em 0;
+    border-top: 0.5px solid var(--font-dark);
+}
+
+img {
+    min-width: 40px;
+    max-width: 40px;
+}
+
+.pfp {
+    min-width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 100%;
+}
+
+.card--notification-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1em
+}
+
+.muted {
+    color: grey;
+}
+
+.options {
+    display: flex;
+    gap: 0.75em;
+}
+
+/* buttons */
+
+button {
+    cursor: pointer;
+    transition: 300ms;
+}
+
+.decline, .accept {
+    padding: 1em 2em;
+    border-radius: 8px;
+}
+
+.decline {
+    border: 0.5px solid var(--font-dark);
+    background: transparent;
+    color: var(--font-dark);
+}
+
+.decline:hover {
+    background-color: var(--font-dark);
+    color: var(--background-col);
+}
+
+
+.accept {
+    border: none;
+    background: var(--font-dark);
+    color: var(--background-col);
+}
+
+.accept:hover {
+    transform: scale(1.1);
+}
+
+.read {
+    padding: 0.7em 0.5em;
+    background: var(--accent-light);
+    color: var(--accent-primary);
+    border: none;
+    border-radius: 50px;
+}
+
+.read:hover {
+    background: var(--accent-primary);
+    color: var(--background-col);
+}
+
+svg {
+    cursor: pointer;
+    transition: 300ms;
+}
+
+svg:hover {
+    transform: rotate(30deg);
+}
