@@ -1,0 +1,166 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    --background-col: #FFFFFF;
+    --accent-one: #2E95CA;
+    --accent-two: #4FB2E6;
+    --text-accent: #58BAEC;
+}
+
+body {
+    background: var(--background-col);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+img {
+    width: 350px
+}
+
+h1, h2, h3, h5 {
+    font-family: "Roboto Condensed"
+}
+
+p {
+    font-family: "Roboto";
+    font-size: 9pt;
+}
+
+h2 {
+    font-size: 13pt;
+    text-transform: uppercase;
+    width: 70%;
+    color: var(--text-accent);
+}
+
+h3 {
+    opacity: 0.7;
+}
+
+h5 {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--accent-one)
+}
+
+.card {
+    width: 300px;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 1em -0.3em var(--text-accent);
+}
+
+.card--header {
+    width: 400px;
+    height: 200px;
+    transform: rotate(5deg);
+    overflow: hidden;
+    position: relative;
+    top: -15px;
+    left: -15px;
+    border-bottom: 3px solid var(--accent-two);
+}
+
+.booked {
+    position: absolute;
+    right: 10px;
+    top: 150px;
+    width: 85px;
+    height: 85px;
+    border: 5px solid var(--accent-one);
+    border-radius: 100%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.booked > h2 {
+    text-align: center;
+}
+
+.booked > p {
+    color: var(--text-accent);
+    text-transform: uppercase;
+    font-size: 10pt;
+}
+
+.card--content {
+    padding: 0 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.card--content-time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+    padding-top: 1em;
+}
+
+.time--boxes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+.time--boxes-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3em
+}
+
+.time--boxes-section > p {
+    font-size: 8pt;
+    opacity: 0.5;
+}
+
+.box {
+    border: 1px solid var(--text-accent);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card--button {
+    width: 400px;
+    height: 100px;
+    transform: rotate(4deg);
+    position: relative;
+    left: -15px;
+    top: 30px;
+    background: white;
+    border: 1px solid var(--text-accent);
+    cursor: pointer;
+    transition: 200ms;
+    color: var(--text-accent);
+}
+
+.card--button:hover {
+    scale: 1.1;
+    background: linear-gradient(
+        to right, 
+        var(--accent-one), 
+        var(--accent-two));
+    color: white;
+}
+
+.card--button > * {
+    position: absolute;
+    top: 25px;
+    left: 100px;
+    rotate: -4deg;
+}
