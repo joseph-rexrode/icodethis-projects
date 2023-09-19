@@ -1,0 +1,82 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    --background-col: #E4F0EF;
+    --accent-one: #CEE5E4;
+    --text-dark: #1B1B1B;
+}
+
+body {
+    background: var(--background-col);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: sans-serif;
+}
+
+img {
+    width: 75px;
+}
+
+.card {
+    width: max(300px, 65%);
+    background: white;
+    border: 25px solid var(--accent-one);
+    padding: 3em 4em;
+}
+
+.card--main-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3em;
+}
+
+.card--sub-content {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    padding: 1.5em 0;
+    border-bottom: 2px solid;
+}
+
+.card--sub-content-sections {
+    display: flex;
+    gap: 7.5px
+}
+
+.section {
+    width: 7.5px;
+    height: 7.5px;
+    background: black;
+    opacity: 0.1;
+    border-radius: 100%;
+}
+
+.section:nth-of-type(2) {
+    opacity: 1;
+}
+
+.card--switches {
+    padding-top: 1em;
+    display: flex;
+    gap: 1em;
+}
+
+.card--sub-content-reviewer > p:nth-of-type(1) {
+    text-transform: uppercase;
+    font-size: 10pt
+}
+
+svg {
+    cursor: pointer;
+    transition: 300ms;
+}
+
+svg:hover {
+    scale: 1.1;
+}
