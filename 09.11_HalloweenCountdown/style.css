@@ -1,0 +1,70 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    --background-col: #0d1023;
+    --text-light: #FFFFFF; 
+}
+
+body {
+    background-color: var(--background-col);
+    color: var(--text-light);
+    font-family: "Roboto";
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.card {
+    width: 550px;
+    height: 400px;
+    background-image: url(https://images.unsplash.com/photo-1477659803863-c1bf91b34c90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2370&q=80);
+    background-size: cover;
+    box-shadow: 0 0 1em black;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.card--header {
+    text-align: center;
+}
+
+.subtitle {
+    padding-bottom: 0.3em
+}
+
+.title {
+    font-size: 30pt;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.card--main {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1em;
+}
+
+.card--main-timeblock {
+    width: 110px;
+    height: 125px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(13, 16, 35, 0.4);
+}
+
+.number {
+    font-size: 48pt;
+    font-weight: 100;
+}
+
