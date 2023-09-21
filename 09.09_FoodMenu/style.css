@@ -1,0 +1,119 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    --main-accent: #F14F34;
+    --text-dark: #663C26;
+    --text-light: #FEF3F1;
+    --text-accent: #C01C00;
+    --button-accent: #D9D0CD;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: url(https://images.unsplash.com/photo-1452251889946-8ff5ea7b27ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2524&q=80);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Roboto";
+}
+
+.accordion {
+    width: 500px;
+    height: 500px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.accordion--inner {
+    width: 95%;
+    height: 250px;
+    background: var(--main-accent);
+    opacity: 0.9;
+    z-index: 0;
+    position: absolute;
+}
+
+.accordion--outer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
+    z-index: 1;
+    position: absolute;
+}
+
+.accordion--outer-section {
+    background-color: var(--text-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 1.5em;
+    border-radius: 5px;
+}
+
+.section {
+    color: var(--main-accent);
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.section-time {
+    color: var(--text-dark);
+    font-size: 8pt;
+}
+
+.toggle-on, .toggle-off {
+    height: 30px;
+    width: 30px;
+    border: none;
+    background-color: var(--button-accent);
+    border-radius: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle-off {
+    display: none;
+}
+
+
+
+.accordion--menu-section {
+    display: none;
+    justify-content: center;
+    gap: 2em;
+    margin: 1.5em;
+    transition: 300ms;
+}
+
+.accordion--menu-section-half {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu--item {
+    display: flex;
+    gap: 0.5em;
+    padding: 0.6em 0;
+    border-bottom: 1px solid var(--text-accent)
+}
+
+.item--name {
+    color: var(--text-light);
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 10pt;
+}
+
+.price {
+    color: var(--text-accent);
+}
