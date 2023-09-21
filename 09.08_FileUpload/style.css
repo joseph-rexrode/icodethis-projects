@@ -1,0 +1,144 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    --background-col: #EADCCF;
+    --main-accent-dark: #E57009;
+    --main-accent-light: #FF9436;
+    --secondary-accent-dark: #3BABD7;
+    --secondary-accent-light: #6ECFF6;
+    --text-dark: #606060;
+    --shadow-col: #E7CEBB;
+}
+
+body {
+     background-color: var(--background-col);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     min-height: 100vh;
+     font-family: "Roboto";
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 18pt;
+    text-transform: uppercase;
+    margin: 0.75em 0
+}
+
+p {
+    font-size: 10pt;
+}
+
+.card {
+    background: white;
+    width: 500px;
+    border: 2px solid var(--main-accent-dark);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 300ms;
+}
+
+.card:hover {
+    transform: translateY(-10px) translateX(-15px);
+    box-shadow: 1.5em 1em var(--shadow-col);
+}
+
+.card--header {
+    background-color: var(--main-accent-light);
+    width: 100%;
+}
+
+.card--main {
+    width: calc(100% - 4em);
+    margin: 2.5em 0 1.5em 0;
+    height: 200px;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em
+}
+
+.file {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.file--info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.25em;
+}
+
+.progress {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.progress--bar {
+    width: 90%;
+    height: 20px;
+    border: 3px solid var(--secondary-accent-dark);
+    border-radius: 3px;
+    background: var(--secondary-accent-light)
+}
+
+.progress > svg {
+    cursor: pointer;
+}
+
+.actions {
+    align-self: flex-end;
+    padding-right: 2.5em 
+}
+
+.actions > button {
+    border: none;
+    background: none;
+    color: var(--main-accent-light);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.actions > button:hover {
+    color: var(--main-accent-dark)
+}
+
+.card--file-adding {
+    position: relative;
+}
+
+.file--adding-info {
+    position: absolute;
+    top: 80px;
+    left: 65px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px
+}
+
+.select {
+    padding: 0.5em 0.75em;
+    background: var(--main-accent-light);
+    border: none;
+    border-radius: 3px;
+    color: white;
+    box-shadow: 0 0.25em var(--main-accent-dark);
+    cursor: pointer;
+    transition: 200ms;
+}
+
+.select:active {
+    box-shadow: none;
+    transform: translateY(2px);
+}
