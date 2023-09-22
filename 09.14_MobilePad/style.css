@@ -1,0 +1,124 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    --background-col: #22C98B;
+    --accent-one: #2FB5F2;
+    --accent-two: #FFA69E;
+    --text: #5C5C5C;
+}
+
+body {
+    background-color: var(--background-col);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: "Rubik";
+}
+
+.card {
+    width: 250px;
+    background: white;
+    border-radius: 10px;
+    padding: 1em 2em;
+    transition: 300ms;
+}
+
+.card:hover {
+    transform: translateX(-5px) translateY(-5px);
+    box-shadow: 1em 1em var(--text);
+}
+
+.card--header {
+    min-height: 85px;
+    margin: 1em 0;
+    background-color: #EEE4E1;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly
+}
+
+.card--header-result {
+    font-size: 18pt;
+}
+
+.card--main {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75em
+}
+
+.card--main-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn,
+.add,
+.delete,
+.call {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    border: none;
+    font-family: "Rubik";
+    color: var(--text);
+    cursor: pointer;
+}
+
+.btn {
+    background: none;
+    border: 1px solid var(--accent-two);
+    transition: 100ms;
+}
+
+.btn:hover {
+    background: var(--accent-two);
+    color: white;
+}
+
+.add, .delete {
+    background: none;
+    transition: 200ms;
+}
+
+.add:hover, .delete:hover {
+    transform: scale(1.2);
+}
+
+.call {
+    background: var(--accent-one);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.call:hover {
+    opacity: 0.8;
+}
+
+.number {
+    font-size: 13pt;
+}
+
+.btn-star {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.btn-star .number {
+    font-size: 20pt;
+    position: relative;
+    top: 5px;
+}
+
+.letters {
+    font-size: 8pt;
+}
