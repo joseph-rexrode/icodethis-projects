@@ -1,0 +1,162 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --background-col-1: #394053;
+    --background-col-2: #4E4A59;
+    --accent-one: #FF5335;
+    --accent-two: #01CAC2;
+}
+
+body {
+    background: linear-gradient(
+        to top right, 
+        var(--background-col-1),
+        var(--background-col-2) 90%
+    );
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: "Rubik";
+}
+
+img {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+}
+
+p, h3 {
+    margin: 0
+}
+
+.card {
+    width: 700px;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    padding: 1em 0
+}
+
+.card--header {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--accent-one);
+}
+
+.card--header-navtop {
+    display: flex;
+    align-self: end;
+    padding: 1em 1.5em;
+}
+
+.card--header-navtop > .nav--item button {
+    text-transform: uppercase;
+}
+
+.card--header-navbottom {
+    display: flex;
+    padding: 0.5em 1.5em;
+}
+
+.nav--item {
+    border-right: 1px solid white;
+    padding: 0 0.75em
+}
+ 
+.nav--item:last-of-type {
+    border-right: none;
+}
+
+.nav--item button {
+    background: none;
+    border: none;
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+    padding: 0.25em 0.5em;
+    transition: 300ms;
+}
+
+.nav--item button:hover,
+.nav--item button.active {
+    background: rgb(255, 255, 255, 0.4);
+}
+
+
+.card--main {
+    overflow: hidden;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th {
+    background: var(--accent-two);
+    padding: 1em 0
+}
+
+tr {
+    border-top: 1px solid white;
+    transition: 300ms;
+}
+
+tr:nth-child(even) {
+    background: rgb(255, 255, 255, 0.3);
+}
+
+.row--data:hover {
+    background-color: #6F1A07;
+}
+
+td {
+    text-align: center;
+    padding: 0.75em 0;
+    border-right: 1px solid white;
+}
+
+td:last-of-type {
+    border-right: none;
+}
+
+.rank {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 100%
+}
+
+.number {
+    font-size: 22pt;
+}
+
+.recs {
+    font-size: 8pt;
+}
+
+.extra {
+    height: 7.5px;
+    background: var(--accent-one);
+    margin: 0.25em 0
+}
+
+.viewAll {
+    align-self: end;
+    border: none;
+    background: none;
+    color: white;
+    cursor: pointer;
+}
+
+tr.d-none {
+    display: none;
+}
+
+tr.d-auto {
+    display: auto;
+}
