@@ -1,0 +1,70 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --background-col: #27BEC9;
+    --background-accent: #27717F;
+    --muted: #CCCCCC;
+}
+
+body {
+    background-color: var(--background-col);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main--card {
+    width: 450px;
+    height: 400px;
+    background: center / contain no-repeat url(https://images.unsplash.com/photo-1505022610485-0249ba5b3675?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2370&q=80);
+    background-size: cover;
+    border-radius: 7.5px;
+    box-shadow: 0 0 1em 0.3em var(--background-accent);
+    position: relative;
+}
+
+.mini--card {
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    bottom: -50px;
+    left: -50px;
+    background: center / contain no-repeat url(https://images.unsplash.com/photo-1505022610485-0249ba5b3675?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2370&q=80);
+    background-size: cover;
+    border-radius: 100%;
+}
+
+.zoom--bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    margin-top: 1em;
+}
+
+.plus, .minus {
+    color: white;
+    margin: 0;
+    padding-bottom: 0.2em 
+}
+
+.zoom--bar-bar {
+    width: 200px;
+    height: 0;
+    border: 1px solid white;
+    position: relative;
+}
+
+.zoom--bar-switch {
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 100%;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+}
+
