@@ -1,0 +1,154 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    --background-col: #1C2434;
+    --text-light: #FFFFFF;
+    --accent-one: #E26D5C;
+    --tr-time: 300ms;
+}
+
+body {
+    background-color: var(--background-col);
+    color: var(--text-light);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main {
+    width: min(90%, 700px);
+}
+
+.main--content {
+    height: 330px;
+    position: relative;
+    overflow: hidden;
+}
+
+.main--content-page {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 1em;
+    width: 100%
+    
+}
+
+.page--row {
+    display: flex;
+    height: 90px;
+    width: 100%;
+}
+
+.profile {
+    display: flex;
+    gap: 1em;
+    flex: 1;
+}
+
+.pfp {
+    width: 90px;
+    height: 90px;
+    border: 1px solid white;
+    position: relative;
+}
+
+.pfp > img {
+    width: 100%;
+    height: auto;
+}
+
+.downloads {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    background: rgb(128, 128, 128, 0.6);
+    font-size: 8pt;
+    padding: 0.5em 0;
+    text-align: center;
+}
+
+.gallery {
+    display: flex;
+    gap: 10px;
+    overflow-x: scroll;
+    width: 60%;
+    flex: 1;
+}
+
+.gallery::-webkit-scrollbar {
+    display: none;
+}
+
+.gallery > img {
+    height: 100%
+}
+
+.main--nav {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    border-top: 1px solid var(--text-light);
+    padding: 0.5em
+}
+
+.main--nav-nav {
+    display: flex;
+    gap: 0.5em
+}
+
+
+.first, .last {
+    border: 1px solid var(--text-light);
+    padding: 0.25em 0.75em;
+    color: var(--text-light);
+}
+
+button {
+    background: none;
+    cursor: pointer;
+    transition: var(--tr-time);
+}
+
+button:hover {
+    background: var(--text-light);
+    color: var(--background-col);
+    scale: 1.1;
+}
+
+.prev, .next {
+    border: none;
+}
+
+.prev:hover, .next:hover {
+    background: none;
+    scale: none;
+}
+
+.prev > svg, .next > svg {
+    transition: var(--tr-time);
+}
+
+.prev:hover > svg, .next:hover > svg {
+    scale: 1.1;
+}
+
+.main--nav-nav-pages {
+    display: flex;
+    align-items: center;
+}
+
+.pageNumber {
+    border: none;
+    color: var(--text-light);
+}
+
+.pageNumber.currentPage {
+    background: var(--text-light);
+    color: var(--background-col);
+}
