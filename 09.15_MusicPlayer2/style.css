@@ -1,0 +1,171 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    --background-col: #8A8A95;
+    --main-card-bg: #1A1A1A;
+    --accent-card-bg1: #2C2C2E;
+    --accent-card-bg2: #1E3641;
+    --main-accent: #37A6EE;
+}
+
+body {
+    background-color: var(--background-col);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: "Rubik";
+}
+
+img {
+    width: 125px;
+    box-shadow: 0 0 1em 0.3em black;
+}
+
+h3 {
+    font-size: 12pt;
+}
+
+p {
+    font-size: 10pt;
+    opacity: 0.7;
+}
+
+.card {
+    width: 325px;
+    display: flex;
+    flex-direction: column;
+    transition: 300ms;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateX(-5px) translateY(-5px);
+    box-shadow: 0.5em 0.5em 1em black;
+    
+}
+
+.card--topSection {
+    flex: 1.5;
+    background-color: var(--main-card-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card--topSection-actions {
+    width: 100%;
+    padding: 0.5em 0.75em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card--topSection-main {
+    margin: 1em 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em
+}
+
+.card--bottomSection {
+    flex: 1;
+    background: linear-gradient(
+        to bottom right,
+        var(--accent-card-bg1),
+        var(--accent-card-bg2)
+    );
+    position: relative;
+    padding-bottom: 1.5em;
+}
+
+.song--progress {
+    position: relative;
+    top: 0;
+    width: 100%;
+}
+
+.song--progress-bar {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--main-accent);
+}
+
+.song--progress-point {
+    position: absolute;
+    top: -4.5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: var(--main-accent);
+}
+
+.song--progress > p {
+    text-align: end;
+    font-size: 8pt;
+    padding: 0.3em 0.5em;
+}
+
+.card--bottomSection-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75em;
+    padding: 1em 0 1em 0
+}
+
+.action, .b--action {
+    color: white;
+    border: 1px solid var(--main-accent);
+    border-radius: 100%;
+    font-family: "Rubik";
+    cursor: pointer;
+    transition: 200ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.action:hover, .b--action:hover {
+    background: var(--main-accent);
+    scale: 1.1;
+}
+
+.action {
+    width: 30px;
+    height: 30px;
+    background: transparent;
+}
+
+.b--action {
+    width: 40px;
+    height: 40px;
+    background: var(--accent-card-bg1);
+}
+
+.card--bottomSection-songList {
+    max-height: 150px;
+    overflow: scroll;
+}
+
+.songList--element {
+    display: flex;
+    justify-content: space-between;
+    margin: 0em 1em;
+    padding: 0.75em 1em;
+    border-bottom: 2px solid var(--main-card-bg);
+    cursor: pointer;
+    transition: 300ms;
+}
+
+.songList--element:hover {
+    background-color: var(--main-accent);
+}
