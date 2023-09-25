@@ -1,0 +1,181 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    --background-col: #345967;
+}
+
+body {
+    background-color: var(--background-col);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: white;
+    font-family: "Rubik";
+}
+
+img {
+    width: 70px;
+    height: 70px;
+}
+
+.card {
+    background-color: white;
+    width: 300px;
+    box-shadow: 0.5em 0.5em 1em -0.3em black;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.profile {
+    background: url(https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2376&q=80);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75em;
+    padding: 1em 0.5em
+}
+
+.profile--header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.profile--pic {
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    border-radius: 100%;
+}
+
+.profile--info {
+    display: flex;
+    gap: 1.5em;
+    text-align: center;
+}
+
+.profile--actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.photoSection {
+    padding: 0.25em;
+    height: 270px;
+}
+
+.photoSection--header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75em 2em
+}
+
+.photoSection--header-info {
+    color: black;
+    text-align: center;
+}
+
+.photoSection--photos {
+    max-height: 200px;
+    overflow: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25em 0.25em;
+}
+
+.photoSection--photos::-webkit-scrollbar {
+    display: none;
+}
+
+.photoSection--photos-photo {
+    height: 100px;
+    width: auto;
+}
+
+
+
+
+/* BUTTONS */ 
+
+button {
+    cursor: pointer;
+    transition: 300ms;
+    font-family: "Rubik";
+}
+
+.btn--option {
+    background: rgba(0, 0, 0, 0.1);
+    color: white;
+    border: none;
+    padding: 0.25em 0.75em;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn--option:hover {
+    background: rgba(0, 0, 0, 0.5);
+    scale: 1.05;
+    transform: translateY(-3px);
+}
+
+.follow, .message {
+    display: flex;
+    align-items: center;
+    gap: 0.25em;
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 0.5em 1em;
+}
+
+.follow:hover, .message:hover {
+    background: white;
+    color: var(--background-col);
+}
+
+.message > svg > g > path,
+.follow > svg {
+    transition: 300ms;
+}
+
+.message:hover > svg > g > path {
+    stroke: var(--background-col)
+}
+
+.follow:hover > svg {
+    fill: var(--background-col)
+}
+
+.follow {
+    border-radius: 50px 0 0 50px;
+    border-right: none;
+}
+
+.message {
+    border-radius: 0 50px 50px 0;
+}
+
+.next, .prev {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: none;
+}
+
+.next:hover, .prev:hover {
+    scale: 1.1
+}
