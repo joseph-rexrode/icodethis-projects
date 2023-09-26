@@ -1,0 +1,82 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="card">
+        <div class="card--light">
+            <div class="card--light-headerBackground"></div>
+            <h2 class=" heading card--light-heading">Light</h2>
+            <p class="price">$19<span>/mo</span></p>
+            <div class="stats">
+                <div class="stat">
+                    <p class="stat-info">100</p>
+                    <p class="stat-desc">Max Connections</p>
+                </div>
+                <div class="stat">
+                    <p class="stat-info">200,000</p>
+                    <p class="stat-desc">Messages per day</p>
+                </div>
+                <div class="stat">
+                    <div class="nope"></div>
+                    <p class="stat-info stat-desc">Encryption</p>
+                    <p class="stat-desc">SSL Protection</p>
+                </div>
+            </div>
+            <button class="select" id="select-light">Select Plan</button>
+        </div>
+        <div class="card--startup">
+            <div class="card--startup-headerBackground"></div>
+            <h2 class="heading card--startup-heading">Startup</h2>
+            <p class="price">$49<span>/mo</span></p>
+            <div class="stats">
+                <div class="stat">
+                    <p class="stat-info">500</p>
+                    <p class="stat-desc">Max Connections</p>
+                </div>
+                <div class="stat">
+                    <p class="stat-info">1 million</p>
+                    <p class="stat-desc">Messages per day</p>
+                </div>
+                <div class="stat">
+                    <p class="stat-info">Encryption</p>
+                    <p class="stat-desc">SSL Protection</p>
+                </div>
+            </div>
+            <button class="select" id="select-startup">Select Plan</button>
+        </div>
+        <div class="card--premium">
+            <div class="card--premium-headerBackground"></div>
+            <h2 class="heading card--premium-heading">Premium</h2>
+            <p class="price">$199<span>/mo</span></p>
+            <div class="stats">
+                <div class="stat">
+                    <p class="stat-info">5000</p>
+                    <p class="stat-desc">Max Connections</p>
+                </div>
+                <div class="stat">
+                    <p class="stat-info">10 million</p>
+                    <p class="stat-desc">Messages per day</p>
+                </div>
+                <div class="stat">
+                    <p class="stat-info">Encryption</p>
+                    <p class="stat-desc">SSL Protection</p>
+                </div>
+            </div>
+            <button class="select" id="select-premium">Select Plan</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
