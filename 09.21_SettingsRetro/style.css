@@ -1,0 +1,200 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    --background-col: #141317;
+    --card-main: #1E1F25;
+    --accent-main: #3D5E6F;
+    --accent-two: #FFAC4A;
+    --muted-text: #A89A8F;
+    --main-text: #FFFFFF;
+    --btn-accent: #46A0A1;
+}
+
+body {
+    background-color: var(--background-col);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Rubik";
+}
+
+.bold {
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 10pt;
+    color: white;
+}
+
+p {
+    font-size: 9pt;
+    color: var(--muted-text);
+}
+
+.card {
+    background-color: var(--card-main);
+    width: min(550px, 95%);
+    height: 550px;
+    padding: 0.5em;
+    display: flex;
+    scale: 0.8
+}
+
+.card--sidebar {
+    background-color: var(--accent-main);
+    width: 230px;
+    padding: 0.5em 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar--settings {
+    padding: 0 2.5em 0 1em;
+}
+
+.sidebar--settings > h3 {
+    padding: 2em 1em 1em;
+}
+
+.setting,
+.sidebar--section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.setting {
+    padding: 0.5em 0
+}
+
+
+.sidebar--section {
+    padding: 1em 2.5em 1em 2em;
+    transition: 200ms;
+    cursor: pointer;
+}
+
+.sidebar--section:hover,
+.sidebar--section-selected {
+    background: var(--card-main);
+}
+
+.btn--sidebar {
+    position: relative;
+    width: 50px;
+    height: 20px;
+    background-color: var(--card-main);
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 1em -0.2em;
+}
+
+.btn--sidebar-toggle,
+.btn--main-toggle {
+    position: absolute;
+    top: 2px;
+    left: 3px;
+    height: 16px;
+    width: 16px;
+    background-color: white;
+    border-radius: 100%;
+    transition: 300ms;
+}
+
+.btn--sidebar-toggle.btn--sidebar-on {
+    transform: translateX(28px);
+    background-color: var(--accent-two);
+}
+
+.main--section > .setting {
+    justify-content: start;
+    gap: 0.5em;
+    padding: 0.75em 1em;
+}
+
+.main--section > .setting > p {
+    width: 50%;
+}
+
+.card--main {
+    padding: 1em;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.btn--main {
+    width: 50px;
+    height: 20px;
+    border-radius: 40px;
+    border: 2px solid var(--btn-accent);
+    background-color: var(--card-main);
+    position: relative;
+    cursor: pointer;
+}
+
+.btn--main-toggle {
+    top: 0;
+    left: 0;
+}
+
+.btn--main-on {
+    transform: translateX(31px);
+    background-color: var(--btn-accent);
+}
+
+.scrollbar {
+    height: 3px;
+    width: 50%;
+    background: linear-gradient(
+        to right,
+        var(--btn-accent),
+        var(--btn-accent) 0%,
+        var(--background-col) 0%
+    );
+    position: relative;
+}
+
+.scrollbar > .btn--main-toggle {
+    top: -6px;
+    cursor: pointer;
+}
+
+.main--actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+.save, .reset {
+    width: 100px;
+    padding: 0.25em 0;
+    border: 3px solid var(--btn-accent);
+    border-radius: 50px;
+    font-family: "Rubik";
+    font-weight: 500;
+    transition: 300ms;
+    cursor: pointer;
+}
+
+.save:hover, .reset:hover {
+    background-color: var(--btn-accent);
+    color: white;
+}
+
+.save {
+    color: var(--btn-accent);
+}
+
+.reset {
+    color: var(--muted-text);
+}
