@@ -1,0 +1,204 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    --background-one: #9C4DB0;
+    --background-two: #343A90;
+    --accent-one: #b751ef;
+    --accent-two: #fc8fd4;
+    --text-light: #FDF9FD;
+    --text-dark: #989A9C;
+}
+
+body {
+    background: linear-gradient(
+        to top right,
+        var(--background-one),
+        var(--background-two)
+    );
+    color: var(--text-dark);
+    font-family: "Rubik";
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h3 {
+    font-weight: 400;
+}
+
+p {
+    font-size: 10pt;
+}
+
+img {
+    min-width: 75px;
+    max-width: 75px;
+    height: 75px;
+}
+
+select:focus-visible {
+    border: 1px solid var(--accent-one);
+    outline: none;
+    border-radius: 2.5px;
+}
+
+button:focus-visible {
+    border-radius: 2.5px;
+    outline: 2px solid var(--background-one);
+}
+
+.card {
+    width: 350px;
+    height: 500px;
+    position: relative;
+    background-color: var(--text-light);
+
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 1em 0.3em var(--background-two);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.card--header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    padding: 1.5em 1em;
+
+    background: linear-gradient(
+        to right,
+        var(--accent-one) 30%,
+        var(--accent-two)
+    );
+    color: var(--text-light);
+}
+
+.card--main {
+    height: 70%;
+    overflow-y: scroll;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+
+    position: relative;
+
+    padding: 1em;
+    border-bottom: 1px solid var(--accent-two);
+
+    background: linear-gradient(to right,
+            var(--accent-two) 10%,
+            transparent 10%);
+    background-position: -3em;
+    background-repeat: no-repeat;
+    
+    transition: background-position 300ms;
+}
+
+.item:hover {
+    background-position: 0;
+}
+
+.item--info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em
+}
+
+.item--info-options {
+    display: flex;
+    align-items: center;
+    gap: 0.25em
+}
+
+.item--price {
+    position: absolute;
+    right: 1em
+}
+
+.card--main-total {
+    align-self: end;
+    padding: 0.5em 2.5em;
+}
+
+/* Buttons */
+
+button {
+    cursor: pointer;
+}
+
+.back,
+.options,
+.edit,
+.remove {
+    background: none;
+    border: 2px solid transparent;
+    transition: 300ms;
+}
+
+.back:hover,
+.options:hover {
+    scale: 1.2
+}
+
+.edit,
+.remove {
+    opacity: 0.5;
+}
+
+.edit:hover,
+.remove:hover {
+    opacity: 1;
+}
+
+.checkout {
+    width: 120%;
+    height: 16%;
+    position: absolute;
+    bottom: 0;
+    left: -20px;
+    border-radius: 100% 100% 0 0;
+    background: linear-gradient(to right,
+                var(--accent-one),
+                var(--accent-two));
+    opacity: 0;
+    transition: 500ms;
+    cursor: pointer;
+    z-index: -1;
+}
+
+.btn--checkout {
+
+    border: none;
+    padding-top: 1.5em;
+    font-size: 14pt;
+    font-family: "Rubik";
+
+    background: none;
+    transition: 300ms;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.checkout:hover,
+.checkout:focus-visible,
+.btn--checkout:hover > .checkout,
+.btn--checkout:focus-visible > .checkout {
+    opacity: 1;
+}
+
+.btn--checkout:hover {
+    color: var(--text-light);
+}
