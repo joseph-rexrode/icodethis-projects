@@ -1,0 +1,129 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="card">
+        <div class="card--nav">
+            <div class="btn--active-bg" id="active--summary"></div>
+            <button class="options">
+                <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M20.75 7C20.75 7.41421 20.4142 7.75 20 7.75L4 7.75C3.58579 7.75 3.25 7.41421 3.25 7C3.25 6.58579 3.58579 6.25 4 6.25L20 6.25C20.4142 6.25 20.75 6.58579 20.75 7Z"
+                            fill="#F1EEFD"></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M20.75 12C20.75 12.4142 20.4142 12.75 20 12.75L4 12.75C3.58579 12.75 3.25 12.4142 3.25 12C3.25 11.5858 3.58579 11.25 4 11.25L20 11.25C20.4142 11.25 20.75 11.5858 20.75 12Z"
+                            fill="#F1EEFD"></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M20.75 17C20.75 17.4142 20.4142 17.75 20 17.75L4 17.75C3.58579 17.75 3.25 17.4142 3.25 17C3.25 16.5858 3.58579 16.25 4 16.25L20 16.25C20.4142 16.25 20.75 16.5858 20.75 17Z"
+                            fill="#F1EEFD"></path>
+                    </g>
+                </svg>
+            </button>
+            <button class="btn--nav btn--navActive" id="summary">Summary</button>
+            <button class="btn--nav" id="activity">Activity</button>
+            <button class="btn--nav" id="sendRequest">Send/Request</button>
+        </div>
+        <div class="card--summary card--page">
+            <div class="card--summary-top">
+                <div class="summary--balance">
+                    <h2>Your Balance</h2>
+                    <h1>244.32 USD</h1>
+                </div>
+            </div>
+            <div class="summary--main">
+                <div class="summary--actions">
+                    <button class="btn--section btn--active" id="pending">Pending</button>
+                    <button class="btn--section" id="completed">Completed</button>
+                </div>
+                <div class="summary--pendingItems">
+                    <div class="pendingItem">
+                        <div class="pendingItem--section">
+                            <h3>Company Inc.</h3>
+                            <p>Payment request for 280.00</p>
+                        </div>
+                        <div class="pendingItem--section">
+                            <p class="muted">Company Inc. hasn't paid yet</p>
+                        </div>
+                        <div class="pendingItem--buttons">
+                            <button class="sendReminder">Send a reminder</button>
+                            <button class="editAmount">Edit Amount</button>
+                            <button class="cancel">Cancel</button>
+                        </div>
+                    </div>
+                    <div class="pendingItem">
+                        <div class="pendingItem--section">
+                            <h3>Company Inc.</h3>
+                            <p>Payment request for 280.00</p>
+                        </div>
+                        <div class="pendingItem--section">
+                            <p class="muted">Company Inc. hasn't paid yet</p>
+                        </div>
+                        <div class="pendingItem--buttons">
+                            <button class="sendReminder">Send a reminder</button>
+                            <button class="editAmount">Edit Amount</button>
+                            <button class="cancel">Cancel</button>
+                        </div>
+                    </div>
+                    <div class="pendingItem">
+                        <div class="pendingItem--section">
+                            <h3>Company Inc.</h3>
+                            <p>Payment request for 280.00</p>
+                        </div>
+                        <div class="pendingItem--section">
+                            <p class="muted">Company Inc. hasn't paid yet</p>
+                        </div>
+                        <div class="pendingItem--buttons">
+                            <button class="sendReminder">Send a reminder</button>
+                            <button class="editAmount">Edit Amount</button>
+                            <button class="cancel">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="summary--completedItems hidden">
+                    <div class="pendingItem">
+                        <div class="pendingItem--section">
+                            <h3>Company Inc.</h3>
+                            <p>Payment request for 280.00</p>
+                        </div>
+                        <div class="pendingItem--section">
+                            <p class="muted">Company Inc. has paid!</p>
+                        </div>
+                    </div>
+                    <div class="pendingItem">
+                        <div class="pendingItem--section">
+                            <h3>Company Inc.</h3>
+                            <p>Payment request for 280.00</p>
+                        </div>
+                        <div class="pendingItem--section">
+                            <p class="muted">Company Inc. has paid!</p>
+                        </div>
+                    </div>
+                    <div class="pendingItem">
+                        <div class="pendingItem--section">
+                            <h3>Company Inc.</h3>
+                            <p>Payment request for 280.00</p>
+                        </div>
+                        <div class="pendingItem--section">
+                            <p class="muted">Company Inc. has paid!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

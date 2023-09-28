@@ -1,0 +1,251 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    --bg-col: #F0EFF5;
+    --accent-one: #88FED7;
+    --accent-two: #B090DA;
+    --btn-accent: #A8A6FE;
+    --text-dark: #828282;
+    --text-light: #F1EEFD;
+}
+
+body {
+    background-color: var(--bg-col);
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Rubik";
+}
+
+h1 {
+    color: var(--text-light);
+    font-size: 22pt;
+}
+
+h2 {
+    color: var(--text-light);
+    font-size: 14pt;
+}
+
+h3, p {
+    color: var(--text-dark);
+    font-size: 10pt;
+}
+
+.card {
+    background-color: white;
+    width: 350px;
+    height: 550px;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 1em -0.2em var(--btn-accent);
+    scale: 0.9;
+}
+
+.card--nav {
+    position: absolute;
+    background: transparent;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    z-index: 2;
+}
+
+
+.card--page {
+    height: 100%;
+    position: relative;
+    top: 0;
+}
+
+.card--summary-top {
+    --mask: 
+            radial-gradient(154.35px at 25% calc(100% - 212.00px), #000 99%, #0000 101%) calc(25% - 160px) 0/320px 100%,
+            radial-gradient(154.35px at 25% calc(100% + 132.00px), #0000 99%, #000 101%) 25% calc(100% - 80px)/320px 100% repeat-x;
+        -webkit-mask: var(--mask);
+        mask: var(--mask);
+
+
+    position: relative;
+    top: 0;
+    min-height: 50%;
+    background: radial-gradient(
+        circle at 0% 180%,
+        var(--accent-one) 20%,
+        var(--accent-two)
+    );
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 4.5em 0 0;
+    text-align: center;
+    transition: 1000ms;
+}
+
+.card--summary-top.xShift {
+    --mask: 
+            radial-gradient(154.35px at 75% calc(100% - 212.00px), #000 99%, #0000 101%) calc(75% - 160px) 0/320px 100%,
+            radial-gradient(154.35px at 75% calc(100% + 132.00px), #0000 99%, #000 101%) 75% calc(100% - 80px)/320px 100% repeat-x;
+        -webkit-mask: var(--mask);
+        mask: var(--mask);
+}
+
+.summary--main {
+    min-height: 55%;
+    width: 100%;
+    position: absolute;
+    top: 34%;
+}
+
+.summary--actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5em;
+    width: 100%;
+}
+
+.summary--pendingItems,
+.summary--completedItems {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25em;
+    position: absolute;
+
+    padding: 1em;
+    max-height: 1000px;
+    opacity: 1;
+    transition: 300ms;
+}
+
+.summary--completedItems {
+    width: 100%;
+    text-align: end;
+    gap: 2.5em
+}
+
+.hidden {
+    opacity: 0;
+    max-height: 0px;
+}
+
+.pendingItem {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em
+}
+
+.muted {
+    font-size: 8pt;
+    opacity: 0.8;
+}
+
+/* BUTTONS */
+
+button {
+    cursor: pointer;
+    transition: 200ms;
+    font-family: "Rubik";
+}
+
+.btn--nav {
+    border: none;
+    background: none;
+    color: var(--text-light);
+    opacity: 0.8;
+}
+
+.btn--nav:hover,
+.btn--navActive {
+    opacity: 1;
+}
+
+.btn--section {
+    position: relative;
+    border: none;
+    background: none;
+    color: var(--text-light);
+    text-transform: uppercase;
+    z-index: 1;
+}
+
+.btn--section.btn--active {
+    color: var(--text-dark);
+}
+
+.pendingItem--buttons {
+    display: flex;
+}
+
+.pendingItem--buttons > button {
+    background: none;
+    border: 2px solid var(--btn-accent);
+    padding: 0.4em 1em;
+    color: var(--text-dark);
+}
+
+.pendingItem--buttons > button:hover {
+    background-color: var(--btn-accent);
+    color: var(--text-light);
+}
+
+.sendReminder {
+    border-radius: 100px 0 0 100px;
+}
+
+.pendingItem--buttons > .editAmount, 
+.pendingItem--buttons > .cancel {
+    border-left: none;
+}
+
+.cancel {
+    border-radius: 0 100px 100px 0;
+}
+
+.options {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.options:hover {
+    scale: 1.2;
+}
+
+
+.btn--active-bg {
+    width: 4px;
+    height: 4px;
+    background-color: var(--accent-one);
+    border-radius: 100%;
+
+    position: absolute;
+    top: 1em;
+    left: 130px;
+
+    transition: 500ms;
+}
+
+#active--summary {
+    transform: translateX(0);
+}
+
+#active--activity {
+    transform: translateX(75px);
+}
+
+#active--sendRequest {
+    transform: translateX(190px);
+}
