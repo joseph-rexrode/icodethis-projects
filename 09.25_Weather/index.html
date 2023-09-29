@@ -1,0 +1,255 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="card">
+        <div class="card--header">
+            <h4>Thursday 10:40 PM</h4>
+            <h1>Timisoara</h1>
+        </div>
+
+        <div class="card--today">
+            <div class="card--today-icon">
+                <svg width="150px" height="150px" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    fill="#000000">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <path
+                            d="M895.573333 652.096a21.504 21.504 0 0 0-20.693333-5.504A406.186667 406.186667 0 0 1 768 661.333333c-223.509333 0-405.333333-181.824-405.333333-405.333333 0-35.136 4.949333-71.104 14.741333-106.88a21.333333 21.333333 0 0 0-26.197333-26.218667C156.970667 175.957333 21.333333 353.514667 21.333333 554.666667c0 247.04 200.96 448 448 448 201.173333 0 378.709333-135.637333 431.744-329.856a21.333333 21.333333 0 0 0-5.504-20.714667z"
+                            fill="#FEFBCB"></path>
+                        <path
+                            d="M725.333333 106.666667c-35.285333 0-64-28.714667-64-64a21.333333 21.333333 0 1 0-42.666666 0c0 35.285333-28.714667 64-64 64a21.333333 21.333333 0 1 0 0 42.666666c35.285333 0 64 28.714667 64 64a21.333333 21.333333 0 1 0 42.666666 0c0-35.285333 28.714667-64 64-64a21.333333 21.333333 0 1 0 0-42.666666zM981.333333 362.666667c-35.285333 0-64-28.714667-64-64a21.333333 21.333333 0 1 0-42.666666 0c0 35.285333-28.714667 64-64 64a21.333333 21.333333 0 1 0 0 42.666666c35.285333 0 64 28.714667 64 64a21.333333 21.333333 0 1 0 42.666666 0c0-35.285333 28.714667-64 64-64a21.333333 21.333333 0 1 0 0-42.666666z"
+                            fill="#FFE324"></path>
+                    </g>
+                </svg>
+            </div>
+            <div class="card--today-info">
+                <div class="card--today-degrees">
+                    <p class="temp temp-number">9</p>
+                    <div>
+                        <p class="degree--type">
+                            <span id="d-celsius">ºC</span> 
+                            <span id="d-border">|</span> 
+                            <span class="inactive" id="d-fahrenheit">ºF</span>
+                        </p>
+                        <p class="degree--min">
+                            MIN <span class="temp-number">3</span> ºC 
+                        </p>
+                    </div>
+                </div>
+                <div class="other--info">
+                    <div class="other--section">
+                        <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <g id="Environment / Water_Drop">
+                                    <path id="Vector"
+                                        d="M16.0001 13.3848C16.0001 14.6088 15.526 15.7828 14.6821 16.6483C14.203 17.1397 13.6269 17.5091 13 17.7364M19 13.6923C19 7.11538 12 2 12 2C12 2 5 7.11538 5 13.6923C5 15.6304 5.7375 17.4893 7.05025 18.8598C8.36301 20.2302 10.1436 20.9994 12.0001 20.9994C13.8566 20.9994 15.637 20.2298 16.9497 18.8594C18.2625 17.4889 19 15.6304 19 13.6923Z"
+                                        stroke="#66DAFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </g>
+                            </g>
+                        </svg>
+                        <p>93%</p>
+                    </div>
+                    <div class="other--section">
+                        <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M6.25 5.5C6.25 3.70508 7.70507 2.25 9.5 2.25C11.2949 2.25 12.75 3.70507 12.75 5.5C12.75 7.29493 11.2949 8.75 9.5 8.75H3C2.58579 8.75 2.25 8.41421 2.25 8C2.25 7.58579 2.58579 7.25 3 7.25H9.5C10.4665 7.25 11.25 6.4665 11.25 5.5C11.25 4.5335 10.4665 3.75 9.5 3.75C8.5335 3.75 7.75 4.5335 7.75 5.5V5.85714C7.75 6.27136 7.41421 6.60714 7 6.60714C6.58579 6.60714 6.25 6.27136 6.25 5.85714V5.5ZM14.25 7.5C14.25 5.15279 16.1528 3.25 18.5 3.25C20.8472 3.25 22.75 5.15279 22.75 7.5C22.75 9.84721 20.8472 11.75 18.5 11.75H2C1.58579 11.75 1.25 11.4142 1.25 11C1.25 10.5858 1.58579 10.25 2 10.25H18.5C20.0188 10.25 21.25 9.01878 21.25 7.5C21.25 5.98122 20.0188 4.75 18.5 4.75C16.9812 4.75 15.75 5.98122 15.75 7.5V8C15.75 8.41421 15.4142 8.75 15 8.75C14.5858 8.75 14.25 8.41421 14.25 8V7.5ZM3.25 14C3.25 13.5858 3.58579 13.25 4 13.25H18.5C20.8472 13.25 22.75 15.1528 22.75 17.5C22.75 19.8472 20.8472 21.75 18.5 21.75C16.1528 21.75 14.25 19.8472 14.25 17.5V17C14.25 16.5858 14.5858 16.25 15 16.25C15.4142 16.25 15.75 16.5858 15.75 17V17.5C15.75 19.0188 16.9812 20.25 18.5 20.25C20.0188 20.25 21.25 19.0188 21.25 17.5C21.25 15.9812 20.0188 14.75 18.5 14.75H4C3.58579 14.75 3.25 14.4142 3.25 14Z"
+                                    fill="#66DAFE"></path>
+                            </g>
+                        </svg>
+                        <p>5 km/h</p>
+                    </div>
+                    <div class="other--section">
+                        <svg fill="#66DAFE" height="24px" width="24px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <g>
+                                    <g>
+                                        <path
+                                            d="M181.295,127.02L109.054,4.944C107.241,1.879,103.945,0,100.386,0c-3.559,0-6.855,1.879-8.67,4.944L19.475,127.02 c-21.873,36.963-15.939,83.989,14.432,114.358c17.756,17.758,41.366,27.537,66.478,27.537c25.113,0,48.721-9.779,66.478-27.537 C197.234,211.009,203.168,163.983,181.295,127.02z M152.619,227.132c-13.952,13.953-32.503,21.635-52.233,21.635 c-19.732,0.001-38.281-7.683-52.235-21.635c-23.861-23.862-28.524-60.81-11.337-89.852l63.572-107.427l63.572,107.427 C181.143,166.323,176.481,203.271,152.619,227.132z">
+                                        </path>
+                                    </g>
+                                </g>
+                                <g>
+                                    <g>
+                                        <path
+                                            d="M492.526,127.02L420.285,4.943C418.471,1.879,415.176,0,411.615,0s-6.855,1.879-8.67,4.944l-72.24,122.077 c-21.873,36.963-15.939,83.989,14.432,114.358c18.328,18.328,42.404,27.493,66.478,27.493c24.076,0,48.151-9.164,66.48-27.493 C508.463,211.009,514.397,163.983,492.526,127.02z M463.848,227.132c-13.952,13.953-32.501,21.635-52.233,21.635 c-19.731,0-38.281-7.684-52.233-21.635c-23.862-23.862-28.524-60.81-11.339-89.852l63.572-107.427l63.572,107.427 C492.373,166.323,487.709,203.271,463.848,227.132z">
+                                        </path>
+                                    </g>
+                                </g>
+                                <g>
+                                    <g>
+                                        <path
+                                            d="M463.627,144.12l-15.188-25.665c-2.833-4.788-9.012-6.369-13.799-3.539c-4.787,2.833-6.372,9.011-3.539,13.799 l15.188,25.666c9.374,15.838,6.831,35.992-6.184,49.008c-3.934,3.934-3.933,10.313,0,14.247c1.968,1.966,4.545,2.95,7.123,2.95 c2.577,0,5.156-0.983,7.124-2.951C473.874,198.11,477.688,167.88,463.627,144.12z">
+                                        </path>
+                                    </g>
+                                </g>
+                                <g>
+                                    <g>
+                                        <path
+                                            d="M308.011,387.248l-15.188-25.665c-2.833-4.788-9.011-6.369-13.799-3.539c-4.787,2.833-6.372,9.011-3.539,13.799 l15.188,25.666c9.374,15.838,6.831,35.992-6.184,49.008c-3.934,3.934-3.933,10.313,0,14.247c1.968,1.966,4.545,2.95,7.123,2.95 c2.577,0,5.156-0.983,7.124-2.951C318.258,441.238,322.073,411.008,308.011,387.248z">
+                                        </path>
+                                    </g>
+                                </g>
+                                <g>
+                                    <g>
+                                        <path
+                                            d="M152.397,144.12l-15.188-25.665c-2.833-4.788-9.01-6.369-13.799-3.539c-4.787,2.833-6.372,9.011-3.539,13.799 l15.188,25.666c9.374,15.838,6.831,35.992-6.184,49.008c-3.934,3.934-3.933,10.313,0,14.247c1.968,1.966,4.545,2.95,7.123,2.95 s5.156-0.983,7.124-2.951C162.644,198.11,166.458,167.88,152.397,144.12z">
+                                        </path>
+                                    </g>
+                                </g>
+                                <g>
+                                    <g>
+                                        <path
+                                            d="M336.909,370.149L264.67,248.073c-1.813-3.064-5.109-4.944-8.67-4.944s-6.855,1.879-8.67,4.944l-72.24,122.076 c-21.873,36.963-15.939,83.989,14.431,114.358C207.848,502.836,231.924,512,256,512c24.074,0,48.15-9.164,66.478-27.493 C352.848,454.138,358.782,407.111,336.909,370.149z M308.233,470.262c-28.802,28.799-75.665,28.801-104.466,0 c-23.862-23.862-28.524-60.81-11.337-89.852L256,272.984l63.572,107.427C336.757,409.452,332.095,446.4,308.233,470.262z">
+                                        </path>
+                                    </g>
+                                </g>
+                                <g>
+                                    <g>
+                                        <circle cx="425.343" cy="99.224" r="10.074"></circle>
+                                    </g>
+                                </g>
+                                <g>
+                                    <g>
+                                        <circle cx="114.129" cy="99.224" r="10.074"></circle>
+                                    </g>
+                                </g>
+                                <g>
+                                    <g>
+                                        <circle cx="269.728" cy="342.338" r="10.073"></circle>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                        <p>0%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card--forecast">
+            <div class="card--forecast-day">
+                <h3>Fri</h3>
+                <svg width="32px" height="32px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="#66DAFE"
+                    class="bi bi-cloudy">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <path
+                            d="M13.405 8.527a5.001 5.001 0 0 0-9.499-1.004A3.5 3.5 0 1 0 3.5 14.5H13a3 3 0 0 0 .405-5.973zM8.5 5.5a4 4 0 0 1 3.976 3.555.5.5 0 0 0 .5.445H13a2 2 0 0 1-.001 4H3.5a2.5 2.5 0 1 1 .605-4.926.5.5 0 0 0 .596-.329A4.002 4.002 0 0 1 8.5 5.5z">
+                        </path>
+                    </g>
+                </svg>
+                <p>
+                    <span class="temp-number">15</span>º / <span class="temp-number">4</span>º
+                </p>
+            </div>
+            <div class="card--forecast-day">
+                <h3>Sat</h3>
+                <svg fill="#000000" width="32px" height="32px" viewBox="0 0 24 24" id="sun-cloudy" data-name="Line Color"
+                    xmlns="http://www.w3.org/2000/svg" class="icon line-color">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <path id="secondary" d="M7.75,13.72a3,3,0,1,1,4.18-3.38"
+                            style="fill: none; stroke: #FFE324; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path>
+                        <path id="secondary-2" data-name="secondary" d="M9,4V3M4.05,6.05l-.71-.71M14,6.05l.71-.71"
+                            style="fill: none; stroke: #FFE324; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path>
+                        <path id="primary"
+                            d="M17.67,11.8a2.76,2.76,0,0,0-.77.11A4.1,4.1,0,0,0,13.5,10a4.27,4.27,0,0,0-4.1,3.79,2.27,2.27,0,0,0-.9-.19A2.61,2.61,0,0,0,6,16.3,2.61,2.61,0,0,0,8.5,19h9.17A3.47,3.47,0,0,0,21,15.4,3.47,3.47,0,0,0,17.67,11.8Z"
+                            style="fill: none; stroke: #66DAFE; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path>
+                    </g>
+                </svg>
+                <p>
+                    <span class="temp-number">22</span>º / <span class="temp-number">7</span>º
+                </p>
+            </div>
+            <div class="card--forecast-day">
+                <h3>Sun</h3>
+                <svg fill="#000000" width="32px" height="32px" viewBox="0 0 24 24" id="sun-cloudy" data-name="Line Color"
+                    xmlns="http://www.w3.org/2000/svg" class="icon line-color">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <path id="secondary" d="M7.75,13.72a3,3,0,1,1,4.18-3.38"
+                            style="fill: none; stroke: #FFE324; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path>
+                        <path id="secondary-2" data-name="secondary" d="M9,4V3M4.05,6.05l-.71-.71M14,6.05l.71-.71"
+                            style="fill: none; stroke: #FFE324; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path>
+                        <path id="primary"
+                            d="M17.67,11.8a2.76,2.76,0,0,0-.77.11A4.1,4.1,0,0,0,13.5,10a4.27,4.27,0,0,0-4.1,3.79,2.27,2.27,0,0,0-.9-.19A2.61,2.61,0,0,0,6,16.3,2.61,2.61,0,0,0,8.5,19h9.17A3.47,3.47,0,0,0,21,15.4,3.47,3.47,0,0,0,17.67,11.8Z"
+                            style="fill: none; stroke: #66DAFE; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path>
+                    </g>
+                </svg>
+                <p>
+                    <span class="temp-number">22</span>º / <span class="temp-number">9</span>º
+                </p>
+            </div>
+            <div class="card--forecast-day">
+                <h3>Mon</h3>
+                <svg width="32px" height="32px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <path
+                            d="M12 2V4M12 20V22M4 12H2M6.31412 6.31412L4.8999 4.8999M17.6859 6.31412L19.1001 4.8999M6.31412 17.69L4.8999 19.1042M17.6859 17.69L19.1001 19.1042M22 12H20M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z"
+                            stroke="#FFE324" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                </svg>
+                <p>
+                    <span class="temp-number">25</span>º / <span class="temp-number">14</span>º
+                </p>
+            </div>
+            <div class="card--forecast-day">
+                <h3>Tue</h3>
+                <svg width="32px" height="32px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <path
+                            d="M12 2V4M12 20V22M4 12H2M6.31412 6.31412L4.8999 4.8999M17.6859 6.31412L19.1001 4.8999M6.31412 17.69L4.8999 19.1042M17.6859 17.69L19.1001 19.1042M22 12H20M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z"
+                            stroke="#FFE324" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                </svg>
+                <p>
+                    <span class="temp-number">25</span>º / <span class="temp-number">14</span>º
+                </p>
+            </div>
+            <div class="card--forecast-day">
+                <h3>Wed</h3>
+                <svg width="32px" height="32px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <path
+                            d="M12 2V4M12 20V22M4 12H2M6.31412 6.31412L4.8999 4.8999M17.6859 6.31412L19.1001 4.8999M6.31412 17.69L4.8999 19.1042M17.6859 17.69L19.1001 19.1042M22 12H20M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z"
+                            stroke="#FFE324" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                </svg>
+                <p>
+                    <span class="temp-number">26</span>º / <span class="temp-number">18</span>º
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
