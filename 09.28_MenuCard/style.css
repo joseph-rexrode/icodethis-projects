@@ -1,0 +1,174 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-1: #F4FDF4;
+    --bg-2: #AACDC6;
+    --accent-1: #D12E42;
+    --text-dark: #444446;
+    --text-light: #FFFFFF;
+    --button-muted: #868586;
+}
+
+body {
+    background: radial-gradient(
+        circle at center,
+        var(--bg-2) 30%,
+        var(--bg-1)
+    );
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: "Rubik";
+}
+
+h5 {
+    color: var(--accent-1)
+}
+
+p, li {
+    font-size: 9pt;
+    opacity: 0.5;
+}
+
+li::marker {
+    color: var(--accent-1);
+}
+
+li {
+    padding: 0.5em 0;
+}
+
+.card {
+    width: 275px;
+    height: 475px;
+    background: top / 150% no-repeat url(https://images.unsplash.com/photo-1464305795204-6f5bbfc7fb81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2370&q=80);
+    background-color: #E7E9E8;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.card--header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em 1em;
+    background: rgba(255,255,255,0.5)
+}
+
+.card--card {
+    width: 240px;
+    height: 200px;
+    background: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    margin: 1em 0;
+    padding: 1em;
+    
+    border-radius: 10px;
+    box-shadow: 0 0.5em 0.5em -0.5em;
+
+    transition: 500ms ease-in-out;
+}
+
+.full {
+    height: 100%;
+    width: 100%;
+    box-shadow: none;
+    margin: 0;
+}
+
+.card--card-recipe {
+    opacity: 1;
+    max-height: 1000px;
+
+    transition: opacity 500ms 700ms, max-height 1000ms 300ms;
+}
+
+.hidden {
+    opacity: 0;
+    max-height: 0;
+    transition: opacity 500ms, max-height 500ms;
+}
+
+.card--card-rating {
+    padding-top: 0.5em;
+    width: 100%;
+    position: relative;
+}
+
+.star {
+    position: absolute;
+    left: 57.5px;
+    top: 6px;
+    scale: 0;
+    transition: scale 500ms;
+}
+
+.star--visible {
+    scale: 1;
+}
+
+.star:nth-of-type(2) {
+    top: -5px;
+    left: 75px;
+}
+
+.star:nth-of-type(3) {
+    top: -10px;
+    left: 97px;
+}
+
+.star:nth-of-type(4) {
+    top: -5px;
+    left: 119px;
+}
+
+.star:last-of-type {
+    left: 136.5px;
+}
+
+/* BUTTONS */
+
+button {
+    font-family: "Rubik";
+    cursor: pointer;
+    transition: 200ms ease-in-out;
+}
+
+.action {
+    background-color: var(--text-light);
+    color: var(--accent-1);
+    border: 2px solid var(--accent-1);
+    border-radius: 10px;
+    padding: 0.5em 2em;
+}
+
+.action:hover {
+    background-color: var(--accent-1);
+    color: var(--bg-1);
+}
+
+.options {
+    background: none;
+    border: none;
+    opacity: 0.6;
+}
+
+.options:hover {
+    opacity: 1;
+    scale: 1.1;
+}
