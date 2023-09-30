@@ -1,0 +1,183 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    --bg-col: #2C2F40;
+    --card-col: #36394B;
+    --accent-one: #7596FF;
+    --accent-two: #C692FE;
+    --accent-three: #50E3C2;
+    --accent-four: #E37F51;
+    --text-light: #E6E7E9;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    min-height: 100vh;
+    background-color: var(--bg-col);
+    color: var(--text-light);
+    font-family: "Nunito";
+    padding: 4em 0;
+}
+
+@media screen and (max-width: 650px) {
+    body {
+        flex-direction: column;
+    }
+}
+
+h4 {
+    font-size: 11pt;
+}
+
+.card--main {
+    padding: 0.5em 0 1em;
+    background-color: var(--card-col);
+    width: 450px;
+    border-radius: 5px;
+    box-shadow: 0 0 0.5em -0.2em black;
+}
+
+.card--header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 1.5em
+}
+
+.challenge {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5em 1.5em;
+    transition: 200ms ease-in-out
+}
+
+.challenge:hover,
+.active {
+    background-color: var(--bg-col);
+}
+
+.challenge--top {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.muted {
+    font-size: 10pt;
+    opacity: 0.7;
+}
+
+.card--challengeInfo {
+    width: 250px;
+    height: 275px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    padding: 2em 1em;
+    background-color: var(--card-col);
+    transition: max-height 500ms, scale 500ms 500ms;
+    max-height: 1000px;
+    border-radius: 5px;
+    box-shadow: 0 0 0.5em -0.2em black;
+}
+
+.hidden {
+    max-height: 0;
+    transition: scale 500ms, max-height 500ms 500ms;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background: linear-gradient(
+        to top right,
+        var(--accent-one),
+        var(--accent-two),
+        var(--accent-three) 75%
+    );
+}
+
+@keyframes rotateIcon {
+    from {
+        rotate: 0deg;
+    }
+    to {
+        rotate: 360deg;
+    }
+}
+
+.card--challengeInfo:hover > .icon {
+    transform: rotate(360deg);
+    animation-duration: 1s;
+    animation-name: rotateIcon;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+/* BUTTONS */
+
+button:not(.new):not(.closed) {
+    cursor: pointer;
+    transition: 300ms ease-in-out;
+    font-family: "Nunito";
+}
+
+.reset {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    opacity: 0.6;
+}
+
+.reset:hover {
+    opacity: 1;
+}
+
+.new,
+.closed {
+    padding: 0.25em 0.75em;
+    border-radius: 50px;
+    border: none;
+}
+
+.new {
+    background-color: var(--accent-three);
+}
+
+.closed {
+    background-color: var(--accent-four);
+}
+
+.vote {
+    padding: 0.3em 2em;
+    border: none;
+    border-radius: 3px;
+    background-image: linear-gradient(
+        to right,
+        var(--accent-one),
+        var(--accent-two)
+    );
+    color: var(--text-light);
+    font-weight: 600;
+    background-repeat: repeat;
+    background-position: 0;
+    position: relative;
+    z-index: 10;
+}
+
+.vote:hover {
+    background-position: 82px;
+}
+
+.card--challengeInfo > .vote:hover {
+    background-position: 115px;
+}
