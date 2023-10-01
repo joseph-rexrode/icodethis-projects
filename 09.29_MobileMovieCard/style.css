@@ -1,0 +1,294 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Rubik";
+}
+
+:root {
+    --text-light: #FFFFFF;
+    --text-dark: #59595B;
+    --text-accent: #175995;
+    --accent-one: #3ECBDD;
+    --play: #F82447;
+    --star: #FFC11B;
+}
+
+body, .wrapper {
+    min-height: 100vh;
+    width: 100%;
+}
+
+body {
+    background: right / cover no-repeat url(https://jonnegroni.com/wp-content/uploads/2015/11/arlo_spot_the_good_dinosaur-hd.jpg);
+}
+
+/* TYPOGRAPHY */
+
+h3 {
+    font-size: 16pt;
+    text-transform: uppercase;
+    color: var(--text-accent);
+}
+
+p {
+    color: var(--text-dark);
+    font-size: 9.5pt;
+}
+
+.tags {
+    font-size: 8pt;
+}
+
+.rating {
+    color: var(--text-light);
+    font-size: 12pt;
+}
+
+/* MAIN */
+
+.wrapper {
+    background: rgba(255,255,255,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    width: 325px;
+    height: 500px;
+    background: var(--text-light);
+    border-radius: 10px;
+    padding: 1em;
+
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    box-shadow: 0 0 0.5em -0.1em var(--accent-one);
+}
+
+.header--bg {
+    position: absolute;
+    z-index: 0;
+    height: 200px;
+    width: 110%;
+    left: -5%;
+    top: -4%;
+    rotate: -7deg;
+}
+
+.footer--bg {
+    position: absolute;
+    z-index: 0;
+    height: 90px;
+    width: 110%;
+    background-color: var(--accent-one);
+    bottom: -4%;
+    left: -5%;
+    rotate: 4deg;
+}
+
+.header--bg-img {
+    width: 100%;
+    height: 100%;
+    background: center / cover no-repeat url(https://jonnegroni.com/wp-content/uploads/2015/12/the_good_dinosaur_2015_movie-wide.jpg)
+}
+
+.card--header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card--main {
+    position: relative;
+}
+
+.main--icons {
+    padding: 0.5em 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main--icons-ratings {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.main--icons-play {
+    width: 50px;
+    height: 50px;
+    background: var(--play);
+    opacity: 0.80;
+    border-radius: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    transition: 200ms;
+}
+
+.play--icon {
+    height: 0;
+    width: 0;
+    border-width: 10px 15px 10px 15px;
+    border-style: solid;
+    border-color: transparent transparent transparent white;
+    position: absolute;
+    left: 19px;
+    transition: 200ms;
+}
+
+.main--icons-play:hover {
+    opacity: 1;
+}
+
+.main--icons-play:hover > .play--icon {
+    scale: 1.1;
+    transform: translateX(1.5px);
+}
+
+.description {
+    padding: 0.5em 0
+}
+
+.main--actors {
+    height: 150px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.actors--carousel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0 3em;
+
+    width: 95%;
+}
+
+.actors--carousel-main {
+    position: relative;
+    width: 100%
+}
+
+.actors--carousel-main > img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    left: 80px;
+    transition: 500ms ease-in-out;
+    opacity: 0;
+}
+
+.actors--carousel-main > .img-main {
+    z-index: 2;
+    opacity: 1;
+}
+
+.actors--carousel-main > .img-prev,
+.actors--carousel-main > .img-next {
+    scale: 0.9;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.actors--carousel-main > .img-prev {
+    transform: translateX(-60px);
+}
+
+.actors--carousel-main > .img-next {
+    transform: translateX(60px);
+}
+
+.img--blank, .img--blank-end {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(242, 242, 242);
+    border-radius: 50%;
+    top: 0px;
+}
+
+.img--blank-end {
+    right: 0;
+}
+
+#actor--role {
+    font-weight: bold;
+}
+
+#actor--name {
+    font-size: 8pt;
+}
+
+.main--actions {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+/* BUTTONS */
+
+button {
+    cursor: pointer;
+    transition: 300ms ease-in-out;
+}
+
+.option {
+    background: none;
+    border: none;
+}
+
+.option > svg > g > path {
+    transition: 300ms ease-in-out;
+}
+
+.option:hover {
+    scale: 1.1;
+}
+
+.option:hover > svg > g > path {
+    fill: #3ECBDD;
+}
+
+.action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25em;
+    width: 150px;
+    background: none;
+    border: none;
+}
+
+.action > p {
+    color: var(--text-light);
+}
+
+.action:hover {
+    scale: 1.1;
+}
+
+.next, .prev {
+    cursor: pointer;
+    position: relative;
+    top: 20px;
+}
+
+.next:hover, .prev:hover {
+    scale: 1.1;
+}

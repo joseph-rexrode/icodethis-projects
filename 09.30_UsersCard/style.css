@@ -1,0 +1,192 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-col: #F7F8FC;
+    --card-col: #FFFFFF;
+    --accent: #10172F;
+    --text-muted: #949AAB;
+}
+
+body {
+    background: var(--bg-col);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100vh;
+}
+
+.muted {
+    color: var(--text-muted);
+    font-size: 9pt;
+}
+
+.card {
+    width: 350px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0.25em 0.35em 0.5em -0.2em var(--accent);
+    position: relative;
+}
+
+.card--header {
+    padding: 1.5em 1em;
+    background-color: var(--card-col);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+.profile--info {
+    display: flex;
+    align-items: center;
+    gap: 0.5em
+}
+
+.profile--info > img {
+    width: 40px;
+    border-radius: 100%;
+}
+
+.card--main {
+    transition: max-height 500ms linear, opacity 500ms linear;
+}
+
+.card:has(.card--header[data-closed = false]) > .card--main {
+    scale: 1;
+    max-height: 1000px;
+    opacity: 1;
+}
+
+.card:has(.card--header[data-closed = true]) > .card--main {
+    scale: 0;
+    max-height: 0;
+    opacity: 0;
+}
+
+.card--top {
+    height: 225px;
+    background: center / cover no-repeat url(https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2370&q=80)
+}
+
+.card--bottom {
+    height: 125px;
+    background-color: var(--card-col);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.actions {
+    display: flex;
+    gap: 1em
+}
+
+/* SMALL SCREENS */
+
+@media screen and (max-width: 450px) {
+    
+    .card {
+        box-shadow: none;
+        width: 250px;
+        height: 350px;
+    }
+
+    .card--header {
+        background-color: transparent;
+        flex-direction: column;
+        gap: 2em;
+        justify-content: center;
+        position: relative;
+        top: 90px
+    }
+
+    .card--main {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: scale 500ms, opacity 300ms;
+    }
+
+    .card:has(.card--header[data-closed = false]) > .card--main {
+        max-height: 1000px;
+        opacity: 1;
+        scale: 1;
+    }
+
+    .profile--info-info,
+    .header--actions {
+        transition: 300ms
+    }
+
+    .card--header[data-closed=true] > .profile--info > .profile--info-info,
+    .card--header[data-closed=true] > .header--actions {
+        opacity: 0;
+    }
+
+    .card:has(.card--header[data-closed = true]) > .card--main {
+        max-height: 1000px;
+        scale: 0;
+        opacity: 0;
+    }
+
+    .card--top {
+        height: 150px;
+    }
+
+    .card--bottom {
+        height: 200px;
+    } 
+
+    .card--bottom > * {
+        border: 2px solid red;
+        opacity: 0;
+        max-height: 0;
+        position: relative;
+        z-index: -3;
+    }
+
+    .profile--info {
+        flex-direction: column;
+        gap: 3em;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .card--header > .profile--info > img {
+        transition: scale 300ms linear;
+        width: 65px
+    }
+
+    .card--header[data-closed=false] > .profile--info > img {
+        scale: 1.5;
+    }
+}
+
+/* BUTTONS */
+
+button {
+    cursor: pointer;
+    transition: 300ms;
+    background: none;
+    border: 0.5px solid var(--accent);
+    padding: 0.5em 2em;
+    border-radius: 50px;
+}
+
+button:hover {
+    background: var(--accent);
+    color: var(--bg-col);
+}
+
+.share {
+    display: flex;
+}
