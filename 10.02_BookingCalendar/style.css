@@ -1,0 +1,172 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Rubik";
+}
+
+:root {
+  --bg-col: #F1F5FC;
+  --main: #FFFFFF;
+  --accent: #203775;
+  --accent2: #496CB0;
+}
+
+body {
+  background-color: var(--bg-col);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 18pt;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 11pt
+}
+
+h5 {
+  font-size: 9pt;
+}
+
+p {
+  font-size: 8pt;
+}
+
+.subtitle {
+  font-weight: 500;
+}
+
+.card {
+  width: 420px;
+  background-color: var(--main);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0.3em 0.4em -0.2em var(--accent);
+}
+
+.card--header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 1.5em;
+  color: var(--main);
+  background-color: var(--accent);
+}
+
+.card--main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  padding: 1em 0;
+  max-height: 1000px;
+  opacity: 1;
+  transition: max-height 500ms linear, opacity 600ms;
+}
+
+.card--main.hidden {
+  padding: 0;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 500ms linear, opacity 600ms, padding 0ms 500ms;
+}
+
+.main--date {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  text-align: center;
+}
+
+.main--cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  padding-bottom: 1em;
+}
+
+.main--card {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+
+  width: 300px;
+  padding: 1em;
+  background-color: var(--accent);
+  color: var(--bg-col);
+  border-radius: 10px;
+  transition: 200ms linear;
+}
+
+.main--card:hover {
+  transform: translateX(-10px)
+}
+
+.main--card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em
+}
+
+.trainer--info {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.pfp {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  border: 2px solid var(--accent2);
+}
+
+.pfp-em {
+  background: center / cover no-repeat url(https://source.unsplash.com/random/?woman)
+}
+
+.pfp-er {
+  background: center / cover no-repeat url(https://source.unsplash.com/random/?man)
+}
+
+/* BUTTONS */ 
+
+button {
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.btn-icon {
+  background: none;
+  border: none;
+  opacity: 0.5;
+}
+
+.btn-icon:hover,
+.btn-icon:focus-visible {
+  opacity: 1;
+}
+
+.btn-action {
+  background: var(--main);
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.btn-action:hover,
+.btn-action:focus-visible,
+.btn-action.booked {
+  color: var(--main);
+  background: var(--accent2);
+}
+
+.inactive {
+  display: none;
+}
