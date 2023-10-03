@@ -1,0 +1,173 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Rubik";
+}
+
+:root {
+  --bg-col-1: #0C1425;
+  --bg-col-2: #11182F;
+  --card-bg: #090D1B;
+  --text: #707CA3;
+  --accent: #4E8D09;
+  --star: #FBBA52;
+}
+
+body {
+  background: linear-gradient(
+    to bottom right,
+    var(--bg-col-2),
+    var(--bg-col-1)
+  );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  padding-block: 2em;
+
+  min-height: 100vh;
+}
+
+@media screen and (max-width: 710px) {
+  body {
+    flex-direction: column;
+  }
+}
+
+h4 {
+  font-size: 9pt;
+}
+
+p {
+  font-size: 8pt;
+}
+
+.muted {
+  opacity: 0.7;
+  align-self: start;
+}
+
+.rightSide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+.card {
+  background-color: var(--card-bg);
+  color: var(--text);
+  padding: 0.75em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5em;
+  position: relative;
+
+  background-color: var(--bg-col-2);
+  color: var(--text);
+  cursor: pointer;
+
+  padding: 1em 0.5em 1em 1em
+}
+
+.message.activeMessage::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background-color: var(--accent);
+}
+
+.message:hover,
+.message.activeMessage {
+  filter: brightness(1.2)
+}
+
+.read--icon {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+}
+
+.read--icon[data-read = 'false'] {
+  background-color: var(--accent);
+}
+
+.read--icon[data-read = 'true'] {
+  background-color: var(--bg-col-1);
+}
+
+.searchbar {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+
+  background-color: var(--bg-col-2);
+  padding: 0.5em;
+}
+
+input {
+  background: none;
+  border: none;
+  color: var(--text);
+  padding: 0.5em;
+  width: 200px;
+}
+
+input:focus-visible {
+  outline: 2px solid var(--text);
+  border-radius: 5px;
+}
+
+input::placeholder {
+  color: var(--text);
+}
+
+.messageCount {
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 2.5em 4em
+}
+
+.countBadge {
+  text-align: center;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: var(--accent);
+  border-radius: 3px;
+  inset: 40px 0px 0px 110px;
+  z-index: 1;
+  color: var(--text);
+}
+
+.num {
+  color: white
+}
+
+/* BUTTONS */
+
+button {
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.options {
+  background: none;
+  border: none;
+  opacity: 0.5;
+}
+
+.options:hover {
+  opacity: 1;
+}
