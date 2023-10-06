@@ -1,0 +1,165 @@
+*, ::after, ::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik";
+}
+
+:root {
+  --bg-col: #263045;
+  --card-green-one: #0CD3CD;
+  --card-green-two: #32E398;
+  --card-red-one: #D61541;
+  --card-red-two: #EF2E89;
+  --accent: #0390ED;
+}
+
+body {
+  background-color: var(--bg-col);
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+}
+
+p {
+  font-size: 9pt;
+}
+
+.card {
+  width: 220px;
+  height: 220px;
+  background-color: #FFFFFF;
+  border-radius: 15px;
+  box-shadow: 0 0 0.5em 0.1em black;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 0.5em;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+.animated {
+  animation: 2s 1 fade-out-in;
+}
+
+.animated > svg {
+  fill: #FFFFFF;
+}
+
+@keyframes fade-out-in {
+  from {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  70% {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.success > .card--bg {
+  --card-color-one: var(--card-green-one);
+  --card-color-two: var(--card-green-two);
+}
+
+.error > .card--bg {
+  --card-color-one: var(--card-red-one);
+  --card-color-two: var(--card-red-two);
+}
+
+.card--bg {
+  width: 150%;
+  height: 180%;
+  position: absolute;
+  top: -450px;
+  left: -60px;
+  rotate: -15deg;
+
+  background: linear-gradient(
+    to top right,
+    var(--card-color-one),
+    var(--card-color-two) 40%
+  );
+  box-shadow: inset 0 0 0.5em;
+  opacity: 0;
+  transition: top 500ms, opacity 700ms;
+  z-index: 0;
+}
+
+.card--bg.sliding-in-out {
+  animation: 2s 1 slide-in-out;
+}
+
+.card--bg.sliding-in-out + svg {
+  fill: #FFFFFF;
+}
+
+@keyframes slide-in-out {
+  from {
+    opacity: 0;
+  }
+
+  25% {
+    top: -40px;
+    opacity: 1;
+  }
+
+  75% {
+    top: -40px;
+    opacity: 0;
+  }
+
+  to {
+    top: -450px;
+    opacity: 0;
+  }
+}
+
+.card > *:not(.card--bg) {
+  position: relative;
+  z-index: 1;
+}
+
+.card:hover > .card--bg {
+  top: -300px;
+  opacity: 1
+}
+
+svg {
+  margin-bottom: 2em;
+  transition: fill 500ms;
+}
+
+.card:hover > svg {
+  fill: #FFFFFF;
+}
+
+.action {
+  border: none;
+  background: none;
+  font-weight: bold;
+  color: var(--accent);
+  padding: 0.5em 1em;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 550px) {
+  body {
+    flex-direction: row;
+  }
+}
