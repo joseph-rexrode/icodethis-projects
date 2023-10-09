@@ -1,0 +1,59 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="card">
+    <h3>Closest stores</h3>
+    <div class="card--location">
+      <div class="location--postal">
+        <p class="subtitle">Postal Code</p>
+        <input type="text" name="postalCode" id="pCode">
+      </div>
+      <div class="useLocation">
+        <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 21C15.5 17.4 19 14.1764 19 10.2C19 6.22355 15.866 3 12 3C8.13401 3 5 6.22355 5 10.2C5 14.1764 8.5 17.4 12 21Z" stroke="#756BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="#756BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+        <p class="accent">Use my location</p>
+      </div>
+    </div>
+    <div class="card--stores">
+      <div class="card--store">
+        <div class="store--section store--section-top">
+          <p><b>POINT Bergen Sentrum</b></p>
+          <div class="status">CLOSED</div>
+        </div>
+        <div class="store--section">
+          <p>Strandagaten 55-57, 6007 Bergen</p>
+        </div>
+        <div class="store--section">
+          <svg width="16px" height="16px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 7V12L14.5 13.5M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#C1BEFB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+          <p>9:00 - 19:00</p>
+        </div>
+      </div>
+      <div class="card--store">
+        <div class="store--section store--section-top">
+          <p><b>POINT Bergen Sentrum</b></p>
+          <div class="status open">OPEN</div>
+        </div>
+        <div class="store--section">
+          <p>Strandagaten 55-57, 6007 Bergen</p>
+        </div>
+        <div class="store--section">
+          <svg width="16px" height="16px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 7V12L14.5 13.5M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#C1BEFB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+          <p>9:00 - 21:00</p>
+        </div>
+      </div>
+    </div>
+    <button class="card--action">View All</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

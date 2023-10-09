@@ -1,0 +1,155 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Rubik";
+}
+
+:root {
+  --bg: #1C1A39;
+  --card-bg: #121029;
+  --bg-accent1: #FE5DAC;
+  --bg-accent2: #AC65DE;
+  --accent-main: #756BFF;
+  --text: #C1BEFB;
+  --accent-button: #00BD9C;
+}
+
+body {
+  background: var(--bg);
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: -2;
+}
+
+h3 {
+  font-size: 12pt
+}
+
+p {
+  font-size: 8pt
+}
+
+.accent {
+  color: var(--accent-main);
+}
+
+.card {
+  width: 250px;
+  background: var(--card-bg);
+  color: var(--text);
+  border-radius: 10px;
+  position: relative;
+  padding: 1.5em;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.card::before {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  width: 250px;
+  height: 250px;
+  background-image: repeating-linear-gradient(
+    to bottom right,
+    var(--bg-accent1) 0%,
+    var(--bg-accent2) 10%,
+    var(--bg-accent1) 50%
+  );
+  background-size: cover;
+  border-radius: 0 25px;
+  animation: slideBackground 4s linear infinite;
+  top: -50px;
+  left: -50px
+}
+
+@keyframes slideBackground {
+  100% {
+    background-position: 250px 250px;
+  }
+}
+
+.card--location {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.location--postal {
+  flex: 0.7;
+}
+
+.useLocation {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+input {
+  width: 100%;
+  padding: 0.5em;
+  background: none;
+  border: 1px solid var(--accent-main);
+  border-radius: 3px;
+  color: var(--text);
+}
+
+.subtitle {
+  font-size: 8;
+  padding-block: 0.25em
+}
+
+
+.card--store,
+.card--stores {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.card--stores {
+gap: 1em;
+}
+
+.store--section {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.store--section-top {
+  justify-content: space-between;
+}
+
+.status {
+  padding: 0.25em 0.5em;
+  font-size: 6pt;
+  background-color: var(--bg-accent1);
+  text-align: center;
+  color: white;
+  border-radius: 50px;
+}
+
+.status.open {
+  background: var(--accent-button)
+}
+
+.card--action {
+  cursor: pointer;
+  transition: 200ms;
+  padding: 0.5em;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--accent-main);
+  border-radius: 5px;
+}
+
+.card--action:hover {
+  background: var(--accent-main)
+}
