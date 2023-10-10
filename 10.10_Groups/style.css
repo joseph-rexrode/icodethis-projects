@@ -1,0 +1,204 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Rubik";
+}
+
+:root {
+  --bg: #1A2136;
+  --card-main: #242C42;
+  --card-sample: #2F3650;
+  --accent: #8E66FF;
+  --text: #B2B9D8;
+}
+
+body {
+  background-color: var(--bg);
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+p {
+  font-size: 9pt;
+}
+
+.card {
+  width: 300px;
+  height: 350px;
+  background-color: var(--card-main);
+  border-radius: 15px;
+  padding: 1em;
+  color: var(--text);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.card--nav {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--bg);
+  padding: 0.5em;
+  border-radius: 10px;
+}
+
+.card--main {
+  display: flex;
+  flex-direction: column;
+  padding: 0em 1em;
+  margin-top: 1em;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.card--main-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  width: 100%;
+}
+
+.card--main-content {
+  margin-top: 0.5em;
+  padding-top: 0.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.groupElement {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.5em;
+  border-radius: 10px;
+  position: relative;
+  background-color: var(--bg);
+  transition: 200ms;
+  cursor: pointer;
+}
+
+.groupElement:hover {
+  transform: translateX(-7.5px);
+}
+
+.create {
+  background-color: var(--card-sample);
+}
+
+.add {
+  background-color: var(--bg);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  background: center / cover no-repeat url(https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2380&q=80);
+  border-radius: 50%;
+}
+
+.activeElement::after {
+  position: absolute;
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  top: 10px;
+  right: 10px;
+}
+
+::-webkit-scrollbar {
+  background: var(--text);
+  border-radius: 50px;
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 50px;
+}
+
+@media screen and (min-width: 550px) {
+  .card--group {
+    flex-direction: row;
+    width: 475px;
+    height: 325px;
+  }
+
+  .card--group > .card--nav {
+    flex-direction: column;
+  }
+
+  .card--group > .card--main {
+    overflow: auto;
+  }
+
+  .card--group .card--main-content {
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+  }
+
+  .card--group .groupElement {
+    flex-direction: column;
+    justify-content: center;
+    padding: 1em;
+    width: 110px;
+  }
+
+  .card--group .groupElement:hover {
+    transform: translateY(-5px);
+  }
+}
+
+/* BUTTONS */
+
+button {
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.nav--item {
+  background: none;
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+}
+
+.nav--item:hover,
+.nav--item.nav--item-active {
+  background: var(--card-main);
+}
+
+.layoutButtons {
+  display: flex;
+  background-color: var(--bg);
+  border: 2px solid var(--bg);
+  border-radius: 5px;
+}
+
+.layoutButton {
+  background: none;
+  border: none;
+  padding: 0.5em;
+  border-radius: 3px;
+}
+
+.layoutButton--active {
+  background-color: var(--card-main);
+}
