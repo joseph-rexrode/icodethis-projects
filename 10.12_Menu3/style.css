@@ -1,0 +1,172 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  color: var(--text);
+  font-family: "Rubik";
+}
+
+:root {
+  --bg: #F4F5FB;
+  --card: #FFFFFF;
+  --text: #323466;
+  --accentR: #FFEFF3;
+  --accentG: #EAFBEE;
+  --accentB: #EFF2FF;
+  --accentY: #FBF3E3;
+}
+
+body {
+  background-color: var(--bg);
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h4 {
+  font-size: 9pt;
+  letter-spacing: 1.5px;
+}
+
+h5 {
+  font-size: 8pt;
+}
+
+p {
+  font-size: 7pt;
+}
+
+.wrapper {
+  width: 650px;
+  max-width: 95%;
+  height: 350px;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 0.5em;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav--item {
+  display: flex;
+  align-items: center;
+  gap: 0.25em;
+  padding: 0.5em 0.75em;
+  border-radius: 5px;
+  border: none;
+  background: transparent;
+  transition: 200ms;
+  cursor: pointer;
+}
+
+.nav--item > svg {
+  transition: 300ms ease-in-out;
+}
+
+.nav--item:hover,
+.nav--item-active {
+  background: var(--card);
+}
+
+.nav--active {
+  rotate: 180deg;
+}
+
+.card {
+  max-width: 450px;
+  min-width: 368px;
+  background: var(--card);
+  border-radius: 15px;
+  box-shadow: 0 0.5em 1em -0.7em;
+  padding: 2em 1em;
+  display: flex;
+  gap: 0.5em;
+  transform: translateY(-200px);
+  opacity: 0;
+  max-height: 0px;
+  transition: 300ms ease-in-out;
+  position: absolute;
+  top: 50px;
+}
+
+.card--active {
+  max-height: 1000px;
+  transform: translate(0);
+  opacity: 1;
+}
+
+.card--section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  flex: 1;
+}
+
+.card--section-item {
+  display: flex;
+  gap: 1em;
+  border-radius: 10px;
+  padding: 0.5em;
+  max-width: 210px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card--section-item > svg {
+  min-width: 30px;
+}
+
+.card--section-item:hover .item--bg {
+  scale: 10;
+}
+
+.card--section-item *:not(.item--bg) {
+  position: relative;
+}
+
+.item--bg {
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  background-color: var(--item-col, red);
+  z-index: 0;
+  transition: 400ms ease-in-out;
+}
+
+.item--bg-red {
+  --item-col: var(--accentR);
+}
+
+.item--bg-blue {
+  --item-col: var(--accentB);
+}
+
+.item--bg-green {
+  --item-col: var(--accentG);
+}
+
+.item--bg-yellow {
+  --item-col: var(--accentY);
+}
+
+@media screen and (min-width: 700px) {
+  .card--products {
+    translate: -240px;
+  }
+  .card--solutions {
+    translate: -160px;
+  }
+  .card--resources {
+    translate: -75px;
+  }
+}
