@@ -1,0 +1,119 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  color: var(--text);
+  font-family: "Rubik";
+}
+
+:root {
+  --bg: #19223E;
+  --muted: #212C4D;
+  --text: #FFFFFF;
+  --accent1: #7A3AF4;
+  --accent2: #CA61C3;
+  --accent3: #558C8C;
+}
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  
+  min-height: 100vh;
+  background-color: var(--bg);
+  padding: 3em 2em;
+}
+
+.storage {
+  font-size: 24pt;
+}
+
+.card {
+  --_accent: var(--accent);
+  width: 250px;
+  height: 325px;
+  background: conic-gradient(
+    var(--muted) 0deg,
+    var(--muted) 0deg
+  );
+  border-radius: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card--basic {
+  --accent: var(--accent1);
+}
+
+.card--standard {
+  --accent: var(--accent2);
+}
+
+.card--premium {
+  --accent: var(--accent3);
+}
+
+.card--content {
+  width: 94%;
+  height: 95%;
+  background: var(--bg);
+  border-radius: 13px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.card--content-main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1.5;
+  padding-block: 2em 1em;
+  border-bottom: 1px solid var(--muted)
+}
+
+.card--content-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  padding-top: 1em;
+}
+
+.detail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+
+@media screen and (min-width: 750px) {
+  body {
+    flex-direction: row;
+  }
+}
+
+/* BUTTONS */ 
+
+button {
+  cursor: pointer;
+  transition: 200ms;
+  border: 1px solid var(--_accent);
+  background: none;
+  padding: 0.5em 2em;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: var(--_accent);
+}
