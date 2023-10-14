@@ -1,0 +1,177 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Rubik";
+}
+
+:root {
+  --bg: #131829;
+  --accent1: #FE7453;
+  --accent2: #F4882C;
+  --text: #FFFFFF;
+}
+
+body {
+  background-color: var(--bg);
+  min-height: 100vh;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+}
+
+p {
+  font-size: 8pt;
+}
+
+.main--top,
+.main--bot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+}
+
+.card {
+  width: 230px;
+  background: linear-gradient(
+    to right,
+    var(--accent1),
+    var(--accent2)
+  );
+  padding: 2em;
+  border-radius: 15px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 0.75em;
+}
+
+.useCase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+.useCase--actions {
+  display: flex;
+}
+
+.main--bot {
+  gap: 1.5em;
+}
+
+.progressbar {
+  height: 4px;
+  width: 230px;
+  background: linear-gradient(
+    to right,
+    var(--accent1),
+    var(--accent2)
+  );
+  border-radius: 20px;
+  position: relative;
+}
+
+.progressbar--pointer {
+  position: relative;
+  width: 15px;
+  aspect-ratio: 1;
+  background: var(--text);
+  border-radius: 50%;
+  top: -5px;
+  left: 0px;
+  cursor: pointer;
+}
+
+.progressCounter {
+  height: 25px;
+  width: 40px;
+  background: var(--text);
+  border-radius: 5px;
+  position: absolute;
+  top: 25px;
+  left: -13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+
+.progressCounter:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-bottom-color: var(--text);
+  top: -15px;
+  left: 10px;
+}
+
+.amount {
+  color: var(--bg);
+}
+
+.progress--indicators {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+@media screen and (min-width: 500px) {
+  .main--top {
+    flex-direction: row;
+  }
+}
+
+
+/* BUTTONS */
+
+button {
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.action {
+  padding: 0.75em 1.5em;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+}
+
+.action:hover {
+  transform: translateX(20px);
+}
+
+.action:active {
+  transform: translate(20px, 3px)
+}
+
+.useCase--action {
+  padding: 0.75em 1em;
+  border: 1px solid var(--text);
+  background: transparent;
+  color: var(--text);
+  font-weight: bold;
+}
+
+.useCase--action:first-of-type {
+  border-radius: 5px 0 0 5px;
+  border-right: none;
+}
+
+.useCase--action:last-of-type {
+  border-radius: 0 5px 5px 0;
+  border-left: none;
+}
+
+.active {
+  background: var(--text);
+  color: var(--bg);
+}
+
