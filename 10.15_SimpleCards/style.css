@@ -1,0 +1,120 @@
+*, ::after, ::before {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Rubik";
+}
+
+:root {
+  --bg: #F9BF2E;
+  --card: #222D85;
+  --card-muted: #111C75;
+  --accent1: #F9BF2E;
+  --accent2: #5399FF;
+  --text: #FFFFFF;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  padding-block: 2em;
+  
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 3em;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+  background-color: var(--card);
+  padding: 1em;
+  border-radius: 15px;
+  box-shadow: 0 1em 1em -1em black;
+}
+
+.card:first-of-type {
+  width: 250px
+}
+
+.card--main {
+  display: flex;
+}
+
+.pfp,
+.pfp--default {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid var(--card);
+  margin-right: -15px
+}
+
+.pfp--default {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--text);
+  color: var(--card);
+}
+
+.card--about {
+  width: 250px
+}
+
+.card--header {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 1em;
+}
+
+.muted {
+  padding: 0.5em;
+  background-color: var(--card-muted);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 0.5em
+}
+
+.bar {
+  width: 250px;
+  height: 6px;
+  background: linear-gradient(
+    to right,
+    var(--accent2) 30%,
+    var(--accent1) 30%
+  );
+  border-radius: 50px;
+}
+
+.circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.yellow {
+  background-color: var(--accent1);
+}
+
+.blue {
+  background-color: var(--accent2);
+}
+
+.link {
+  cursor: pointer;
+  background: none;
+  color: var(--text);
+  border: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
