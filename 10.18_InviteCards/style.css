@@ -1,0 +1,320 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  --bg: #EEF1F0;
+  --accent1: #9181FF;
+  --accent2: #EE9CE6;
+  --accent3: #F897C0;
+  --accent-muted: #DCE0F5;
+  --text: #201943;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+p {
+  font-size: 9pt;
+}
+
+.bgCircle1,
+.bgCircle2 {
+  position: absolute;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.bgCircle1 {
+  width: 60%;
+  max-width: 400px;
+  background: radial-gradient(
+    circle at center,
+    var(--accent2) 10%,
+    var(--accent1) 50%
+  );
+  top: 0;
+  left: 0;
+}
+
+.bgCircle2 {
+  width: 50%;
+  max-width: 300px;
+  background: radial-gradient(
+    circle at center,
+    var(--accent3) 30%,
+    var(--accent2) 50%
+  );
+  bottom: 0;
+  right: 0;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  backdrop-filter: blur(10px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  background: rgb(255, 255, 255, 0.7);
+  border-radius: 5px;
+  padding: 1em;
+  position: relative;
+  transition: 500ms;
+  overflow: hidden;
+}
+
+.card > * {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  transition: 500ms;
+}
+
+#home {
+  width: 225px;
+  height: 250px;
+}
+
+#team {
+  width: 500px;
+  max-width: 90%;
+  aspect-ratio: 1.5;
+}
+
+#board {
+  width: 250px;
+  height: 300px;
+}
+
+#org {
+  width: 500px;
+  max-width: 95%;
+  aspect-ratio: 1.5;
+}
+
+.card--home {
+  padding-bottom: 1em;
+}
+
+.card--team {
+  padding-block: 1em;
+}
+
+.card--board {
+  justify-content: space-between;
+  padding-block: 1em;
+}
+
+.card--board > *:not(.back) {
+  width: 80%;
+}
+
+.card--board > h3 {
+  margin-left: 1.5em
+}
+
+.card--board > .email {
+  flex: 0;
+}
+
+.team--main {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  overflow-y: scroll;
+}
+
+.team--main-header {
+  display: flex;
+  gap: 0.5em;
+}
+
+.team--main-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  width: 100%;
+}
+
+.team--main-input {
+  display: flex;
+  gap: 0.5em;
+  width: 100%
+}
+
+.email,
+.team--main-header p:first-of-type {
+  flex: 2;
+}
+
+.team--main-input > select,
+.team--main-header p:last-of-type {
+  flex: 1.25;
+}
+
+.email,
+select {
+  padding: 0.5em
+}
+
+.invite--type {
+  padding: 0.5em 1em;
+  background-color: var(--accent-muted);
+  display: flex;
+  justify-content: space-between;
+  border-radius: 50px;
+  width: 250px;
+  position: relative;
+}
+
+.invite--type-selected {
+  position: absolute;
+  background: white;
+  width: 110px;
+  height: 80%;
+  top: 10%;
+  left: 1%;
+  border-radius: 50px;
+  transition: 500ms;
+}
+
+#invite--email {
+  left: 1%
+}
+
+#invite--link {
+  left: 55%
+}
+
+.card--org {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 1em 3em
+}
+
+.card--org > *:not(.back):not(.invite--type) {
+  width: 90%;
+}
+
+.linkSection {
+  width: 90%;
+  position: relative;
+}
+
+.linkSection input {
+  padding: 0.75em;
+  width: 100%;
+}
+
+.linkSection,
+.emailSection {
+  max-height: 1000px;
+  opacity: 1;
+}
+
+.hidden {
+  opacity: 0;
+  max-height: 0;
+}
+
+/* BUTTONS */
+
+button {
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.back {
+  position: absolute;
+  top: 12px;
+  left: 5px;
+  background: none;
+  border: none;
+}
+
+.back:hover {
+  scale: 1.1;
+}
+
+.home--action,
+.send,
+.sendInvite,
+.copyLink {
+  width: 75%;
+  padding-block: 0.5em;
+  background-color: transparent;
+  border: 2px solid var(--accent1);
+  border-radius: 5px;
+  color: var(--text)
+}
+
+.home--action:hover,
+.send:hover,
+.sendInvite:hover,
+.copyLink:hover {
+  color: white;
+  background-color: var(--accent1);
+}
+
+.addMore {
+  background: none;
+  border: none;
+  color: var(--accent1);
+  align-self: start;
+}
+
+.addMore:hover {
+  filter: brightness(0.7)
+}
+
+.send {
+  width: auto;
+  align-self: start;
+  padding: 0.5em 2em;
+  margin-top: 0.5em
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.invite--email,
+.invite--link {
+  background: none;
+  border: none;
+  font-size: 9pt;
+  position: relative;
+  margin-right: -0.25em;
+}
+
+.invite--email {
+  margin-left: -0.5em;
+}
+
+.copyLink {
+  width: auto;
+  position: absolute;
+  right: 3px;
+  top: 18px;
+  background-color: white;
+}

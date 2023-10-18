@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invite Cards</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bgCircle1"></div>
+  <div class="bgCircle2"></div>
+  <div class="wrapper">
+    <div class="card" id="home">
+      <div class="card--home">
+        <h3>Invites</h3>
+        <button class="home--action" id="action--team">Invite to team</button>
+        <button class="home--action" id="action--board">Invite to board</button>
+        <button class="home--action" id="action--org">Invite to org</button>
+      </div>
+      <div class="card--team">
+        <button class="back">
+          <svg width="24px" height="24px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#201943" d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"></path><path fill="#201943" d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"></path></g></svg>
+        </button>
+        <h3>Invite to team</h3>
+        <div class="team--main">
+          <div class="team--main-header">
+            <p>Team member</p>
+            <p>Permission</p>
+          </div>
+          <div class="team--main-inputs">
+            <div class="team--main-input">
+              <input type="text" class="email" placeholder="Email address">
+              <select name="permission">
+                <option value="Read Only">Read Only</option>
+                <option value="Read & Edit">Read & Edit</option>
+                <option value="Admin">Admin</option>
+              </select>
+            </div>
+          </div>
+          <button class="addMore">+ <u>Add more</u></button>
+          <button class="send">Send Invites</button>
+        </div>
+      </div>
+      <div class="card--board">
+        <button class="back">
+          <svg width="24px" height="24px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#201943" d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"></path><path fill="#201943" d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"></path></g></svg>
+        </button>
+        <h3>Invite to board</h3>
+        <input type="text" class="email" placeholder="email@address.com">
+        <div class="section">
+          <h4>Invite with link</h4>
+          <p>Anyone with link can view your board.</p>
+          <button class="addMore"><u>Create Link</u></button>
+        </div>
+        <button class="sendInvite">Send Invitation</button>
+      </div>
+      <div class="card--org">
+        <button class="back">
+          <svg width="24px" height="24px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#201943" d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"></path><path fill="#201943" d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"></path></g></svg>
+        </button>
+        <h3>Invite people</h3>
+        <p>All invited people will be granted access to all sites within your organization</p>
+        <div class="invite--type">
+          <div class="invite--type-selected" id="invite--email"></div>
+          <button class="invite--email">Invite with email</button>
+          <button class="invite--link">Invite with link</button>
+        </div>
+        <div class="emailSection">
+          <input type="text" class="email" placeholder="Email address">
+          <button class="send">Send Invite</button>
+        </div>
+        <div class="linkSection hidden">
+          <p>Add to team</p>
+          <input readonly type="text" name="link" value="https://examplelinktoshare/my-team/jid984352394">
+          <button class="copyLink">Copy Link</button>
+        </div>
+        <p>People with organization email will be able to join with a link. <u>Deactivate</u> it if you don't need it.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
