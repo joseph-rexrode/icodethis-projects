@@ -1,0 +1,128 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik";
+}
+
+:root {
+  --bg: #F7F8FC;
+  --accent: #306BF4;
+  --text: #101830;
+  --card: #FFFFFF;
+}
+
+body {
+  background-color: var(--bg);
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  min-height: 100vh;
+  padding-block: 2em;
+}
+
+h4 {
+  font-size: 9pt;
+}
+
+p {
+  font-size: 8pt;
+}
+
+.menu {
+  display: flex;
+}
+
+.menu--item {
+  position: relative;
+}
+
+.menu--item-content {
+  width: 250px;
+  max-height: 1000px;
+  opacity: 1;
+  background-color: var(--card);
+  border-radius: 5px;
+  box-shadow: 0 0 1em -0.5em var(--accent);
+  position: absolute;
+  left: 9px;
+  overflow: hidden;
+}
+
+.content--item {
+  display: flex;
+  gap: 1em;
+  padding: 1em;
+  cursor: pointer;
+  transition: 500ms;
+  opacity: 1;
+}
+
+.content--item:hover {
+  background-color: var(--accent);
+  color: var(--bg);
+}
+
+.content--item:hover #SVGRepo_iconCarrierStroke path,
+.content--item:hover circle {
+  stroke: var(--card);
+}
+
+.content--item:hover .update {
+  fill: var(--card);
+}
+
+.menu--item-content.hidden {
+  animation: hide 1s linear;
+  width: 0px;
+  max-height: 0px;
+}
+
+.menu--item-content.hidden .content--item {
+  opacity: 0
+}
+
+@keyframes hide {
+  from {
+    width: 250px;
+    max-height: 1000px;
+  }
+
+  40% {
+    width: 250px;
+    max-height: 339px;
+  }
+
+  60% {
+    width: 50px;
+    max-height: 339px;
+  }
+
+  to {
+    max-height: 0px;
+    width: 0px;
+  }
+}
+
+
+/* BUTTONS */
+
+.menu--item-action {
+  cursor: pointer;
+  border: none;
+  background: none;
+  width: 75px;
+  display: flex;
+  justify-content: center;
+  padding: 0.25em 0.5em;
+}
+
+.menu--item-action:hover,
+.menu--item-action.button--active {
+  font-weight: bold;
+}
+
+.button--active > svg {
+  rotate: 180deg;
+  translate: 0 -8px;
+}
