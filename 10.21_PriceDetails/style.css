@@ -1,0 +1,149 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+  font-family: "Rubik";
+}
+
+:root {
+  --bg: #1A1B38;
+  --accent: #3457DC;
+  --card: #FFFFFF;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2em;
+}
+
+h2 {
+  font-size: 14pt;
+  max-width: 220px;
+}
+
+.subtitle {
+  opacity: 0.8;
+  max-width: 270px;
+  padding-bottom: 1em;
+}
+
+h2, .subtitle {
+  color: var(--card);
+  text-align: center;
+}
+
+h3 {
+  font-size: 12pt;
+}
+
+p, li {
+  font-size: 10pt;
+}
+
+.bg-circle1,
+.bg-circle2 {
+  position: absolute;
+}
+
+.bg-circle1,
+.bg-circle2 {
+  width: 550px;
+  height: 550px;
+  border-radius: 100%;
+  background: var(--accent);
+  z-index: -1;
+  top: 75px;
+  transition: 1000ms;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1.5em;
+}
+
+.card {
+  background-color: var(--card);
+  padding: 1em 2em;
+  border-radius: 5px;
+  width: 350px;
+  animation: slidein 750ms ease-in;
+}
+
+@keyframes slidein {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card--item {
+  opacity: 0;
+  transform: translateY(-5px);
+}
+
+.card--item:first-of-type {
+  border-bottom: 0.5px solid var(--bg);
+}
+
+ul {
+  padding: 0 0.75em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em
+}
+
+li {
+  padding-left: 0.5em;
+  opacity: 0;
+  transform: translateY(-5px);
+}
+
+li::marker {
+  content: url(checkmark-svgrepo-com.svg);
+}
+
+/* LARGE SCREENS */
+
+@media screen and (min-width: 750px) {
+  .cards {
+    flex-direction: row;
+  }
+  .bg-circle1 {
+    width: 350px;
+    height: 350px;
+    top: 30px;
+    right: 30px
+  }
+  .bg-circle2 {
+    width: 200px;
+    height: 200px;
+    top: 300px;
+    left: 50px;
+  }
+}
+
+/* BUTTONS */
+
+.action {
+  cursor: pointer;
+  transition: 200ms;
+  padding: 0.25em 1em;
+  border: 2px solid var(--accent);
+  background: none;
+  color: var(--accent);
+  border-radius: 50px;
+  margin-bottom: 1em
+}
+
+.action:hover {
+  color: var(--card);
+  background: var(--accent)
+}
