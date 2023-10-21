@@ -107,7 +107,7 @@ li {
 }
 
 li::marker {
-  content: url(checkmark-svgrepo-com.svg);
+  content: url(https://raw.github.com/joseph-rexrode/icodethis-projects/main/10.21_PriceDetails/checkmark-svgrepo-com.svg?sanitize=true);
 }
 
 /* LARGE SCREENS */
