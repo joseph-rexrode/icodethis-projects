@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message Box</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="card" data-closed="true">
+    <div class="card--header">
+      <h3>Send us a message</h3>
+      <svg class="minus" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 12L18 12" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+      <svg class="plus" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 12H20M12 4V20" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+    </div>
+    <div class="card--content">
+      <div class="card--content-item">
+        <h5>Your Name</h5>
+        <input type="text" name="name" placeholder="Name">
+      </div>
+      <div class="card--content-item">
+        <h5>Email Address</h5>
+        <input type="email" name="email" placeholder="Email@address.com">
+      </div>
+      <div class="card--content-item">
+        <h5>What can we do for you?</h5>
+        <textarea name="details" placeholder="Type your message here"></textarea>
+      </div>
+      <div class="card--content-item">
+        <h5>Attachments</h5>
+        <label for="files">
+          <p>Upload Files</p>
+          <input type="file" name="files" id="files" style="display: none">
+        </label>
+      </div>
+      <button class="action">Send message</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

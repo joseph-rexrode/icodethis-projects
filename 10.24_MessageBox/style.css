@@ -1,0 +1,139 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Roboto";
+}
+
+:root {
+  --bg: #F5F7FC;
+  --card: #FFFFFF;
+  --accent: #EC8E8E;
+  --text: #3D455F;
+}
+
+h3 {
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
+h5 {
+  font-size: 0.55rem;
+  color: var(--text);
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 0.75rem;
+  color: var(--text);
+  opacity: 0.8;
+}
+
+body {
+  background: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: 250px;
+  background-color: var(--card);
+  border-radius: 7.5px;
+  overflow: hidden;
+  box-shadow: 0.25em 0.25em 0.5em -0.3em var(--text);
+}
+
+.card[data-closed="true"] {
+  .card--content {
+    max-height: 0px;
+    opacity: 0;
+    padding-block: 0;
+  }
+  .minus {
+    display: none;
+  }
+  .plus {
+    display: block
+  }
+}
+
+.minus {
+  display: block;
+}
+
+.plus {
+  display: none;
+}
+
+.card--header {
+  background-color: var(--accent);
+  color: var(--card);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75em 1em;
+  cursor: pointer;
+}
+
+.card--content {
+  padding: 1em 1em 2em 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+  max-height: 1000px;
+  opacity: 1;
+  transition: max-height 500ms, opacity 400ms, padding 200ms linear;
+}
+
+.card--content-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+}
+
+label {
+  cursor: pointer;
+  padding: 0.5em;
+  border: 1.5px dashed lightgrey;
+  border-radius: 2.5px;
+  display: flex;
+  justify-content: center;
+  background: rgba(0,0,0,0);
+}
+
+label:hover {
+  background: rgba(0,0,0,0.1)
+}
+
+input,
+textarea {
+  border: 1.5px solid lightgrey;
+  border-radius: 2.5px;
+  padding: 0.5em;
+  font-size: 0.65rem;
+  resize: none;
+}
+
+*:focus {
+  outline: 1.5px solid var(--accent)
+}
+
+textarea {
+  height: 75px
+}
+
+.action {
+  cursor: pointer;
+  transition: 200ms;
+  padding-block: 1em;
+  border: none;
+  border-radius: 2.5px;
+  font-size: 0.65rem;
+  background-color: var(--accent);
+  color: var(--card);
+}
+
+.action:hover {
+  filter: brightness(1.1);
+}
