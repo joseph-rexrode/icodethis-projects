@@ -1,0 +1,270 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Rubik";
+}
+
+:root {
+  --bg: #3D3C45;
+  --bg-wrapper: #393841;
+  --bg-card: #42414B;
+  --accent1: #E78C45;
+  --accent2: #F49A76;
+  --accent3: #75ccb8;
+  --accent4: #769ACB;
+  --accent5: #BD75CB;
+}
+
+body {
+  background-color: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h4 {
+  color: white;
+  font-size: 11pt;
+}
+
+p {
+  color: white;
+  opacity: 0.6;
+  font-size: 9pt;
+}
+
+.wrapper {
+  width: 350px;
+  height: 475px;
+  background-color: var(--bg-wrapper);
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: start;
+  padding: 2em 3em;
+  position: relative;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.nav--item {
+  cursor: pointer;
+}
+
+#profile {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background: center / cover no-repeat url(https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=2370&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  outline: 10px solid var(--bg);
+  animation: pulseOutline 1s linear alternate-reverse infinite;
+}
+
+#profile.active {
+  animation: none;
+}
+
+@keyframes pulseOutline {
+  from {
+    outline: 10px solid var(--bg);
+  }
+  to {
+    outline: 1px solid var(--bg);
+  }
+}
+
+#notifications {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+}
+
+#notifications:hover,
+#notifications.active {
+  background-color: var(--bg);
+}
+
+.card--notifications,
+.card--profile {
+  position: absolute;
+  width: calc(100% - 6em);
+  height: 360px;
+  top: 90px;
+  background-color: var(--bg-card);
+  border-radius: 7px;
+  scale: 0;
+  transition: scale 500ms;
+}
+
+.card--notifications::after,
+.card--profile::after {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-bottom-color: var(--bg-card);
+  top: -18px;
+}
+
+.card--notifications::after {
+  left: 173px;
+}
+
+.card--profile::after {
+  left: 228px;
+}
+
+.card--notifications {
+  padding: 1em;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile--header {
+  padding: 1em;
+  display: flex;
+  gap: 0.5em;
+  border-bottom: 2px solid var(--bg);
+}
+
+.pfp {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background: center / cover no-repeat url(https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=2370&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
+}
+
+.profile--info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+}
+
+.profile--others {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  border-bottom: 2px solid var(--bg);
+}
+
+.profile--other {
+  display: flex;
+  gap: 0.5em;
+  width: 100%;
+  padding: 0.5em 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.profile--actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+.pfp-mini {
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile--other:nth-of-type(1) {
+  .pfp-mini {
+    background-color: var(--accent3);
+  }
+}
+
+.profile--other:nth-of-type(1):hover {
+  background-color: var(--accent3);
+}
+
+.profile--other:nth-of-type(2) {
+  .pfp-mini {
+    background-color: var(--accent4);
+  }
+}
+
+.profile--other:nth-of-type(2):hover {
+  background-color: var(--accent4);
+}
+
+.profile--other:nth-of-type(3) {
+  .pfp-mini {
+    background-color: var(--accent5);
+  }
+}
+
+.profile--other:nth-of-type(3):hover {
+  background-color: var(--accent5);
+}
+
+
+/* BUTTONS */
+
+button {
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.settings {
+  border: none;
+  border-radius: 2px;
+  padding: 0.5em 0.75em;
+  background: linear-gradient(
+    to bottom right,
+    var(--accent2),
+    var(--accent1));
+  color: white;
+  font-size: 9pt;
+  background-position: left;
+}
+
+.settings:hover {
+  background-position: 115px
+}
+
+.add {
+  background: none;
+  border: 2px dashed var(--bg-wrapper);
+  color: white;
+  font-size: 20pt;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+
+.add:hover {
+  border-style: solid;
+  color: var(--accent2);
+  rotate: 90deg;
+}
+
+.signout {
+  border: 2px solid var(--bg-wrapper);
+  background: none;
+  color: white;
+  padding: 0.5em 2em;
+  border-radius: 5px;
+}
+
+.signout:hover {
+  color: var(--accent2);
+  background-color: var(--bg);
+}
