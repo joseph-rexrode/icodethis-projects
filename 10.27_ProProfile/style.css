@@ -1,0 +1,126 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Rubik";
+}
+
+:root {
+  --bg: #28223F;
+  --card: #231E39;
+  --card-secondary: #1F1A36;
+  --accent-main: #02BFCB;
+  --accent-muted: #B2B8CC;
+  --accent-secondary: #FFBB0C;
+}
+
+body {
+  background-color: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-muted);
+}
+
+h3 {
+  font-size: 12pt;
+}
+
+p {
+  font-size: 10pt;
+}
+
+.card {
+  width: 300px;
+  display: flex;
+  flex-direction: column; 
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1em 1.5em -1em black;
+}
+
+.card--top {
+  background: var(--card);
+  padding: 2.5em 1em 1.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.65em;
+  position: relative;
+}
+
+.proIcon {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  background: var(--accent-secondary);
+  color: var(--card-secondary);
+  font-weight: bold;
+  font-size: 10pt;
+  letter-spacing: 1px;
+  padding: 0.25em 0.5em;
+  border-radius: 3px;
+}
+
+.pfp {
+  width: 75px;
+  height: 75px;
+  border-radius: 100%;
+  background: center / cover no-repeat url(pfp3.png);
+  border: 5px solid transparent;
+  outline: 1px solid var(--accent-main)
+}
+
+.subtitle {
+  font-size: 9pt;
+}
+
+.card--bottom {
+  background: var(--card-secondary);
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em
+}
+
+.card--skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.card--skill {
+  font-size: 9pt;
+  padding: 0.5em 0.65em;
+  border: 2px solid var(--bg);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.card--skill:hover {
+  color: var(--accent-main);
+  border-color: var(--accent-main);
+}
+
+/* BUTTONS */ 
+
+button {
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.card--action {
+  padding: 0.75em 2em;
+  border-radius: 3px;
+  border: 1.5px solid var(--accent-main);
+  background: none;
+  color: var(--accent-main);
+}
+
+.card--action:hover,
+#follow[data-following="true"] {
+  background: var(--accent-main);
+  color: white;
+}
