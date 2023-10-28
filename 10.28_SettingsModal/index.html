@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings Modal</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="card">
+    <div class="card--header">
+      <h3>Settings</h3>
+    </div>
+    <div class="card--main">
+      <div class="card--main-top">
+        <h4>Language</h4>
+        <p>Let us know which language you're most comfortable using. You can change it at any time.</p>
+        <select name="languages" id="languages">
+
+        </select>
+      </div>
+      <div class="card--main-bottom">
+        <div class="card--main-bottom-section">
+          <div>
+            <h4>Autoplay videos</h4>
+            <p>Choose if you want to autoplay on your browser</p>
+          </div>
+          <button class="btn--toggle" data-toggle="off"></button>
+        </div>
+        <div class="card--main-bottom-section">
+          <div>
+            <h4>Show profile photos</h4>
+            <p>Choose whether to show or hide profile photos of other members</p>
+          </div>
+          <button class="btn--toggle" data-toggle="off"></button>
+        </div>
+        <div class="card--main-actions">
+          <button class="save">Save</button>
+          <button class="cancel">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
