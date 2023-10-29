@@ -1,0 +1,242 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Rubik";
+}
+
+:root {
+  --bg: #0D1012;
+  --card: #10181f;
+  --text: #B9B9B9;
+  --accent1: rgb(82, 149, 35);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h3 {
+  font-size: 13pt;
+  transition: 500ms;
+  opacity: 1;
+  max-height: 1000px;
+}
+
+h5 {
+  font-size: 9pt;
+}
+
+p {
+  font-size: 8pt;
+  width: 200px;
+  transition: 500ms;
+  opacity: 1;
+  max-height: 1000px;
+}
+
+.card {
+  background: var(--card);
+  padding: 1em;
+  box-shadow: 0 0 1em 0.2em black;
+  width: min(650px, 90%);
+  overflow: hidden;
+  scale: 0.8;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  transition: 500ms;
+}
+
+.treeSVG {
+  transition: 300ms;
+}
+
+.card[data-joined = "true"] {
+  
+  .card--bottom {
+    padding-block: 0;
+  }
+
+  .treeSVG {
+    width: 96px;
+    height: 96px
+  }
+
+  .member {
+    opacity: 0;
+    max-height: 0px;
+    transition: 400ms;
+  }
+}
+
+.card *:not(.actionbg) {
+  z-index: 1;
+}
+
+.card--top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25em;
+  width: 100%;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.card--bottom {
+  padding-block: 1.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.members {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1em;
+  width: 100%;
+  transition: 500ms;
+  opacity: 1;
+  transform: none;
+}
+
+.member {
+  background-color: var(--bg);
+  padding: 2em 1.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+  border-radius: 5px;
+  max-height: 1000px;
+}
+
+.pfp {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+
+.amountOfTrees {
+  font-size: 8pt;
+  color: var(--accent1);
+  border: 1.5px solid var(--accent1);
+  padding: 0.25em 0.75em;
+  border-radius: 50px;
+}
+
+.seed {
+  height: 50px;
+  width: 70px;
+  background-color: rgba(82, 149, 35, 0.5);
+  border-radius: 25% 100%;
+  position: absolute;
+  top: 125px;
+  animation: slowRotate 10s linear infinite, fadeIn 1s linear;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(90px) scale(0);
+  border: 2px solid var(--accent1);
+}
+
+.seed--pfp {
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  animation: slowRotatePic 10s linear infinite;
+}
+
+.seed > p {
+  animation: slowRotatePic 10s linear infinite;
+  font-weight: bold;
+}
+
+@keyframes slowRotatePic {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes slowRotate {
+  from {
+    transform: rotate(0deg) translate(90px);
+  }
+
+  to {
+    transform: rotate(360deg) translate(90px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .members {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card {
+    height: 590px;
+  }
+}
+
+/* BUTTONS */ 
+
+.action {
+  cursor: pointer;
+  transition: 200ms;
+  width: 125px;
+  padding-block: 0.65em;
+  background: none;
+  color: var(--accent1);
+  border: 1.5px solid var(--accent1);
+  border-radius: 5px;
+  font-size: 9pt;
+  position: relative;
+  z-index: 0;
+}
+
+.action:hover {
+  background: var(--accent1);
+  color: white;
+}
+
+.actionbg {
+  content: '';
+  position: absolute;
+  width: 650px;
+  height: 650px;
+  background: var(--accent1);
+  border-radius: 100%;
+  z-index: 0;
+  transform: translateY(230px);
+  opacity: 0;
+  transition: 400ms ease-in-out;
+  align-self: center;
+}
+
+.card--bottom:has(.action:hover) .actionbg {
+  transform: translateY(70px);
+  opacity: 1;
+}
