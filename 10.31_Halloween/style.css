@@ -1,0 +1,154 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  --bg: #29316E;
+  --text-main: #283338;
+  --text-sec: #7B939F;
+  --card: #FFFFFF;
+}
+
+body {
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 1em;
+  padding: 2em 1em;
+}
+
+.leftSide,
+.rightSide {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.leftSide {
+  flex: 1;
+  max-width: 225px;
+}
+
+.rightSide {
+  flex: 1.5;
+  max-width: 400px;
+}
+
+.action {
+  padding: 1em;
+  border-radius: 7px;
+  border: none;
+  font-size: 12pt;
+  font-weight: bold;
+  box-shadow: 0 0 1em -0.3em black;
+  position: relative;
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.login {
+  background: top / cover no-repeat url("https://t3.ftcdn.net/jpg/01/79/66/60/360_F_179666097_4NZIE4C94hfp9eP4b8fCVikYyXgAbKBW.jpg");
+  background-position: 0 40%;
+  color: white;
+}
+
+.categories {
+  background: center / cover no-repeat url("https://wallpapers.com/images/hd/witch-background-w77v8llto7dxyhs5.jpg");
+  background-position: 0 53%;
+  color: white;
+  text-align: end;
+}
+
+img {
+  width: 100%;
+}
+
+.leftSide img {
+  height: 115px
+}
+
+.leftSide h3 {
+  color: white;
+}
+
+.rightSide--article {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.rightSide--article-label {
+  background-color: white;
+  padding: 1.5em;
+  display: flex;
+  gap: 1em;
+  position: relative;
+}
+
+h4 {
+  font-size: 13pt;
+  text-transform: uppercase;
+}
+
+p {
+  color: var(--text-sec)
+}
+
+.rightSide h3 {
+  color: var(--bg)
+}
+
+h3 span {
+  font-size: 24pt;
+}
+
+@media screen and (max-width: 625px) {
+  body {
+    flex-direction: column;
+    padding: 2em 5em
+  }
+  .rightSide {
+    flex: 1;
+  }
+  .leftSide,
+  .rightSide {
+    max-width: 250px;
+  }
+}
+
+.spider {
+  position: absolute;
+  left: 10px;
+  top: 7px;
+  rotate: -20deg
+}
+
+.pumpkin,
+.spider2 {
+  position: absolute;
+  right: 10px;
+  top: 7px;
+  rotate: 20deg
+}
+
+.spider2 {
+  right: -10px
+}
+
+.action:hover,
+.leftSide--article:hover {
+  scale: 1.1
+}
+
+.leftSide--article {
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.leftSide--article:hover h3 {
+  text-decoration: underline;
+}
