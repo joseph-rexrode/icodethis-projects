@@ -1,0 +1,143 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Rubik";
+}
+
+:root {
+  --bg: #A4A8AB;
+  --card-main: #36474F;
+  --card-sec: #3F535D;
+  --muted: #2E3E46;
+  --text: #F4F4F5;
+  --heart: #FF3B80;
+  --accent: #FEDC97;
+}
+
+body {
+  background: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  color: var(--text);
+}
+
+h3 {
+  font-size: 12pt;
+}
+
+p, div {
+  font-size: 9pt;
+}
+
+.card {
+  width: 300px;
+  height: 450px;
+  margin: auto;
+  background: var(--card-main);
+  overflow: hidden;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2em;
+  box-shadow: -2em -2em var(--accent);
+}
+
+.article--pic,
+.article--content,
+.article--options {
+  padding-inline: 2em
+}
+
+.article--pic {
+  background: center / cover no-repeat url("https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=2202&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-position: 0 -20px;
+  width: calc(100% - 4em);
+  height: 150px
+}
+
+.content--attributions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.5em;
+}
+
+.date {
+  padding: 0.25em 1em;
+  background: var(--muted);
+  border-radius: 50px;
+}
+
+.article--content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em
+}
+
+.article--options {
+  width: 100%;
+  background: var(--card-sec);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  padding-block: 2em;
+}
+
+.option {
+  display: flex;
+  gap: 0.25em;
+  align-items: center;
+  cursor: pointer;
+}
+
+.option:hover .like {
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+.option:hover .like--color {
+  stroke: var(--heart);
+}
+
+.share p,
+.share--color,
+.comment--color {
+  transition: 200ms;
+}
+
+.share:hover p {
+  color: white;
+}
+
+.share:hover .share--color,
+.comment:hover .comment--color {
+  fill: var(--accent)
+}
+
+.like[data-liked="true"] .like--color {
+  fill-opacity: 1;
+  fill: var(--heart);
+  stroke: var(--heart);
+}
+
+.muted {
+  color: var(--bg);
+}
+
+
+@keyframes heartbeat {
+  0% {
+    scale: 1;
+  }
+  10% {
+    scale: 1.1
+  }
+  35% {
+    scale: 1;
+  }
+  45% {
+    scale: 1.1
+  }
+}
