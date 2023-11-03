@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  --bg: #292929;
+  --card-main: #313131;
+  --card-sec: #242424;
+  --button: #1a1a1a;
+  --accent-main: #FCC743;
+  --accent-t1: #04A9F5;
+  --accent-t2: #AA01FF;
+  --accent-t3: #F50057;
+}
+
+body {
+  font-family: "Rubik";
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  min-height: 100vh;
+  color: white;
+}
+
+ul {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  list-style: none;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+h3 {
+  color: var(--accent-main);
+}
+
+p, li {
+  font-size: 9pt;
+}
+
+.card {
+  width: 250px;
+  height: 375px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0.1em 0.5em -0.1em black;
+  transition: 300ms;
+}
+
+.card.selected {
+  transform: translateY(-10px)
+}
+
+.card.selected .card__top {
+  background: linear-gradient(to top right, var(--card-main) 40%, var(--card-accent));
+}
+
+#tierOne {
+  --card-accent: var(--accent-t1);
+}
+
+#tierTwo {
+  --card-accent: var(--accent-t2);
+}
+
+#tierThree {
+  --card-accent: var(--accent-t3);
+}
+
+.card__banner {
+  position: absolute;
+  background-color: var(--card-accent);
+  rotate: 40deg;
+  padding: 0.5em 3em;
+  text-align: center;
+  right: -30px;
+  top: 10px;
+  box-shadow: 0 0.5em 0.5em -0.5em black;
+}
+
+.card__banner p {
+  font-weight: bold;
+}
+
+p span {
+  font-size: 12pt;
+}
+
+.card__top {
+  background-color: var(--card-main);
+  height: 200px;
+  padding: 2em 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.card__bottom {
+  background-color: var(--card-sec);
+  flex: 1;
+  padding: 1.5em 1em 2em;
+}
+
+
+
+@media screen and (max-width: 800px) {
+  body {
+    flex-direction: column;
+    padding-block: 3em;
+  }
+  .card.selected {
+    scale: 1.05;
+    transform: none;
+  }
+  
+}
+
+/* BUTTONS */
+
+.action {
+  cursor: pointer;
+  transition: 200ms;
+  margin-top: 2em;
+  width: 100%;
+  padding-block: 1.2em;
+  border: none;
+  border-radius: 5px;
+  background: var(--button);
+  color: var(--accent-main);
+  text-transform: uppercase;
+  font-size: 8pt;
+}
+
+.action:hover {
+  transform: translateY(-3px)
+}
