@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  --bg: #0A1E3B;
+  --bg-elements: #122746;
+  --accent-orange: #FA755B;
+  --accent-pink: #DA637D;
+  --accent-magenta: #9A348E;
+  --accent-purple: #8544D4;
+}
+
+body {
+  background: var(--bg);
+  color: white;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: "Montserrat", sans-serif;
+}
+
+p, label {
+  font-size: 8pt;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  padding-block: 3em;
+}
+
+.bgElement {
+  aspect-ratio: 1;
+  border-radius: 100%;
+  background: var(--bg-elements);
+  position: absolute;
+  z-index: -1;
+  width: var(--elemWidth);
+}
+
+.bgElement__small {
+  --elemWidth: 80px
+}
+
+.bgElement__medium {
+  --elemWidth: 110px
+}
+
+.bgElement__large {
+  --elemWidth: 200px
+}
+
+.card {
+  border-radius: 10px;
+  background-color: var(--cardAccent);
+  box-shadow: 0 0.5em 0.5em -0.3em black;
+}
+
+.timeline {
+  --cardAccent: var(--accent-orange);
+  width: 275px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline__section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40px;
+  gap: 0.25em;
+}
+
+.timeline__bar {
+  width: 40px;
+  height: 2px;
+  background: white;
+  margin-bottom: 1em;
+
+}
+
+.status {
+  width: 30px;
+  height: 30px;
+  background: white;
+  border-radius: 100%;
+  position: relative;
+}
+
+.status.audio::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 10px;
+  display: block;
+  width: 11px;
+  height: 18px;
+  border: solid var(--accent-orange);
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);;
+  -moz-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.status.video {
+  background: var(--accent-orange);
+  border: 10px solid white;
+}
+
+.status.performance {
+  opacity: 0.6;
+}
+
+.starRating {
+  --cardAccent: var(--accent-pink);
+  width: 225px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  padding-inline: 1em;
+  text-align: center;
+}
+
+.stars,
+.ratings {
+  display: flex;
+  gap: 0.25em
+}
+
+.star,
+.ratingItem {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.star:hover,
+.ratingItem:hover,
+.ratingItem.selected {
+  background: rgba(255,255,255,0.3)
+}
+
+.star.selected #SVGRepo_iconCarrier path {
+  opacity: 1;
+}
+
+.starRating__section {
+  display: flex;
+  justify-content: space-between;
+  width: 82%
+}
+
+.rating {
+  --cardAccent: var(--accent-magenta);
+  width: 200px;
+  height: 135px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.feedback {
+  --cardAccent: var(--accent-purple);
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+  gap: 1em;
+}
+
+.feedback__section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+}
+
+.feedback__section-item {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  padding-top: 3px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 20px;
+  width: 175px
+}
+
+.feedback__section-item:hover input ~ .checkmark,
+.feedback__section-item input:checked ~ .checkmark {
+  background-color: white;
+}
+
+.feedback__section-item input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 5px;
+}
+
+.checkmark::after {
+  position: absolute;
+  content: '';
+  display: none;
+}
+
+.feedback__section-item input:checked ~ .checkmark::after {
+  display: block;
+}
+
+.feedback__section-item .checkmark::after {
+  left: 5px;
+  top: 1px;
+  width: 7px;
+  height: 12.5px;
+  border: solid var(--accent-purple);
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);;
+  -moz-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+@media screen and (min-width: 650px) {
+  .wrapper {
+    display: grid;
+    grid: 1fr 1fr / 300px 300px;
+    align-content: center;
+    justify-content: center;
+  }
+}
