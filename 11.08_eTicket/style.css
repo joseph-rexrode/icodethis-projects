@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  --accent-main: #03D7DB;
+  --accent-muted: #E4FAF8;
+  --text-dark: #727574;
+  --text-light: #AEB7B6;
+}
+
+body {
+  background: center / cover no-repeat url("https://images.unsplash.com/photo-1501630834273-4b5604d2ee31?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  min-height: 100vh;
+  display: flex;
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  font-size: 26pt;
+  color: var(--accent-main);
+}
+
+h5 {
+  color: var(--accent-main);
+  font-size: 12pt;
+}
+
+p {
+  font-size: 10pt;
+  color: var(--text-dark)
+}
+
+.ticket {
+  margin: auto;
+  width: 575px;
+  height: 275px;
+  background: white;
+  box-shadow: 0 0 1em -0.4em var(--accent-main) inset;
+  display: flex;
+  align-items: center;
+  border-radius: 2px;
+  clip-path: polygon(0 0, 360px 0, 369px 10px, 380px 0, 100% 0, 100% 100%, 380px 100%, 369px calc(100% - 10px), 360px 100%, 0 100%);
+  transition: scale 500ms ease-in-out, rotate 300ms ease-in-out;
+}
+
+.ticket__main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75em;
+  padding: 3em 2em 2em 2em;
+  border-right: 2px dashed lightgrey;
+  min-width: 370px
+}
+
+.plane__element {
+  display: flex;
+  align-items: center;
+  gap: 0.25em;
+  margin-bottom: 1em
+}
+
+.line {
+  width: 20px;
+  height: 1.5px;
+  background: var(--text-light)
+}
+
+.ticket__airports {
+  display: flex;
+  gap: 0.5em;
+}
+
+.ticket__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.5em 1em;
+  background: var(--accent-muted);
+}
+
+.ticket__footer p {
+  font-size: 7pt;
+  text-align: center;
+}
+
+.ticket__tearAway {
+  height: 205px;
+  min-width: 275px;
+  transform: rotate(-90deg) translateY(-30px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.ticket__tearAway > * {
+  scale: 0.7;
+}
+
+@media screen and (max-width: 600px) {
+  .ticket {
+    rotate: 90deg;
+    scale: 0.7
+  }
+}
