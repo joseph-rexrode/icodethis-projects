@@ -1,0 +1,137 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  --bg: #212121;
+  --card: #282828;
+  --accentMain: #F7705E;
+  --busy: #D191FF;
+  --available: #65F0C6;
+  --away: #F0B565;
+}
+
+body {
+  background-color: var(--bg);
+  min-height: 100vh;
+  display: flex;
+}
+
+h4 {
+  color: white;
+  font-size: 11pt;
+}
+
+.occupation {
+  color: white;
+  opacity: 0.5;
+  font-size: 10pt;
+  padding-bottom: 0.25em
+}
+
+.card {
+  margin: auto;
+  background: var(--card);
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0 0.5em 1em -0.3em;
+  display: flex;
+  flex-direction: column;
+}
+
+.card__user {
+  display: flex;
+  gap: 0.5em;
+  padding-block: 1em
+}
+
+.card__user:nth-of-type(2) {
+  border-top: 0.5px solid grey;
+  border-bottom: 0.5px solid grey;
+}
+
+.user__pfp {
+  position: relative;
+  background: center / cover no-repeat url("https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2487&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  width: 70px;
+  height: 70px;
+  border-radius: 2px 15px 15px 15px;
+}
+
+.status {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background-color: white;
+  border: 4px solid var(--card);
+  top: -4px;
+  left: -4px;
+  cursor: pointer;
+}
+
+.status:hover ~ .status__message {
+  opacity: 1;
+}
+
+.status__message {
+  background: var(--bg);
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  position: absolute;
+  padding: 0.5em 0;
+  width: 75px;
+  top: -35px;
+  left: -35px;
+  font-size: 9pt;
+  opacity: 0;
+  transition: 200ms;
+}
+
+.status__message::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-top-color: var(--bg);
+  bottom: -10px;
+  left: 33px;
+}
+
+.user__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+}
+
+.action {
+  width: 80px;
+  padding-block: 0.5em;
+  border: 1px solid var(--accentMain);
+  font-size: 9pt;
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.message {
+  border-radius: 50px 0 0 50px;
+  background: var(--bg);
+  color: white;
+}
+
+.message:hover {
+  background: var(--accentMain);
+}
+
+.follow {
+  border-radius: 0 50px 50px 0;
+  color: var(--card);
+  background-color: var(--accentMain);
+}
+
+.follow:hover {
+  color: white;
+}
