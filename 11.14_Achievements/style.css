@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  --bg: #F5F5F5;
+  --card: #FFFFFF;
+  --text: #273238;
+  --accent-main: #1F88E5;
+  --accent-blue: #1D64BC;
+  --accent-red: #BD2825;
+}
+
+body {
+  background: var(--bg);
+  display: flex;
+  min-height: 100vh;
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  font-size: 17pt;
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  margin-bottom: 1.5em
+}
+
+h3 {
+  font-size: 14pt;
+}
+
+h4 {
+  font-size: 11pt;
+  font-weight: 300;
+}
+
+h5 {
+  text-transform: uppercase;
+}
+
+p {
+  opacity: 0.6
+}
+
+.announcement {
+  font-size: 8pt;
+  font-weight: 600;
+}
+
+.award p {
+  font-weight: 600;
+}
+
+.card {
+  background: var(--card);
+  margin: auto;
+  width: min(95%, 450px);
+  color: var(--text);
+  box-shadow: 0 0.2em 1em -0.3em var(--accent-main);
+  border-radius: 5px;
+}
+
+.card__results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  padding: 1em
+}
+
+.card__results-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75em
+}
+
+.results__section {
+  text-align: center;
+  flex: 1;
+}
+
+.points__bg {
+  min-width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  display: flex;
+  flex: 1
+}
+
+.points__text {
+  margin: auto;
+  width: 85%;
+  height: 85%;
+  display: flex;
+  border-radius: 100%;
+  background: var(--card);
+  text-align: center;
+}
+
+.points__text > * {
+  margin: auto;
+}
+
+.card__awards {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 100%;
+  gap: 0.5em
+}
+
+.card__awards-section {
+  width: 100%;
+  height: 150px;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5em;
+  border: 0.5px solid rgb(187, 181, 181);
+}
+
+.award {
+  width: 75px;
+  text-align: center;
+}
+
+.card__progress {
+  width: 100%;
+  text-align: center;
+}
+
+.progressBar {
+  width: 100%;
+  height: 10px;
+  background: var(--bg);
+  margin-top: 0.5em;
+  border-radius: 50px;
+}
+
+.progress {
+  height: 100%;
+  width: 45%;
+  background: var(--accent-main);
+  border-radius: 50px;
+}
