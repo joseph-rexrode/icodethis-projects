@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  --bg: #CCEBE9;
+  --card-bg: #B8D4E4;
+  --accent-main: #4378FF;
+  --accent-mutedBtn: #E0F2FA;
+  --accent-status: #81BE45;
+}
+
+body {
+  background-color: var(--bg);
+  display: flex;
+  min-height: 100vh;
+  font-family: "Montserrat", sans-serif;
+}
+
+h3 {
+  font-size: 12pt;
+}
+
+p, div, button {
+  font-size: 7pt;
+}
+
+.cart {
+  margin: auto;
+  background: white;
+  padding: 3em;
+  border-radius: 20px;
+}
+
+.cart[data-status="open"] { 
+  width: min(95%, 300px);
+  transition: width 300ms 300ms;
+
+  .cart__closed {
+    opacity: 0;
+    z-index: -1;
+    max-height: 0px;
+    transition: max-height 300ms 300ms, opacity 200ms, z-index 200ms 200ms;
+  }
+
+  .cart__open {
+    opacity: 1;
+    z-index: 1;
+    max-height: 1000px;
+    transition: z-index 200ms 300ms, opacity 300ms 800ms, max-height 300ms 600ms;
+  }
+}
+
+.cart[data-status="closed"] {
+  width: calc(40px + 6em);
+  transition: width 300ms 500ms;
+
+
+  .cart__open {
+    opacity: 0;
+    z-index: -1;
+    max-height: 0px;
+    transition: max-height 300ms 200ms, opacity 200ms, z-index 200ms 200ms;
+  }
+
+  .cart__closed {
+    opacity: 1;
+    z-index: 1;
+    max-height: 1000px;
+    transition: z-index 200ms 300ms, opacity 300ms 800ms, max-height 300ms 350ms
+  }
+}
+
+.cart__open {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  position: relative;
+}
+
+.cart__item {
+  display: flex;
+  align-items: start;
+  border-bottom: 1px solid;
+  margin-block: 2em;
+}
+
+.item__pic {
+  background: center / cover no-repeat url("https://atlas-content-cdn.pixelsquid.com/stock-images/vacuum-cleaner-robot-724XAXD-600.jpg");
+  min-width: 75px;
+  height: 50px;
+}
+
+.item__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+}
+
+.status {
+  background: var(--accent-status);
+  width: 60px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  padding-block: 0.2em;
+  border-radius: 50px;
+  margin-bottom: 0.5em;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 0.5em;
+  margin-bottom: 2em;
+}
+
+input {
+  width: 25px;
+  text-align: center;
+}
+
+.decrease,
+.increase {
+  background: var(--accent-mutedBtn);
+  border: none;
+  height: 22px;
+  width: 22px;
+  border-radius: 5px;
+  font-size: 12pt;
+}
+
+.cart__costs {
+  margin-top: 0.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em
+}
+
+.cart__cost {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.promo {
+  border: none;
+  background: none;
+  color: var(--accent-main);
+  text-align: start;
+  padding: 0;
+  margin-bottom: 1em;
+}
+
+.promo:hover {
+  text-decoration: underline;
+}
+
+.checkout {
+  padding: 1em;
+  border-radius: 50px;
+  border: none;
+  background: var(--accent-main);
+  color: white;
+}
+
+.checkout:hover {
+  transform: translateY(-3px);
+}
+
+button {
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.close {
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: 200ms;
+}
+
+.close:hover {
+  opacity: 1;
+}
+
+.cart__closed {
+  width: 40px;
+  cursor: pointer;
+}
