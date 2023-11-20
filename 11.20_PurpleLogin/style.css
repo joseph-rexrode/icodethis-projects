@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  --bg-purple: #C490FE;
+  --bg-pink: #E7A1BD;
+  --accent-purple: #A16CED;
+  --accent-pink: #F33C7F;
+  --text: #455A64
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(to top right, var(--bg-purple), var(--bg-pink));
+  display: flex;
+  font-family: "Montserrat", sans-serif;
+}
+
+.card {
+  background: white;
+  width: min(300px, 100%);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-block: 3em;
+  gap: 0.5em;
+  border-radius: 5px;
+  box-shadow: 0 0.3em 1em -0.3em;
+}
+
+.subtitle {
+  width: 70%;
+  opacity: 0.6;
+  font-size: 10pt;
+  margin-bottom: 1em;
+}
+
+.form__section {
+  position: relative;
+  width: calc(100% - 4em);
+  margin-bottom: 1em;
+}
+
+.form__section input {
+  width: 100%;
+  padding: 0.55em;
+  border: none;
+  border-bottom: 2px solid var(--bg-purple)
+}
+
+.form__section label {
+  position: absolute;
+  opacity: 0.5;
+  left: 2em;
+  top: 6px;
+  transition: font-size 300ms 300ms, top 300ms 300ms, left 300ms 300ms;
+}
+
+.form__section svg {
+  position: absolute;
+  top: 5px;
+  left: 0px;
+  transition: 300ms
+}
+
+.form__section input:focus-visible {
+  outline: none;
+
+  ~label {
+    font-size: 7pt;
+    top: -10px;
+    left: 0;
+    transition: font-size 300ms, top 300ms 300ms, left 300ms 300ms;
+  }
+
+  ~svg {
+    left: 200px;
+    transition: 300ms 300ms
+  }
+}
+
+.other {
+  display: flex;
+  gap: 0.25em;
+  width: calc(100% - 4em);
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.other label {
+  font-size: 9pt;
+}
+
+/* BUTTONS */
+
+button {
+  cursor: pointer;
+  transition: 200ms ease-in-out;
+  font-size: 9pt;
+}
+
+button:focus-visible,
+input[type="checkbox"]:focus-visible {
+  outline: 2px solid var(--bg-purple)
+}
+
+.action {
+  width: calc(100% - 4em);
+  padding: 1em;
+  border: none;
+  border-radius: 3px;
+  color: white;
+}
+
+.action:hover {
+  width: 100%;
+  border-radius: 0;
+}
+
+.login {
+  background: var(--accent-purple);
+}
+
+.signup {
+  background: var(--accent-pink);
+}
+
+.forgot {
+  background: none;
+  border: none;
+  color: var(--accent-pink);
+  font-style: italic;
+  margin-left: 1.5em;
+  border-radius: 3px;
+}
+
+.forgot:hover {
+  text-decoration: underline;
+}
