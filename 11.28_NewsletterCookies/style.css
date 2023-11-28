@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #F4F5F9;
+  --card-dark: #33363E;
+  --card-light: #FFFFFF;
+  --accent-main: #1F222D;
+  --accent-sec: #D66A3F;
+}
+
+body {
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 1em;
+  font-family: "Montserrat", sans-serif;
+}
+
+p {
+  font-size: 7pt;
+  font-weight: 500;
+}
+
+h4 {
+  font-size: 9pt;
+}
+
+.footerText {
+  font-size: 6pt;
+}
+
+.card {
+  border-radius: 10px;
+  display: flex;
+  padding: 1em;
+  gap: 1em;
+  box-shadow: 0 0.5em 1em -0.5em;
+}
+
+.card__cookies {
+  background: var(--card-dark);
+  color: var(--bg);
+  width: 275px;
+  box-shadow: 0 0.5em 1em -0.5em var(--accent-main);
+}
+
+.card__newsletter {
+  background: var(--card-light);
+  color: var(--accent-main);
+  width: min(95%, 450px);
+}
+
+span {
+  color: var(--accent-sec);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+span:hover {
+  text-decoration: underline;
+}
+
+.card__newsletter-form {
+  position: relative;
+  margin-top: 1em;
+}
+
+label {
+  position: absolute;
+  font-size: 9pt;
+  top: 4px;
+  left: 7px;
+  z-index: 0;
+  opacity: 0.6;
+  transition: 300ms;
+}
+
+input {
+  position: relative;
+  background: transparent;
+  border: 1px solid grey;
+  border-radius: 2px;
+  padding: 0.25em;
+  z-index: 1;
+}
+
+input:focus-visible ~ label {
+  font-size: 6pt;
+  transform: translate(0, -15px)
+}
+
+
+
+/* BUTTONS */ 
+
+button {
+  cursor: pointer;
+  transition: 200ms;
+  background: var(--accent-main);
+  color: var(--bg);
+  border: none;
+  border-radius: 2px;
+  padding: 0.25em 0.5em
+}
+
+button:not(.subscribe):hover {
+  background: var(--bg);
+  color: var(--accent-main)
+}
+
+.subscribe:hover {
+  background: var(--accent-sec);
+}
