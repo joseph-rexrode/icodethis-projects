@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+:root {
+  --bg-main: #eceef7;
+  --card: #FFFFFF;
+  --accent-missed: #E64C3C;
+  --accent-callback: #1BA371;
+  --text: #383F53;
+  --chat: #4392F1;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-main);
+  display: flex;
+}
+
+p {
+  font-size: 9pt;
+}
+
+.muted {
+  font-size: 7pt;
+  opacity: 0.5
+}
+
+.card {
+  width: 300px;
+  height: 250px;
+  background: var(--card);
+  margin: auto;
+  padding: 0 1em;
+  border-radius: 7.5px;
+  box-shadow: 0 0 1em -0.3em #383F53;
+}
+
+.card--top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card--top__left {
+  display: flex;
+  align-items: center;
+  gap: 0.5em
+}
+
+.card--main {
+  padding-left: 2em
+}
+
+.card--main__content {
+  display: flex;
+  gap: 1em;
+  margin-top: 1em;
+}
+
+.missed--caller {
+  background: top / cover no-repeat url("https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bWFuJTIwaGVhZHNob3R8ZW58MHx8MHx8fDA%3D");
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  outline: 5px solid rgba(177, 176, 176, 0.656);
+}
+
+.card--main__actions {
+  display: flex;
+  margin-top: 1.5em;
+  gap: 1em
+}
+
+button {
+  width: 120px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  border-radius: 5px;
+  border: none;
+  transition: 300ms;
+  cursor: pointer;
+  p {
+    font-size: 7pt;
+  }
+}
+
+.sendMessage {
+  background: var(--card);
+  outline: 1.5px solid lightgrey;
+}
+
+.sendMessage:hover {
+  background: var(--chat);
+  outline: 0px;
+  color: var(--card);
+  scale: 1.1
+}
+
+.callBack {
+  background: var(--accent-callback);
+  color: var(--card)
+}
+
+.callBack:hover {
+  scale: 1.1
+}
+
+.close {
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.close:hover {
+  scale: 1.1;
+  rotate: 90deg
+}
