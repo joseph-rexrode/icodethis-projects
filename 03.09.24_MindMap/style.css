@@ -1,0 +1,127 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to bottom, #EBEBF6, #D0D5E3 85%);
+  margin: 0;
+  display: flex;
+}
+
+main {
+  background: #F6F7FC;
+  width: min(85%, 800px);
+  height: min(85%, 425px);
+  margin: auto;
+  display: flex;
+  overflow:scroll;
+}
+
+p {
+  font-size: 9pt;
+}
+
+.accent-y {
+  --main-color: #F5EFEB;
+  --accent-color: #E3AA4C;
+}
+
+.accent-g {
+  --main-color: #E4F4EE;
+  --accent-color: #51CDE3;
+}
+
+.accent-b {
+  --main-color: #E4EBFB;
+  --accent-color: #7CAEE8;
+}
+
+.accent-r {
+  --main-color: #F5E6EA;
+  --accent-color: #E67B6D;
+}
+
+.root {
+  display: flex;
+  position: relative;
+  margin: auto
+}
+
+.bubble--root {
+  background: white;
+  width: 150px;
+  border-radius: 15px;
+  box-shadow: 0 0.5em 1em -0.75em;
+  font-size: 10pt;
+  margin: auto;
+  cursor: pointer;
+  text-align: center;
+  padding: 0.75em;
+  transition: 200ms
+}
+
+.bubble--root:hover {
+  scale: 1.05;
+  border-radius: 10px;
+}
+
+.child::before {
+  content: '';
+  width: 100px;
+  height: 70px;
+  border-radius: 50%;
+  border-right: 2px dashed var(--accent-color);
+  position: absolute;
+}
+
+.child--1::before, .child--3::before {
+  bottom: -60px;
+  rotate: -20deg
+}
+
+.child--2::before, .child--4::before {
+  bottom: -80px;
+  left: 30px;
+  rotate: -20deg
+}
+
+.child--2 {
+  translate: 75px 0;
+  --rotation-amt: 90deg;
+}
+
+.child--3 {
+  --rotation-amt: 180deg;
+}
+
+.child--4 {
+  translate: -75px 0;
+  --rotation-amt: 270deg;
+}
+
+.child {
+  position: absolute;
+  transform: translateY(-100px);
+  rotate: var(--rotation-amt);
+  text-align: center;
+  width: 150px
+}
+
+.bubble--child {
+  rotate: calc(var(--rotation-amt) * -1);
+  background-color: var(--main-color);
+  padding: 0.15em 0.05em;
+  width: 120px;
+  border-radius: 15px 15px 0 0;
+  border: 2px solid transparent;
+  border-bottom-color: var(--accent-color);
+  transition: 200ms;
+  cursor: pointer;
+  position: relative;
+}
+
+.bubble--child:hover {
+  border-color: var(--accent-color);
+  border-radius: 15px;
+  scale: 1.025
+}
