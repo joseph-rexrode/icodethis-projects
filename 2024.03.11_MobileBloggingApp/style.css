@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-dark: #327EDD;
+  --bg-light: #85f0f7;
+  --main: #1F359F;
+  --accent: #FF767E;
+  --text: #131313;
+}
+
+body {
+  background: linear-gradient(to bottom right, var(--bg-light), var(--bg-dark) 80%);
+  display: flex;
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+}
+
+p {
+  font-size: 8pt;
+}
+
+h5 {
+  font-size: 9pt;
+}
+
+.subtitle {
+  width: 75%;
+  opacity: 0.6
+}
+
+.screen {
+  margin: auto;
+  width: 300px;
+  height: 450px;
+  background: white;
+  box-shadow: 1em 1.5em 2em -0.5em var(--main);
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.page--interests {
+  background: var(--main);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em
+}
+
+.page--interests__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5em;
+}
+
+.close {
+  align-self: end;
+  cursor: pointer;
+}
+
+.page--interests__content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  align-items: center;
+  justify-content: center;
+}
+
+.interest {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2em;
+  cursor: pointer;
+
+  h5 {
+    width: 110%;
+    text-align: center;
+    border-radius: 100px;
+    transition: 300ms;
+  }
+}
+
+.interest:hover {
+  .interest--icon {
+    outline: 1px solid var(--accent)
+  }
+
+  h5 {
+    background-color: var(--accent);
+  }
+}
+
+.interest--icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: navy;
+  border-radius: 100%;
+  transition: 300ms;
+  outline: 1px solid transparent;
+}
+
+.page--interests__action {
+  width: 150px;
+  padding: 0.75em 0;
+  border-radius: 100px;
+  border: none;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+}
