@@ -1,0 +1,107 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --text: #2B2D4B;
+  --bg: #F4F5FF;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3em;
+  margin: 0;
+  padding: 1em
+}
+
+p, li {
+  font-size: 8pt;
+}
+
+.section {
+  background: white;
+  border-radius: 5px;
+  margin: auto;
+  padding: 1em;
+  box-shadow: -0.1em 0.5em 1em -0.75em var(--text);
+}
+
+.navSection {
+  width: min(275px, 90%)
+}
+
+.nav {
+  display: flex;
+  padding: 0;
+  gap: 0.5em
+}
+
+.nav--item {
+  list-style: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.nav--item:hover {
+  opacity: 0.6;
+}
+
+.actionSection {
+  display: flex;
+  gap: 1.5em;
+  align-items: center;
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  gap: 0.35em;
+  cursor: pointer;
+}
+
+.tagSection {
+  width: min(250px, 55%)
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35em
+}
+
+.tag {
+  background: var(--bg);
+  padding: 1em;
+  border-radius: 50px;
+}
+
+.devicesSection {
+  width: min(250px, 60%);
+  aspect-ratio: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  align-items: center;
+  justify-content: center;
+}
+
+.device {
+  background-color: white;
+  width: 45%;
+  aspect-ratio: 1;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 400ms;
+}
+
+.device:hover {
+  background-color: var(--bg);
+}
