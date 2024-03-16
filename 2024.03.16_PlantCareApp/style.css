@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-light: #F4F7F6;
+  --bg-accent: #CEEEE9;
+  --text-bold: #00434B;
+  --accent-lightgreen: #4AD093;
+  --accent-darkgreen: #61BC60;
+  --accent-text: #69BFB1;
+}
+
+body {
+  background: linear-gradient(to top left,
+                var(--bg-light), 
+                var(--bg-accent), 
+                var(--bg-light));
+  display: flex;
+  font-family: "Rubik", sans-serif;
+  height: 100vh;
+}
+
+p {
+  font-size: 9pt;
+}
+
+.screen {
+  width: 275px;
+  height: 425px;
+  background: white;
+  margin: auto;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0.5em 1em 3em -0.4em;
+}
+
+.screen--login, .screen--home {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: 500ms ease-in-out;
+}
+
+.screen--login.active {
+  left: 0;
+}
+
+.screen--login {
+  background: left / cover no-repeat url("https://images.unsplash.com/photo-1524055988636-436cfa46e59e?q=80&w=2535&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-position: -40px;
+  z-index: 1;
+  left: 100%;
+}
+
+.login--header {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  flex: 1;
+  padding: 2em 2em 0 2em;
+}
+
+.login--main {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  gap: 1em;
+  padding: 2em;
+  background: linear-gradient(to top, white 10%, transparent)
+}
+
+.screen--home {
+  padding: 1em;
+  z-index: 0;
+}
+
+.home--header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1em
+}
+
+.home--main, .plant {
+  display: flex;
+  flex-direction: column;
+}
+
+.plant {
+  align-items: center;
+  justify-content: center;
+  gap: 1em
+}
+
+.plant--picture {
+  background: center/cover no-repeat url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=2573&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  width: 175px;
+  height: 175px;
+  aspect-ratio: 1;
+  border-radius: 10px;
+}
+
+.plant--attributes {
+  display: flex;
+  gap: 1em
+}
+
+.watering, .watered {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.watering > p, .watered > p {
+  padding-left: 2.65em
+}
+
+.next, .last {
+  display: flex;
+  align-items: center;
+  gap: 0.5em
+}
+
+.accented {
+  color: var(--accent-text)
+}
+
+/* BUTTONS */ 
+
+button, .options, .exit {
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.action {
+  width: 175px;
+  height: 35px;
+  border-radius: 100px;
+  border: none;
+  background: none;
+  font-weight: bold;
+}
+
+.signup {
+  background: linear-gradient(to right, var(--accent-lightgreen), var(--accent-darkgreen));
+  color: white;
+}
+
+.login {
+  outline: 1px solid var(--accent-lightgreen)
+}
+
+.action:hover, .action:focus-visible {
+  width: calc(100% + 4rem);
+  border-radius: 0;
+}
+
+.exit:hover {
+  scale: 1.2
+}
