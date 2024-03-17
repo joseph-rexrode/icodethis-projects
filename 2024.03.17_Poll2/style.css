@@ -1,0 +1,129 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-light: #6AEAEA;
+  --bg-dark: #66A9EA;
+  --main: #458AFE;
+  --text: #66777E;
+  --accent: #40376E;
+}
+
+body {
+  background: linear-gradient(to top right,
+                    var(--bg-light),
+                    var(--bg-dark));
+  display: flex;
+  color: var(--text);
+  height: 100vh;
+}
+
+.screen {
+  width: 300px;
+  height: 400px;
+  background: white;
+  margin: auto;
+  border-radius: 10px;
+  padding: 2em;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0.3em 1em 4em -0.5em;
+}
+
+.polls--header {
+  padding: 0 0 0.5em 0;
+  border-bottom: 1px solid lightgrey;
+  flex: 1;
+}
+
+.polls {
+  display: flex;
+  width: calc(900px - 4em);
+  gap: 2em;
+  position: relative;
+  flex: 10
+}
+
+.polls--poll {
+  max-width: calc(300px - 4em);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  padding-block: 0.5em;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: 500ms ease-in-out
+}
+
+.restart {
+  height: 50px;
+  width: 150px;
+  align-self: center;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: 300ms;
+  cursor: pointer;
+  opacity: 0;
+  position: relative;
+  left: -500px;
+}
+
+.polls--poll:not(.polls--poll:first-of-type) {
+  opacity: 0;
+  z-index: -3;
+}
+
+.form--element {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  cursor: pointer;
+}
+
+label {
+  cursor: pointer;
+}
+
+.actions {
+  padding-top: 1em;
+  display: flex;
+  gap: 1.5em;
+  flex: 1;
+}
+
+/* BUTTONS */
+
+button {
+  cursor: pointer;
+  transition: 300ms;
+  padding-block: 0.75em;
+}
+
+.submitAnswer {
+  width: 170px;
+  background: var(--main);
+  color: white;
+  border: none;
+  border-radius: 3px;
+}
+
+.submitAnswer:hover {
+  background-color: var(--bg-dark);
+}
+
+.skip {
+  border: none;
+  background: none;
+  color: lightgrey
+}
+
+.skip:hover {
+  color: var(--text)
+}
