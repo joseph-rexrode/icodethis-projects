@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #FBFBFC;
+  --main: #FFFFFF;
+  --text: #252E4C;
+  --accent-blue: #4B90E2;
+  --accent-orange: #F5A623;
+  --accent-yellow: #FDD73A;
+  --accent-button: #ECF8F8;
+}
+
+body {
+  display: flex;
+  background: var(--bg);
+  height: 100vh;
+}
+
+.post {
+  margin: auto;
+  width: min(100%, 400px);
+  background: var(--main);
+  color: var(--text);
+  box-shadow: -0.5em 0.75em 1.5em -1em;
+  padding: 1em 1.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  font-family: "Rubik", sans-serif;
+  border-radius: 5px;
+}
+
+.post--header {
+  font-size: 9pt;
+}
+
+.post--main {
+  textarea {
+    border: none;
+    font-size: 12pt;
+    max-width: 100%;
+    width: 100%;
+    min-width: 50%;
+  }
+
+  textarea:focus-visible {
+    outline: none;
+  }
+}
+
+.post--actions {
+  display: flex;
+  gap: 1em;
+}
+
+.action {
+  cursor: pointer;
+  transition: background-color 300ms;
+  width: 35px;
+  aspect-ratio: 1;
+  border: none;
+  background-color: transparent;
+  border-radius: 5px;
+}
+
+.action:hover, .action:focus-visible {
+  background-color: var(--accent-button);
+  outline: none;
+}
