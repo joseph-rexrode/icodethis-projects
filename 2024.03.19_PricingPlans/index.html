@@ -1,0 +1,41 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Pricing Plans</title>
+</head>
+
+<body>
+  <div class="card">
+    <div class="billingTypes">
+      <div class="billingType">
+        <input type="radio" name="billing" id="monthly" checked="true">
+        <label for="monthly">Monthly</label>
+      </div>
+      <div class="billingType">
+        <input type="radio" name="billing" id="yearly">
+        <label for="yearly">Yearly</label>
+      </div>
+    </div>
+    <div class="plan">
+      <h4>For Individuals</h4>
+      <p class="amount">$9.99 / <span id="indBillType">month</span></p>
+      <button class="action">Buy Now</button>
+    </div>
+    <div class="plan">
+      <h4>For Families</h4>
+      <p class="amount">$16.99 / <span id="famBillType">month</span></p>
+      <button class="action">Buy Now</button>
+    </div>
+    <div class="plan">
+      <h4>For Teams</h4>
+      <p class="amount">$14.99 / <span id="teamBillType">month</span></p>
+      <button class="action">Try for Free</button>
+      <p>or <span><button class="action--other">purchase now</button></span></p>
+    </div>
+  </div>
+</body>
+
+</html>

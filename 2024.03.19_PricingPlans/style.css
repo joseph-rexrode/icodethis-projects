@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #F8F9FF;
+  --plan: #FFFFFF;
+  --button: #000000;
+  --text: #151D39;
+  --accent: #C1C9E3;
+}
+
+body {
+  background: var(--bg);
+  display: flex;
+  min-height: 100vh;
+  padding-block: 1em;
+}
+
+p, button {
+  font-size: 9pt;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  margin: auto;
+  width: 200px;
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  font-family: "Rubik", sans-serif;
+  box-shadow: 0.5em 0.5em var(--accent);
+}
+
+.billingTypes, .plan {
+  min-height: 198px;
+  background: var(--plan);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em
+}
+
+.billingTypes {
+  justify-content: center;
+}
+
+.plan {
+  padding-top: 2em;
+  transition: transform 300ms ease-in-out;
+  box-shadow: 0 0.5em 1em -0.75em;
+}
+
+.plan:hover {
+  transform: translate(-5px, -10px);
+}
+
+button {
+  cursor: pointer;
+}
+
+.action {
+  padding: 0.65em 1em;
+  background: var(--button);
+  color: white;
+  border-radius: 3px;
+  border: none;
+}
+
+.action--other {
+  background: none;
+  border: none;
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 675px) {
+  .card {
+    flex-direction: row;
+    height: 200px;
+    width: auto;
+  }
+
+  .billingTypes {
+    width: 175px
+  }
+
+  .plan {
+    width: 160px
+  }
+}
