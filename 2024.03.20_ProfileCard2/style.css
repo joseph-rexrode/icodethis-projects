@@ -1,0 +1,76 @@
+
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --text: #120B35;
+  --accent-dark: #2D2559;
+  --bg-purple: #B4A0E5;
+  --bg-green: #CAFFD0;
+  --card: #FFFFFF;
+  --accent-blue: #C6D4FF;
+}
+
+body {
+  background: radial-gradient(circle at left 30%, var(--bg-purple) 40%, var(--bg-green));
+  display: flex;
+  height: 100vh;
+}
+
+p {
+  font-size: 8pt;
+}
+
+.card {
+  width: 275px;
+  aspect-ratio: 0.97;
+  background: var(--card);
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: -0.3em 0.3em 0.75em -0.3em var(--text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
+.profile--main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em
+}
+
+.avatar {
+  background: center / cover no-repeat url("https://plus.unsplash.com/premium_photo-1661892088256-0a17130b3d0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80");
+  width: 70px;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  border: 8px solid var(--accent-blue);
+}
+
+.profile--actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 0.35em;
+}
+
+.action {
+  width: 75px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.25em;
+  border-radius: 10px;
+  border: 2px solid var(--accent-blue);
+  background: none;
+  cursor: pointer;
+}
