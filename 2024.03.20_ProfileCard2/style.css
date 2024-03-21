@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 *, ::before, ::after {
   box-sizing: border-box;
@@ -19,6 +19,9 @@ body {
   background: radial-gradient(circle at left 30%, var(--bg-purple) 40%, var(--bg-green));
   display: flex;
   height: 100vh;
+  align-items: center;
+  justify-content: center;
+  font-family: "Rubik", sans-serif;
 }
 
 p {
@@ -29,7 +32,6 @@ p {
   width: 275px;
   aspect-ratio: 0.97;
   background: var(--card);
-  margin: auto;
   border-radius: 10px;
   box-shadow: -0.3em 0.3em 0.75em -0.3em var(--text);
   display: flex;
@@ -37,13 +39,15 @@ p {
   align-items: center;
   justify-content: center;
   gap: 1em;
+  overflow: hidden;
 }
 
 .profile--main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5em
+  gap: 0.5em;
+  z-index: 2;
 }
 
 .avatar {
@@ -73,4 +77,66 @@ p {
   border: 2px solid var(--accent-blue);
   background: none;
   cursor: pointer;
+  transition: 300ms;
+  z-index: 2;
+}
+
+.action:hover {
+  background: var(--accent-blue);
+  box-shadow: 0 0 12em 5em var(--bg-purple);
+  z-index: 1;
+}
+
+.moreOptions {
+  position: relative;
+  right: 1rem;
+  border: 2px solid red;
+  width: 180px;
+  aspect-ratio: 0.75;
+  align-self: center;
+  margin-top: 15em;
+  border-radius: 10px;
+  background: var(--text);
+  color: white;
+  border: none;
+  padding: 1em;
+  z-index: 3;
+  overflow: hidden;
+  transition: max-height 400ms ease-in-out, padding 0ms;
+  max-height: 1000px;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  li {
+    list-style: none;
+    cursor: pointer;
+    transition: 200ms;
+    padding: 0.5em 1em;
+    font-size: 9pt;
+    border-radius: 3px;
+  }
+
+  li:hover {
+    background: var(--accent-dark);
+  }
+}
+
+.moreOptions.inactive {
+  max-height: 0;
+  padding: 0;
+  transition: max-height 400ms ease-in-out, padding 0ms 400ms
+}
+
+
+@media screen and (max-width: 500px) {
+  .moreOptions {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 0;
+    opacity: 0.85
+  }
 }
