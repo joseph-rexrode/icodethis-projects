@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --card: #ABD2FA;
+  --bg: #3D518C;
+  --text: #091540;
+  --accent: #7692FF;
+}
+
+body {
+  background: var(--bg);
+  display: flex;
+  font-family: "Rubik", sans-serif;
+  height: 100vh;
+  color: var(--text)
+}
+
+/* ALL SCREENS */
+
+.card {
+  background: var(--card);
+  margin: auto;
+  border-radius: 5px;
+  box-shadow: 0 0 4em -0.5em #1B2CC1;
+  transition: height 400ms 400ms,
+              width 400ms 0ms;
+  overflow: hidden;
+}
+
+.card--beginning {
+  background: var(--accent);
+}
+
+.card--main {
+  display: flex;
+  align-items: center;
+  position: relative;
+  text-align: center;
+}
+
+.pfp {
+  background: center / cover no-repeat url("https://plus.unsplash.com/premium_photo-1661892088256-0a17130b3d0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80");
+  width: 80px;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  position: relative;
+  border: 7px solid var(--card)
+}
+
+.profile--info {
+  display: flex;
+}
+
+.profile--actions {
+
+}
+
+.action {
+  background: none;
+  border: 1.5px solid var(--text);
+  padding: 0.5em;
+  border-radius: 3px;
+  transition: 300ms;
+  cursor: pointer;
+}
+
+.action:hover {
+  background-color: var(--text);
+  color: var(--card);
+}
+
+/* SMALL SCREENS */
+
+@media screen and (max-width: 500px) {
+  .card {
+    width: 250px;
+    height: 300px;
+  }
+
+  .card--beginning {
+    width: 100%;
+    height: 100px
+  }
+
+  .card--main {
+    flex-direction: column;
+    gap: 1.5em
+  }
+
+  .pfp {
+    top: -40px
+  }
+
+  .profile--info {
+    flex-direction: column;
+    gap: 0.5em;
+    margin-top: -40px
+  }
+}
+
+/* BIG SCREENS */
+
+@media screen and (min-width: 501px) {
+  .card {
+    width: 450px;
+    height: 200px;
+    transition: height 400ms,
+                width 400ms 400ms;
+  }
+
+  .card--beginning {
+    width: 100px;
+    height: 100%;
+  }
+}
