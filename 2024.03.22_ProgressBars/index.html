@@ -1,0 +1,72 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Progress Bar Practice</title>
+</head>
+
+<body>
+  <div class="card">
+    <div class="card--banner"></div>
+    <div class="card--main">
+      <h1>Recipe: Stroopwafels</h1>
+      <div class="card--main_ingredients">
+        <h3>INGREDIENTS</h3>
+        <div class="ingredients--progress">
+          <div class="progressBarContainer">
+            <div id="ingredientsProgress"></div>
+          </div>
+          <p id="currentProgress">0%</p>
+        </div>
+        <div class="ingredients--ingredients">
+          <div class="ingredient">
+            <input type="checkbox" name="ingredient" id="plainFlour">
+            <label for="plainFlour">300g plain flour</label>
+          </div>
+          <div class="ingredient">
+            <input type="checkbox" name="ingredient" id="unsaltedButter">
+            <label for="unsaltedButter">165g unsalted butter</label>
+          </div>
+          <div class="ingredient">
+            <input type="checkbox" name="ingredient" id="yeast">
+            <label for="yeast">7g fast-action dried yeast</label>
+          </div>
+          <div class="ingredient">
+            <input type="checkbox" name="ingredient" id="cinnamon">
+            <label for="cinnamon">1.5tsp ground cinnamon</label>
+          </div>
+          <div class="ingredient">
+            <input type="checkbox" name="ingredient" id="casterSugar">
+            <label for="casterSugar">65g caster sugar</label>
+          </div>
+          <div class="ingredient">
+            <input type="checkbox" name="ingredient" id="brownSugar">
+            <label for="brownSugar">200g brown sugar</label>
+          </div>
+          <div class="ingredient">
+            <input type="checkbox" name="ingredient" id="warmWater">
+            <label for="warmWater">65ml warm water</label>
+          </div>
+          <div class="ingredient">
+            <input type="checkbox" name="ingredient" id="syrup">
+            <label for="syrup">5tbsp golden syrup</label>
+          </div>
+          <div class="ingredient">
+            <input type="checkbox" name="ingredient" id="egg">
+            <label for="egg">1 large egg</label>
+          </div>
+          <div class="ingredient">
+            <input type="checkbox" name="ingredient" id="vanilla">
+            <label for="vanilla">1tbsp vanilla extract</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
