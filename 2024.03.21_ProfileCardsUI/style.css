@@ -21,6 +21,10 @@ body {
   color: var(--text)
 }
 
+p {
+  font-size: 10pt;
+}
+
 /* ALL SCREENS */
 
 .card {
@@ -55,10 +59,12 @@ body {
 
 .profile--info {
   display: flex;
+  flex-direction: column;
+  gap: 0.5em;
 }
 
 .profile--actions {
-
+  padding-top: 1em;
 }
 
 .action {
@@ -90,17 +96,18 @@ body {
 
   .card--main {
     flex-direction: column;
-    gap: 1.5em
+    gap: 1.5em;
+    box-shadow: 0 -0.5em 1em -0.5em;
   }
 
   .pfp {
-    top: -40px
+    top: -40px;
+    box-shadow: 0 -0.5em 1em -0.5em;
   }
 
   .profile--info {
-    flex-direction: column;
-    gap: 0.5em;
-    margin-top: -40px
+    margin-top: -40px;
+    padding-inline: 1em;
   }
 }
 
@@ -112,10 +119,26 @@ body {
     height: 200px;
     transition: height 400ms,
                 width 400ms 400ms;
+    display: flex;
   }
 
   .card--beginning {
-    width: 100px;
+    width: 130px;
     height: 100%;
+  }
+
+  .card--main {
+    box-shadow: -0.5em 0 1em -0.5em;
+  }
+
+  .pfp {
+    left: -50px;
+    width: 120px;
+    box-shadow: -0.5em 0 1em -0.5em;
+    transition: width 400ms 400ms
+  }
+
+  .profile--info {
+    margin-left: -50px
   }
 }
