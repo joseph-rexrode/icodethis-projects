@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --card: #F7EAE9;
+  --bg-dark: #C98741;
+  --bg-light: #E6BA8D;
+  --text: #272727;
+  --accent: #2B50AA;
+}
+
+body {
+  display: flex;
+  background: radial-gradient(circle at left,
+                              var(--bg-dark),
+                              var(--bg-light));
+  font-family: "Rubik", sans-serif;
+}
+
+h1 {
+  font-size: 18pt;
+}
+
+p, label {
+  font-size: 11pt;
+}
+
+.card {
+  margin: auto;
+  background: var(--card);
+  border-radius: 10px;
+  box-shadow: -0.75em 0.5em 1.5em -0.5em;
+}
+
+.card--banner {
+  width: 100%;
+  aspect-ratio: 3;
+  background: center / cover no-repeat url("https://thegreatbritishbakeoff.co.uk/wp-content/uploads/2019/09/Stroopwafels_1024x450.png");
+  border-radius: 10px 10px 0 0;
+}
+
+.card--main {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.card--main_ingredients {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em
+}
+
+.progressBarContainer {
+  width: 100%;
+  height: 17px;
+  background: var(--card);
+  border: 2px solid var(--bg-light);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+}
+
+#ingredientsProgress {
+  height: 10px;
+  border-radius: 50px;
+  background: var(--bg-dark);
+  width: 0%;
+  margin: 3px;
+  transition: width 300ms;
+}
+
+#currentProgress {
+  margin-bottom: 1em;
+  margin-top: 0.25em;
+}
+
+.ingredients--ingredients {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  column-gap: 0.5em;
+  height: 100px;
+}

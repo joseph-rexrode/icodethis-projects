@@ -3,6 +3,7 @@ const numIngredients = ingredientList.length;
 const percentPerIngredient = 100 / numIngredients;
 let currentProgress = 0;
 let currentProgressText = document.getElementById("currentProgress");
+let progressBar = document.getElementById("ingredientsProgress");
 
 ingredientList.forEach(ingredient => {
   ingredient.addEventListener("click", () => {
@@ -14,6 +15,7 @@ ingredientList.forEach(ingredient => {
       decreaseProgress();
     }
     currentProgressText.innerHTML = currentProgress + "%"
+    progressBar.style.width = currentProgress + "%";
   });
 })
 
