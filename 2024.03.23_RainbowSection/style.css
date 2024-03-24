@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 *, ::before, ::after {
   box-sizing: border-box;
@@ -21,6 +21,7 @@ body {
   background: var(--bg);
   display: flex;
   height: 100vh;
+  font-family: "Rubik", sans-serif;
 }
 
 p {
@@ -60,6 +61,8 @@ p {
   border-radius: 10px;
   box-shadow: 0 0.5em 1em -0.75em;
   position: relative;
+  transition: height 400ms,
+              width 400ms;
 }
 
 .card::before {
@@ -78,18 +81,15 @@ p {
   top: 50px;
   z-index: -1;
   border-radius: 10px;
+  transition: height 400ms,
+              left 400ms,
+              width 400ms;
 }
 
-@media screen and (min-width: 550px) {
-  .card {
-    width: 500px;
-    height: 350px
-  }
-}
 
 .card--header {
   text-align: center;
-
+  
   h2 {
     margin-bottom: 0.5em;
   }
@@ -102,6 +102,16 @@ p {
   gap: 10px;
 }
 
+@keyframes boxShadowBurst {
+  0% {
+    box-shadow: 0 0 0 0 var(--accent);
+  }
+
+  100% {
+    box-shadow: 0 0 4em 2em var(--accent);
+  }
+}
+
 .reference {
   border: 1.5px solid var(--accent);
   padding: 1em 1.5em;
@@ -110,4 +120,44 @@ p {
   align-items: center;
   justify-content: center;
   text-align: center;
+  cursor: pointer;
+  transition: 300ms;
+  z-index: 1;
+}
+
+.reference:hover {
+  background-color: var(--accent);
+  animation: 1s linear boxShadowBurst;
+  box-shadow: 0 0 4em 2em var(--accent);
+  z-index: 0;
+}
+
+@media screen and (min-width: 550px) {
+  .card {
+    width: 500px;
+    height: 325px;
+    transition: height 400ms 400ms,
+                width 400ms;
+  }
+
+  .card::before {
+    width: 400px;
+    height: 340px;
+    top: -15px;
+    left: 50px;
+    background: linear-gradient(to right,
+                                var(--orange),
+                                var(--yellow),
+                                var(--green),
+                                var(--blue),
+                                var(--purple),
+                                var(--red));
+    transition: width 400ms 400ms,
+                top 400ms 400ms;
+  }
+
+  .card--main {
+    grid: repeat(2, 1fr) / repeat(3, 1fr);
+    gap: 20px
+  }
 }
