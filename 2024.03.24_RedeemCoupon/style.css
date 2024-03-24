@@ -17,6 +17,7 @@ body {
   background: var(--bg);
   display: flex;
   font-family: "Rubik", sans-serif;
+  height: 100vh;
 }
 
 h1 {
