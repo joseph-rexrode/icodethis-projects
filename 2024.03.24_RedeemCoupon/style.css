@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #D8C7CD;
+  --accent: #56445D;
+  --accent-brown: #8B6A70;
+
+}
+
+body {
+  background: var(--bg);
+  display: flex;
+  font-family: "Rubik", sans-serif;
+}
+
+h1 {
+  font-size: 16pt;
+  color: white
+}
+
+h2 {
+  font-size: 12pt;
+}
+
+.heroText--top {
+  background-color: var(--accent);
+  text-align: center;
+  width: 80%;
+}
+
+.heroText--mid {
+  font-weight: 300;
+  background-color: var(--accent-brown);
+  font-size: 15pt;
+  padding-inline: 0.25em;
+}
+
+.card {
+  background: center / cover no-repeat url("https://images.unsplash.com/photo-1457301473530-d6d4d4d7b824?q=80&w=2389&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  position: relative;
+  z-index: 0;
+  margin: auto;
+  width: 300px;
+  height: 325px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-evenly;
+  box-shadow: 0 0 3em -0.5em var(--accent);
+}
+
+.card--filter {
+  width: 100%; 
+  height: 100%;
+  position: absolute;
+  left: 0;
+  background: linear-gradient(to bottom, transparent, white 80%);
+  z-index: -1;
+}
+
+.heroText {
+  padding: 3em 2em 0 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px
+}
+
+.finePrint {
+  font-size: 8pt;
+  padding: 0 2.1em
+}
+
+.code {
+  padding: 1em 2em;
+  border: none;
+  border-radius: 3px;
+  background: rgba(183, 202, 209, 0.5);
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.code:hover {
+  padding: 1em 5em
+}
