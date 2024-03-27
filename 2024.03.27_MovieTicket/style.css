@@ -1,0 +1,94 @@
+
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #9E768F;
+  --card: #FFFFFF;
+  --text-dark: #455A65;
+  --accent-open: #5B889D;
+  --accent-taken: #C9D8DE;
+  --accent-selected: #EC407A;
+}
+
+body {
+  background: var(--bg);
+  display: flex;
+}
+
+h3 {
+  font-size: 12pt;
+  font-weight: 300;
+}
+
+.card {
+  width: 350px;
+  height: 450px;
+  margin: auto;
+  background: var(--card);
+  border-radius: 5px;
+  position: relative;
+}
+
+.card--ticket {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.ticket--header {
+  background: center / cover no-repeat url("https://i.ebayimg.com/images/g/y00AAOSwWVxkdlmF/s-l1200.webp");
+  background-position-y: -170px;
+  height: 40%;
+  border-radius: 5px 5px 0 0;
+  position: relative;
+}
+
+.ticket--header__content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  color: white;
+  background: rgba(211, 211, 211, 0.351);
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding-inline: 1em;
+}
+
+.movie--location {
+  display: flex;
+}
+
+
+
+
+.ticket--main__screen {
+  width: 200px;
+  height: 50px;
+  border: 2px solid transparent;
+  border-bottom-color: var(--accent-open);
+  border-radius: 50%;
+}
+
+
+
+
+
+
+/* BUTTONS */
+
+button {
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.back {
+  position: absolute;
+}
