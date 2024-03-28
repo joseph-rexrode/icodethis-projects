@@ -19,7 +19,6 @@
 body {
   background: var(--bg);
   display: flex;
-  padding-block: 3em;
   font-family: "Rubik", sans-serif;
 }
 
@@ -29,14 +28,13 @@ h3 {
 }
 
 .card {
-  width: 350px;
-  height: 500px;
+  width: 325px;
+  height: 450px;
   margin: auto;
   background: var(--card);
   border-radius: 5px;
   position: relative;
   box-shadow: -1em -1em 3em -1em;
-  scale: 0.9
 }
 
 .card--ticket {
@@ -50,7 +48,7 @@ h3 {
 .ticket--header {
   background: center / cover no-repeat url("https://i.ebayimg.com/images/g/y00AAOSwWVxkdlmF/s-l1200.webp");
   background-position-y: -170px;
-  height: 30%;
+  height: 25%;
   border-radius: 5px 5px 0 0;
   position: relative;
 }
@@ -107,10 +105,14 @@ h3 {
   box-shadow: 0 1.25em 1em var(--accent-open);
   background: none;
   position: absolute;
-  bottom: -20px;
+  bottom: -15px;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  p {
+    padding-top: 1em;
+  }
 }
 
 .ticket--info {
