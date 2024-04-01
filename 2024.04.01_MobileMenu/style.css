@@ -1,0 +1,127 @@
+
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bgCircles: #FFFFFF;
+  --bg: #F7FBFF;
+  --accent-dark: #4F4789;
+  --accent-light: #50A2A7;
+  --text: #47525F;
+  --icon-inactive: #8a8a8a;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  background: var(--bg)
+}
+
+.bg--centerPoint {
+  margin: auto;
+  /* make background circles rotate around center point */
+}
+
+.card {
+  height: 430px;
+  width: 250px;
+  background: var(--bgCircles);
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 1em -0.3em var(--accent-dark);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+}
+
+.card--header {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  position: relative;
+  color: white;
+  z-index: 0;
+  padding: 1em;
+}
+
+.card--header__bg {
+  position: absolute;
+  top: -40px;
+  left: -10px;
+  width: 130%;
+  height: 150%;
+  background: var(--accent-dark);
+  z-index: -1;
+  border-radius: 35px;
+  rotate: -10deg;
+  box-shadow: 0 0.5em 1em -0.6em var(--accent-dark);
+}
+
+.pfp {
+  background: center / cover no-repeat url("https://plus.unsplash.com/premium_photo-1661892088256-0a17130b3d0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80");
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  position: relative;
+  border: 5px solid var(--accent-light);
+}
+
+.subtitle {
+  font-size: 10pt;
+  opacity: 0.7;
+}
+
+.card--main {
+  width: 100%;
+  padding-top: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em
+}
+
+.card--main__item {
+  padding: 0.5em 1.5em;
+  list-style: none;
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  cursor: pointer;
+  border-left: 3px solid transparent;
+  transition: 300ms;
+}
+
+.card--main__item:hover {
+  border-left: 3px solid var(--accent-light);
+  color: var(--accent-light);
+
+  .SVGRepo_iconCarrier path {
+    stroke: var(--accent-light)
+  }
+
+  .lightning {
+    fill: var(--accent-light)
+  }
+}
+
+.card--action {
+  cursor: pointer;
+  align-self: center;
+  padding: 0.5em 1.5em 0.5em 1em;
+  margin-top: 1em;
+  display: flex;
+  align-items: center;
+  gap: 0.25em;
+  background: var(--accent-light);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: 300ms;
+}
+
+.card--action:hover {
+  scale: 1.1
+}
