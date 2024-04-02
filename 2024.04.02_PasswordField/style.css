@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #F7FBFF;
+  --card: #FFFFFF;
+  --accent-light: #5A7D7C;
+  --accent-dark: #232C33;
+  --text: #1E2019;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  height: 100vh;
+  display: flex;
+  background: var(--bg);
+  color: var(--text);
+}
+
+h1 {
+  font-size: 20pt;
+}
+
+h5 {
+  font-size: 12pt;
+}
+
+.subtitle {
+  font-size: 9pt;
+}
+
+p {
+  font-size: 10pt;
+  font-weight: 500;
+}
+
+.card {
+  margin: auto;
+  background: var(--card);
+  padding: 3em 2em;
+  position: relative;
+  width: 350px;
+  height: 360px
+}
+
+.card, .card::before, .card::after {
+  border-radius: 5px;
+  box-shadow: -0.5em 0 1em -0.5em;
+}
+
+.card::before, .card::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: left 300ms ease-in-out;
+}
+
+.card::before {
+  background: var(--accent-light);
+  top: -15px;
+  left: -25px;
+  z-index: -1;
+}
+
+.card::after {
+  background: var(--accent-dark);
+  top: -30px;
+  left: -50px;
+  z-index: -2;
+}
+
+@media screen and (max-width: 450px) {
+  .card::before, .card::after {
+    left: 0;
+    box-shadow: 0 -0.5em 1em -0.5em;
+  }
+
+  .card {
+    box-shadow: 0 0 1em -0.5em;
+  }
+}
+
+.card--content {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 0.75em;
+}
+
+.pfp {
+  background: center / cover no-repeat url("https://plus.unsplash.com/premium_photo-1661892088256-0a17130b3d0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80");
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  position: relative;
+}
+
+.profile--info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35em
+}
+
+.password--section {
+  display: flex;
+  align-items: center;
+  gap: 0.35em;
+  position: relative;
+}
+
+#password {
+  padding: 0.5em 2.5em;
+  width: 100%
+}
+
+.locksvg {
+  position: absolute;
+  left: 0.5rem;
+}
+
+.isvisible {
+  cursor: pointer;
+}
+
+.actions--signin {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 1.65em;
+}
+
+.stay {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.stay--button {
+  cursor: pointer;
+  width: 50px;
+  height: 25px;
+  background: var(--card);
+  border: 1.5px solid var(--text);
+  border-radius: 100px;
+  position: relative;
+}
+
+.stay--button::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background: var(--accent-dark);
+  left: 2px;
+  top: 1.5px;
+}
+
+.continue {
+  cursor: pointer;
+  transition: 300ms;
+  padding: 0.6em 0.8em;
+  border-radius: 5px;
+  border: none;
+  background: var(--accent-dark);
+  color: var(--card);
+}
+
+.continue:hover, .continue:focus-visible {
+  opacity: 0.7;
+}
+
+a {
+  color: var(--accent-light);
+  align-self: start;
+}
+
+*:focus-visible {
+  outline-color: var(--accent-light);
+}
