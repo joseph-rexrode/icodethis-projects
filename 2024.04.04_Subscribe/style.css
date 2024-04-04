@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-pink: #AC80A0;
+  --bg-beige: #D0D6B5;
+  --card: #FFFFFF;
+  --accent-main: #0471A6;
+  --accent-muted: #3685B5;
+  --text: #061826;
+}
+
+*:focus-visible {
+  outline-color: var(--accent-main);
+}
+
+body {
+  font-family: "Urbanist", sans-serif;
+  display: flex;
+  height: 100vh;
+  color: var(--text);
+  background: linear-gradient(to bottom right,
+                              var(--bg-pink) 50%,
+                              var(--bg-beige) 50%);
+}
+
+p {
+  font-size: 9pt;
+}
+
+label {
+  font-size: 8pt;
+  width: 200px;
+}
+
+.card {
+  margin: auto;
+  width: min(85%, 450px);
+  background: var(--card);
+  padding: 2em 3em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 0 0 2em -0.5em var(--text);
+}
+
+.subtitle {
+  width: max(80%, 250px);
+  text-align: center;
+}
+
+.card--email {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  width: 100%;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+#email {
+  padding: 0.5em 1em;
+  flex: 2;
+}
+
+.sendEmail {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em 1em;
+  gap: 0.35em;
+  background: var(--accent-muted);
+  color: var(--card);
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 300ms;
+  box-shadow: 0 0.5em 1em -0.5em var(--accent-main);
+}
+
+.sendEmail:hover {
+  background: var(--accent-main);
+}
+
+.card--newsletter {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  align-self: start;
+}
