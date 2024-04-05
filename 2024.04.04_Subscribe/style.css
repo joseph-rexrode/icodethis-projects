@@ -81,7 +81,7 @@ label {
   color: var(--card);
   border: none;
   border-radius: 3px;
-  cursor: pointer;
+  cursor: not-allowed;
   transition: 300ms;
   box-shadow: 0 0.5em 1em -0.5em var(--accent-main);
 }
