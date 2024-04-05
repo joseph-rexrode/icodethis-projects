@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #D8DAD3;
+  --header: #F1F2EB;
+  --accent: #A4C2A5;
+  --text: #061826;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  background: var(--bg);
+  display: flex;
+}
+
+h3 {
+  font-size: 12pt;
+}
+
+p {
+  font-size: 10pt;
+}
+
+.header {
+  background: var(--header);
+  border-radius: 5px;
+  width: 250px;
+  height: 300px;
+  margin: auto;
+  box-shadow: 0 0.5em 2em -1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em
+}
+
+.header--info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.pfp {
+  background: center / cover no-repeat url("https://plus.unsplash.com/premium_photo-1661892088256-0a17130b3d0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80");
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+}
+
+.socials {
+  display: flex;
+  gap: 0.5em;
+}
+
+.socials--icon {
+  cursor: pointer;
+  transition: border-color 300ms;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: 0.5px solid var(--accent);
+  border-radius: 10px;
+}
+
+.socials--icon:hover {
+  border-color: var(--text);
+}
+
+.header--stats {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.organizations {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.organizations--text {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+
+  svg {
+    cursor: pointer;
+    transition: 300ms;
+  }
+
+  svg:hover {
+    opacity: 0.6
+  }
+}
+
+.organizations--bar {
+  width: 100px;
+  height: 10px;
+  background: lightgrey;
+  border-radius: 50px;
+  position: relative;
+}
+
+.organizations--progress {
+  height: 10px;
+  border-radius: 50px;
+  background-color: var(--accent);
+  width: 75%;
+}
+
+.followers {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 0.5em
+}
+
+.follow {
+  cursor: pointer;
+  transition: 300ms;
+  padding: 0.5em 1em;
+  border: 1px solid var(--text);
+  border-radius: 5px;
+}
+
+.follow:hover {
+  color: white;
+  background-color: var(--text);
+}
+
+@media screen and (min-width: 600px) {
+  .header {
+    width: 500px;
+    height: 225px;
+    flex-direction: row;
+    padding: 2em;
+  }
+
+  .header--info {
+    align-items: start;
+  }
+
+  .header--stats {
+    flex-direction: column;
+    align-items: end;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .organizations {
+    padding-top: 3em;
+    gap: 0.5em
+  }
+
+  .organizations--text {
+    justify-content: space-between;
+  }
+
+  .organizations--bar {
+    width: 200px
+  }
+}
