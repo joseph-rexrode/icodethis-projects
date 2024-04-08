@@ -1,0 +1,145 @@
+
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-main: #FFEA77;
+  --bg-sec: #CDD1DE;
+  --main: #FFCF03;
+  --accent: #9C6615;
+  --text: #150B00;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  background: linear-gradient(to bottom right,
+                              var(--bg-sec),
+                              var(--bg-main),
+                              var(--bg-sec)) 
+}
+
+.card {
+  margin: auto;
+  background: var(--main);
+  width: min(450px, 85%);
+  height: 350px;
+  display: flex;
+  align-items: start;
+  padding: 1em;
+  gap: 2em;
+  border-radius: 10px;
+  box-shadow: 0 0.4em 1em -0.5em;
+}
+
+.card--icon {
+  background: center / cover no-repeat url("https://images.unsplash.com/photo-1505740106531-4243f3831c78?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  width: 150px;
+  aspect-ratio: 1;
+  flex: 0.65;
+  border-radius: 30%;
+}
+
+.card--main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.card--main-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  width: 100%
+}
+
+.card--main-section.action--items {
+  flex-direction: row;
+}
+
+.price--original {
+  opacity: 0.8;
+  text-decoration: line-through;
+}
+
+.muted {
+  opacity: 0.6;
+  font-size: 8pt;
+  margin-top: -0.5em;
+}
+
+.leftInStock {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.leftInStock p {
+  font-size: 8pt;
+}
+
+.leftInStock--icon {
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  border-radius: 100%;
+}
+
+
+/* BUTTONS */
+
+button {
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.notification--shipping {
+  cursor: auto;
+  background: var(--text);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 0.25em;
+  width: 100px
+}
+
+.quickBuy {
+  width: 100%;
+  padding-block: 0.5em;
+  background: var(--bg-main);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0.2em var(--accent);
+}
+
+.add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25em;
+  gap: 0.5em;
+  width: 50%;
+  background: none;
+  border: 2px solid;
+  border-radius: 5px;
+}
+
+.add:hover {
+  background: var(--bg-main)
+}
+
+@media screen and (max-width: 500px) {
+  .card--main-section.action--items {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .add {
+    width: 100%
+  }
+}
