@@ -49,7 +49,7 @@ a:hover {
   opacity: 1;
 }
 
-/* MAIN ELEMENTS */
+/* MAIN ELEMENT */
 
 .card {
   margin: auto;
@@ -66,4 +66,48 @@ a:hover {
   border-radius: 5px;
   box-shadow: -0.5em -0.5em 0.5em var(--accent-two);
   overflow: hidden;
+  position: relative;
+  z-index: 0;
+}
+
+/* circles */
+
+.circle {
+  position: absolute;
+  border-radius: 100%;
+  aspect-ratio: 1;
+  background: red;
+  z-index: -1;
+}
+
+.circle--small {
+  width: 50px;
+  top: 0px;
+  left: 0px;
+  rotate: 60deg
+}
+
+.circle--med {
+  width: 100px;
+  bottom: 0px;
+  left: 0px;
+  rotate: -40deg
+}
+
+.circle--lg {
+  width: 150px;
+  right: 0px;
+  top: 150px
+}
+
+.circle--pink {
+  background: linear-gradient(to right,
+                              var(--accent-one),
+                              var(--card));
+}
+
+.circle--purple {
+  background: linear-gradient(to right,
+                              var(--accent-two),
+                              var(--card));
 }
