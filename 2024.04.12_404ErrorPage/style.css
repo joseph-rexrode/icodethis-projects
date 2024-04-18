@@ -10,6 +10,9 @@
   --card: #8332AC;
   --accent-one: #E086D3;
   --accent-two: #462749;
+  --sm: 50px;
+  --med: 100px;
+  --lg: 150px;
 }
 
 body {
@@ -82,22 +85,16 @@ a:hover {
 
 .circle--small {
   width: 50px;
-  top: 0px;
-  left: 0px;
   rotate: 60deg
 }
 
 .circle--med {
   width: 100px;
-  bottom: 0px;
-  left: 0px;
   rotate: -40deg
 }
 
 .circle--lg {
   width: 150px;
-  right: 0px;
-  top: 150px
 }
 
 .circle--pink {
