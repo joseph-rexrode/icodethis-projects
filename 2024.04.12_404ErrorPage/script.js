@@ -8,29 +8,32 @@ const smallDiameter = root.getPropertyValue("--sm");
 const medDiameter = root.getPropertyValue("--med");
 const lgDiameter = root.getPropertyValue("--lg");
 
-//moveCircle();
+
+
+//moveCircles();
 
 renderRandomPositions()
 
 function renderRandomPositions() {
   circles.forEach(circle => {
-    console.log(getComputedStyle(card).getPropertyValue("width"));
     let cardWidth = parseFloat(getComputedStyle(card).getPropertyValue("width"));
     let cardHeight = parseFloat(getComputedStyle(card).getPropertyValue("height"));
     let circleDiameter = parseFloat(getComputedStyle(circle).getPropertyValue("width"));
     let posx = (Math.random() * (cardWidth - circleDiameter)).toFixed();
     let posy = (Math.random() * (cardHeight - circleDiameter)).toFixed();
-    console.log("Posx: " + posx + "\nPosy: " + posy);
     circle.style.left = posx + "px";
     circle.style.top = posy + "px";
   })
 }
 
-function moveCircle() {
+function moveCircles() {
 
-  setInterval(() => {
-    circle.left = circle.style.left + 10;
-    circle.style.left = circle.style.left + "px";
-    console.log(circle.style.left)
-  }, 200000);
+  circles.forEach(circle => {
+    setInterval(() => {
+      let currentX = parseFloat(getComputedStyle(circle).getPropertyValue("left"));
+      let currentY = parseFloat(getComputedStyle(circle).getPropertyValue("top"));
+      currentX += 10;
+      circle.style.left = currentX + "px";
+    }, 2000)
+  })
 }
