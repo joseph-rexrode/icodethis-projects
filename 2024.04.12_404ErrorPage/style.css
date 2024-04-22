@@ -81,6 +81,7 @@ a:hover {
   aspect-ratio: 1;
   background: red;
   z-index: -1;
+  transition: 200ms
 }
 
 .circle--small {

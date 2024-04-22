@@ -10,9 +10,11 @@ const lgDiameter = root.getPropertyValue("--lg");
 
 
 
-//moveCircles();
-
 renderRandomPositions()
+
+moveCircles();
+
+// gets initial circle positions
 
 function renderRandomPositions() {
   circles.forEach(circle => {
@@ -26,14 +28,50 @@ function renderRandomPositions() {
   })
 }
 
+// moves circles randomly
+
+  /* eight possible directions: 
+          (1) up, (2) up-right, (3) up-left,
+          (4) left, (5) right,
+          (6) down, (7) down-right, (8) down-left 
+  */
+
 function moveCircles() {
 
   circles.forEach(circle => {
     setInterval(() => {
       let currentX = parseFloat(getComputedStyle(circle).getPropertyValue("left"));
       let currentY = parseFloat(getComputedStyle(circle).getPropertyValue("top"));
-      currentX += 10;
+      let direction = Math.ceil(Math.random() * 8);
+
+      // if direction is anything with up, move up 2px
+
+      if (direction == 1 || direction == 2 || direction == 3) {
+        currentY += 2;
+      }
+      
+      // if direction is anything with down, move down 2px
+      
+      if (direction == 6 || direction == 7 || direction == 8) {
+        currentY -= 2;
+      }
+
+      // left 
+
+      if (direction == 3 || direction == 4 || direction == 8) {
+        currentX -= 2;
+      }
+
+      // right
+
+      if (direction == 2 || direction == 5 || direction == 7) {
+        currentX += 2;
+      }
+
       circle.style.left = currentX + "px";
-    }, 2000)
+      circle.style.top = currentY + "px";
+
+      console.log(direction);
+    }, 50)
   })
 }
